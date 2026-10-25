@@ -6,7 +6,7 @@
   html {
     scroll-behavior: smooth;
     color: #1e293b;
-    background-color: #f8fafc;
+    background-color: #fbfbf9;
     -webkit-font-smoothing: antialiased;
   }
 }
@@ -18,40 +18,132 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #f1f1eb;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #c4ddd1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #1b4d3e;
+}
+
+/* Plang Malioboro Style Components */
+.plang-signage {
+  background: linear-gradient(135deg, #1b4d3e 0%, #143d31 100%);
+  border: 3px solid #d4af37;
+  box-shadow: 0 4px 0 0 #09231c, 0 12px 24px -4px rgba(9, 35, 28, 0.25);
+  position: relative;
+}
+
+.plang-signage::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px dashed rgba(212, 175, 55, 0.4);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Ticket Punch Effect */
+.ticket-card {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #e4e4d6;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04), 0 8px 18px rgba(27, 77, 62, 0.06);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ticket-card:hover {
+  transform: translateY(-2px);
+  border-color: #99c4b1;
+  box-shadow: 0 8px 24px rgba(27, 77, 62, 0.12);
+}
+
+/* Transit Vertical Halte Line */
+.transit-line-track {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.transit-line-track::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: 0.75rem;
+  width: 4px;
+  background: #1b4d3e;
+  border-radius: 2px;
+}
+
+.transit-stop-node {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.transit-stop-node::before {
+  content: "";
+  position: absolute;
+  left: -2rem;
+  top: 0.25rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 3px solid #1b4d3e;
+  box-shadow: 0 0 0 2px #d4af37;
+  z-index: 2;
+}
+
+.transit-stop-node.transfer::before {
+  background-color: #d4af37;
+  border-color: #1b4d3e;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.4);
+  width: 16px;
+  height: 16px;
+  left: -2.0625rem;
 }
 
 /* Prose typography styling for articles */
 .prose-transit {
-  color: #334155;
-  line-height: 1.8;
+  color: #27303f;
+  line-height: 1.85;
   font-size: 1.0625rem;
 }
 
 .prose-transit h2 {
-  color: #0f172a;
+  color: #143d31;
   font-size: 1.5rem;
   font-weight: 700;
-  margin-top: 2rem;
-  margin-bottom: 0.85rem;
+  margin-top: 2.25rem;
+  margin-bottom: 0.95rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #e2e8f0;
+  border-bottom: 2px solid #e1eee7;
+  position: relative;
+}
+
+.prose-transit h2::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 48px;
+  height: 2px;
+  background-color: #d4af37;
 }
 
 .prose-transit h3 {
-  color: #1e293b;
+  color: #1b4d3e;
   font-size: 1.25rem;
   font-weight: 600;
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
   margin-bottom: 0.5rem;
 }
 
@@ -69,24 +161,28 @@
 }
 
 .prose-transit a {
-  color: #0284c7;
+  color: #1b4d3e;
   text-decoration: underline;
-  text-underline-offset: 3px;
-  font-weight: 500;
+  text-decoration-color: #d4af37;
+  text-underline-offset: 4px;
+  font-weight: 600;
 }
 
 .prose-transit a:hover {
-  color: #0369a1;
+  color: #059669;
 }
 
 .prose-transit blockquote {
-  border-left: 4px solid #0284c7;
-  background-color: #f0f9ff;
-  padding: 0.75rem 1.25rem;
-  margin: 1.25rem 0;
+  border-left: 4px solid #1b4d3e;
+  background-color: #f2f8f5;
+  padding: 0.85rem 1.35rem;
+  margin: 1.35rem 0;
   border-radius: 0 0.5rem 0.5rem 0;
-  color: #0c4a6e;
+  color: #143d31;
   font-style: italic;
+  border-right: 1px solid #e1eee7;
+  border-top: 1px solid #e1eee7;
+  border-bottom: 1px solid #e1eee7;
 }
 
 /* Markdown tables in prose */
@@ -98,23 +194,25 @@
   font-size: 0.875rem;
   border-radius: 0.75rem;
   overflow: hidden;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #e1eee7;
+  box-shadow: 0 2px 4px rgba(27, 77, 62, 0.04);
 }
 
 .prose-transit th {
-  background-color: #0f172a;
+  background-color: #1b4d3e;
   color: #ffffff;
-  padding: 0.75rem 1rem;
+  padding: 0.85rem 1rem;
   text-align: left;
   font-weight: 600;
   font-size: 0.8125rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  border-bottom: 2px solid #d4af37;
 }
 
 .prose-transit td {
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid #f1f5f9;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #f1f1eb;
   color: #334155;
 }
 
@@ -123,5 +221,9 @@
 }
 
 .prose-transit tr:nth-child(even) {
-  background-color: #f8fafc;
+  background-color: #f8f8f3;
+}
+
+.prose-transit tr:hover td {
+  background-color: #f2f8f5;
 }

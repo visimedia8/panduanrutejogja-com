@@ -4,38 +4,55 @@ import { siteConfig } from '../config/site';
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all shadow-sm">
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b-2 border-keraton-800/10 transition-all shadow-sm">
+  <!-- Top Thin Plang Ribbon -->
+  <div class="bg-keraton-900 text-white text-[11px] py-1 px-4 sm:px-8 border-b border-jogja-500/30">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-jogja-400 animate-pulse"></span>
+        <span class="font-medium tracking-wider uppercase text-jogja-200">Panduan Rute &amp; Halte Transit Yogyakarta</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-4 text-keraton-200 text-[10px]">
+        <span>Jadwal &amp; Tarif Terverifikasi 2026</span>
+        <span class="text-jogja-400">•</span>
+        <a href="/kontak" class="hover:text-white transition-colors">Lapor Perubahan Rute</a>
+      </div>
+    </div>
+  </div>
+
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       
-      <!-- Logo & Brand -->
-      <a href="/" class="flex items-center gap-2.5 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-700 to-brand-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
-          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+      <!-- Logo & Brand: Authentic Malioboro Plang Motif -->
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="relative w-11 h-11 rounded-lg bg-keraton-800 flex items-center justify-center text-white border-2 border-jogja-500 shadow-plang-sm group-hover:scale-105 transition-all">
+          <svg class="w-6 h-6 text-jogja-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
           </svg>
         </div>
         <div>
-          <span class="text-xl font-bold tracking-tight text-navy-900 group-hover:text-brand-600 transition-colors">
-            Panduan<span class="text-brand-600">Rute</span>Jogja
-          </span>
-          <span class="block text-[10px] font-medium tracking-wide text-slate-500 uppercase">
-            Transportasi Publik DIY
+          <div class="flex items-center gap-1.5">
+            <span class="text-xl font-extrabold tracking-tight text-keraton-950 group-hover:text-keraton-800 transition-colors">
+              Panduan<span class="text-keraton-800">Rute</span><span class="text-jogja-600">Jogja</span>
+            </span>
+          </div>
+          <span class="block text-[10px] font-bold tracking-wider text-keraton-700 uppercase">
+            Trans Jogja • KRL • KA Bandara YIA
           </span>
         </div>
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+      <nav class="hidden md:flex items-center gap-1.5">
         {siteConfig.navItems.map((item) => {
           const isActive = currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href));
           return (
             <a
               href={item.href}
-              class={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+              class={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-all ${
                 isActive
-                  ? 'bg-brand-50 text-brand-700 font-semibold'
-                  : 'text-slate-600 hover:text-navy-900 hover:bg-slate-50'
+                  ? 'bg-keraton-800 text-white shadow-sm'
+                  : 'text-slate-700 hover:text-keraton-900 hover:bg-keraton-50'
               }`}
             >
               {item.title}
@@ -44,14 +61,14 @@ const currentPath = Astro.url.pathname;
         })}
       </nav>
 
-      <!-- Search & Mobile Menu Button -->
-      <div class="flex items-center gap-2">
+      <!-- Quick Search Action & Mobile Menu Button -->
+      <div class="flex items-center gap-2.5">
         <a
           href="/#panduan-list"
-          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-medium text-slate-600 hover:bg-slate-50 hover:border-slate-300 transition-colors"
-          aria-label="Cari Panduan"
+          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-keraton-50 border border-keraton-200 text-xs font-bold text-keraton-800 hover:bg-keraton-100 hover:border-keraton-300 transition-colors"
+          aria-label="Cari Panduan Rute"
         >
-          <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="w-4 h-4 text-keraton-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
           <span>Cari Rute</span>
@@ -61,8 +78,8 @@ const currentPath = Astro.url.pathname;
         <button
           id="mobile-menu-btn"
           type="button"
-          class="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-slate-600 hover:text-navy-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-500"
-          aria-label="Buka Menu"
+          class="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-keraton-800 hover:text-keraton-950 hover:bg-keraton-100 focus:outline-none focus:ring-2 focus:ring-keraton-500"
+          aria-label="Buka Menu Navigasi"
         >
           <svg id="menu-icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -77,18 +94,19 @@ const currentPath = Astro.url.pathname;
   </div>
 
   <!-- Mobile Drawer Menu -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-1.5 shadow-xl">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-keraton-100 bg-white px-4 pt-3 pb-6 space-y-1.5 shadow-xl">
     {siteConfig.navItems.map((item) => (
       <a
         href={item.href}
-        class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-700 transition-colors"
+        class="block px-3.5 py-2.5 rounded-lg text-base font-bold text-slate-800 hover:bg-keraton-50 hover:text-keraton-900 transition-colors"
       >
         {item.title}
       </a>
     ))}
-    <div class="pt-3 border-t border-slate-100 flex flex-col gap-1 text-sm text-slate-500">
-      <a href="/tentang" class="px-3 py-2 hover:text-navy-900">Tentang Portal</a>
-      <a href="/kontak" class="px-3 py-2 hover:text-navy-900">Kontak Redaksi</a>
+    <div class="pt-3 border-t border-slate-100 flex flex-col gap-1 text-sm font-medium text-slate-600">
+      <a href="/tentang" class="px-3 py-2 hover:text-keraton-800">Tentang PanduanRuteJogja</a>
+      <a href="/redaksi" class="px-3 py-2 hover:text-keraton-800">Standar Redaksi &amp; E-E-A-T</a>
+      <a href="/kontak" class="px-3 py-2 hover:text-keraton-800">Kontak Analis Rute</a>
     </div>
   </div>
 </header>
@@ -99,14 +117,18 @@ const currentPath = Astro.url.pathname;
   const openIcon = document.getElementById('menu-icon-open');
   const closeIcon = document.getElementById('menu-icon-close');
 
-  menuBtn?.addEventListener('click', () => {
-    const isHidden = mobileMenu?.classList.toggle('hidden');
-    if (isHidden) {
-      openIcon?.classList.remove('hidden');
-      closeIcon?.classList.add('hidden');
-    } else {
-      openIcon?.classList.add('hidden');
-      closeIcon?.classList.remove('hidden');
-    }
-  });
+  if (menuBtn && mobileMenu && openIcon && closeIcon) {
+    menuBtn.addEventListener('click', () => {
+      const isExpanded = mobileMenu.classList.contains('hidden');
+      if (isExpanded) {
+        mobileMenu.classList.remove('hidden');
+        openIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+  }
 </script>

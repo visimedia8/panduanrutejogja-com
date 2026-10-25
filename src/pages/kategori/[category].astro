@@ -21,9 +21,23 @@ export async function getStaticPaths() {
 const { category, articles } = Astro.props;
 
 const breadcrumbs = [
-  { name: 'Kategori', url: `${siteConfig.url}/` },
+  { name: 'Direktori', url: `${siteConfig.url}/` },
   { name: category.name, url: `${siteConfig.url}/kategori/${category.slug}/` },
 ];
+
+const getLineBadge = (title: string) => {
+  const t = title.toUpperCase();
+  if (t.includes('1A')) return { code: '1A', bg: 'bg-emerald-600', text: 'text-white' };
+  if (t.includes('2A')) return { code: '2A', bg: 'bg-emerald-600', text: 'text-white' };
+  if (t.includes('3A')) return { code: '3A', bg: 'bg-emerald-600', text: 'text-white' };
+  if (t.includes('4A') || t.includes('4B')) return { code: '4A/B', bg: 'bg-amber-600', text: 'text-white' };
+  if (t.includes('5A') || t.includes('5B')) return { code: '5A/B', bg: 'bg-amber-600', text: 'text-white' };
+  if (t.includes('KRL') || t.includes('COMMUTER')) return { code: 'KRL', bg: 'bg-red-600', text: 'text-white' };
+  if (t.includes('BANDARA') || t.includes('YIA')) return { code: 'YIA', bg: 'bg-cyan-600', text: 'text-white' };
+  if (t.includes('PRAMEKS')) return { code: 'PRM', bg: 'bg-blue-600', text: 'text-white' };
+  if (t.includes('DAMRI')) return { code: 'DAMRI', bg: 'bg-blue-700', text: 'text-white' };
+  return { code: 'TJ', bg: 'bg-keraton-800', text: 'text-jogja-300' };
+};
 ---
 
 <BaseLayout
@@ -35,80 +49,110 @@ const breadcrumbs = [
     <!-- Breadcrumb -->
     <Breadcrumb items={breadcrumbs.map((b) => ({ label: b.name, href: b.url }))} />
 
-    <!-- Category Header -->
-    <header class="mb-10 text-center sm:text-left bg-gradient-to-r from-navy-900 to-brand-900 text-white p-6 sm:p-10 rounded-3xl shadow-sm">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-brand-200 border border-white/20 mb-4">
-        Kategori Transportasi Publik
-      </div>
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-        Panduan {category.name}
-      </h1>
-      <p class="mt-3 text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
-        {category.description}
-      </p>
-      <div class="mt-6 flex items-center gap-4 text-xs text-brand-200">
-        <span>Total <strong>{articles.length} Panduan Faktual</strong></span>
-        <span>&bull;</span>
-        <span>Terverifikasi Lapangan</span>
+    <!-- Category Header: Plang Malioboro Style -->
+    <header class="mb-10 text-center sm:text-left bg-keraton-950 border-2 border-jogja-500 text-white p-6 sm:p-10 rounded-2xl shadow-ticket relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#d4af3720_1px,transparent_1px),linear-gradient(to_bottom,#d4af3720_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+      
+      <div class="relative z-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-bold bg-keraton-900 border border-jogja-400 text-jogja-300 mb-4 font-mono">
+          KORIDOR &amp; TRANSPORTASI RESMI DIY
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
+          Panduan {category.name}
+        </h1>
+        <p class="mt-3 text-sm sm:text-base text-keraton-100 max-w-2xl leading-relaxed font-normal">
+          {category.description}
+        </p>
+        <div class="mt-6 flex flex-wrap items-center gap-3 text-xs text-jogja-200 font-bold">
+          <span class="px-2.5 py-1 rounded bg-keraton-900 border border-keraton-700 font-mono">
+            {articles.length} RUTE TERVERIFIKASI
+          </span>
+          <span class="text-jogja-400">•</span>
+          <span>Jadwal &amp; Tarif Terkini 2026</span>
+        </div>
       </div>
     </header>
 
     <!-- Ad Slot -->
     <AdSlot slotType="in-article" />
 
-    <!-- Article Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 my-8">
-      {articles.map((art) => (
-        <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md hover:border-brand-300 transition-all flex flex-col group">
-          <a href={`/panduan/${art.slug}`} class="block overflow-hidden relative aspect-[16/9] bg-slate-100">
-            <img
-              src={art.data.featuredImage}
-              alt={art.data.imageAlt || art.data.title}
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-            />
-            <span class="absolute top-3 left-3 bg-navy-900/80 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-md">
-              {art.data.routeType}
-            </span>
-          </a>
-
-          <div class="p-5 flex-1 flex flex-col justify-between">
+    <!-- Article Cards Grid (Ticket Pass Style) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 my-8">
+      {articles.map((art) => {
+        const badge = getLineBadge(art.data.title);
+        return (
+          <article class="ticket-card overflow-hidden flex flex-col justify-between group">
             <div>
-              <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
-                <span>{new Date(art.data.publishDate).toLocaleDateString('id-ID', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-                <span class="font-semibold text-brand-600">{art.data.fare}</span>
-              </div>
-              <h2 class="text-lg font-bold text-navy-900 group-hover:text-brand-600 transition-colors line-clamp-2 leading-snug mb-2">
-                <a href={`/panduan/${art.slug}`}>
-                  {art.data.title}
-                </a>
-              </h2>
-              <p class="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed mb-4">
-                {art.data.description}
-              </p>
-            </div>
-
-            <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span class="text-slate-500 font-medium">
-                {art.data.halteList?.length || 0} Titik Halte / Info
-              </span>
-              <a
-                href={`/panduan/${art.slug}`}
-                class="inline-flex items-center gap-1 font-bold text-brand-600 hover:text-brand-700"
-              >
-                <span>Buka Panduan</span>
-                <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
+              <a href={`/panduan/${art.slug}`} class="block overflow-hidden relative aspect-[16/9] bg-slate-100 border-b border-slate-100">
+                <img
+                  src={art.data.featuredImage}
+                  alt={art.data.imageAlt || art.data.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <div class="absolute top-3 left-3 flex items-center gap-1.5">
+                  <span class={`font-mono text-xs font-extrabold px-2.5 py-1 rounded shadow-md ${badge.bg} ${badge.text}`}>
+                    {badge.code}
+                  </span>
+                  <span class="bg-slate-900/80 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-1 rounded font-mono">
+                    {art.data.routeType}
+                  </span>
+                </div>
+                <div class="absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm text-keraton-950 text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm border border-slate-200 font-mono">
+                  {art.data.fare}
+                </div>
               </a>
+
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between text-[11px] text-slate-400 mb-2">
+                    <span class="font-mono text-slate-500 font-medium">
+                      {new Date(art.data.publishDate).toLocaleDateString('id-ID', { month: 'short', day: 'numeric', year: 'numeric' })}
+                    </span>
+                    <span class="font-bold text-keraton-800">{art.data.halteList?.length || 0} Titik Singgah</span>
+                  </div>
+                  <h2 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-keraton-800 transition-colors line-clamp-2 leading-snug mb-2">
+                    <a href={`/panduan/${art.slug}`}>
+                      {art.data.title}
+                    </a>
+                  </h2>
+                  <p class="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed font-normal mb-4">
+                    {art.data.description}
+                  </p>
+                </div>
+
+                <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-keraton-800">
+                  <span class="text-slate-500 font-medium text-[11px]">
+                    Operasional 2026
+                  </span>
+                  <a
+                    href={`/panduan/${art.slug}`}
+                    class="inline-flex items-center gap-1 text-keraton-800 hover:text-keraton-950 group-hover:underline"
+                  >
+                    <span>Detail Rute</span>
+                    <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        </article>
-      ))}
+          </article>
+        );
+      })}
     </div>
 
-    <!-- Ad Slot Bottom -->
-    <AdSlot slotType="in-article-bottom" />
-
+    <!-- Navigation Back to All Routes -->
+    <div class="mt-12 pt-6 border-t border-slate-200 flex justify-between items-center text-xs sm:text-sm font-bold">
+      <a
+        href="/"
+        class="inline-flex items-center gap-2 text-keraton-800 hover:text-keraton-950 transition-colors"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Kembali ke Beranda Peta Rute
+      </a>
+    </div>
   </div>
 </BaseLayout>

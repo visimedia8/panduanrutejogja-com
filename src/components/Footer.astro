@@ -4,28 +4,29 @@ import { siteConfig } from '../config/site';
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-navy-900 text-slate-300 border-t border-slate-800 mt-20">
+<footer class="bg-keraton-950 text-keraton-100 border-t-4 border-jogja-500 mt-20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
       
       <!-- Brand & Mission Statement -->
       <div class="md:col-span-1 space-y-4">
-        <div class="flex items-center gap-2.5">
-          <div class="w-9 h-9 rounded-xl bg-brand-500 flex items-center justify-center text-white">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-keraton-800 flex items-center justify-center text-white border border-jogja-400 shadow-plang-sm">
+            <svg class="w-5 h-5 text-jogja-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
             </svg>
           </div>
-          <span class="text-xl font-bold tracking-tight text-white">
-            Panduan<span class="text-brand-400">Rute</span>Jogja
+          <span class="text-xl font-extrabold tracking-tight text-white">
+            Panduan<span class="text-keraton-300">Rute</span><span class="text-jogja-400">Jogja</span>
           </span>
         </div>
-        <p class="text-sm text-slate-400 leading-relaxed">
+        <p class="text-xs text-keraton-200/90 leading-relaxed">
           Inisiatif panduan independen utilitas publik untuk memudahkan mobilitas warga lokal, pelajar, dan wisatawan menggunakan transportasi umum di Daerah Istimewa Yogyakarta.
         </p>
-        <div class="pt-2 text-xs text-slate-400">
-          <span class="block font-semibold text-slate-300">Email Kontak Resmi:</span>
-          <a href={`mailto:${siteConfig.contactEmail}`} class="text-brand-400 hover:underline">
+        <div class="pt-2 text-xs text-keraton-300/80">
+          <span class="block font-bold text-jogja-300">Alamat Korespondensi &amp; Email:</span>
+          <p class="text-keraton-200 text-[11px] mt-0.5">Jl. Malioboro No. 42, Sosromenduran, Gedong Tengen, Kota Yogyakarta 55271</p>
+          <a href={`mailto:${siteConfig.contactEmail}`} class="text-jogja-400 hover:text-white underline font-semibold mt-1 inline-block">
             {siteConfig.contactEmail}
           </a>
         </div>
@@ -33,26 +34,31 @@ const currentYear = new Date().getFullYear();
 
       <!-- Kategori Navigasi -->
       <div>
-        <h3 class="text-sm font-semibold tracking-wider text-white uppercase mb-4">
+        <h3 class="text-xs font-bold tracking-wider text-jogja-300 uppercase mb-4 border-b border-keraton-800 pb-2">
           Kategori Transportasi
         </h3>
-        <ul class="space-y-2.5 text-sm">
+        <ul class="space-y-2.5 text-xs">
           {siteConfig.categories.map((cat) => (
             <li>
-              <a href={`/kategori/${cat.slug}`} class="text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-brand-400"></span>
+              <a href={`/kategori/${cat.slug}`} class="text-keraton-200 hover:text-white transition-colors flex items-center gap-1.5 font-medium">
+                <span class="w-1.5 h-1.5 rounded-full bg-jogja-400"></span>
                 {cat.name}
               </a>
             </li>
           ))}
           <li>
-            <a href="/kategori/trans-jogja" class="text-slate-400 hover:text-white transition-colors">
-              Rute Bus Trans Jogja
+            <a href="/kategori/trans-jogja" class="text-keraton-200 hover:text-white transition-colors">
+              Rute Bus Trans Jogja (1A - 5B)
             </a>
           </li>
           <li>
-            <a href="/kategori/kereta-bandara" class="text-slate-400 hover:text-white transition-colors">
-              KRL Jogja - Solo & KA Bandara
+            <a href="/kategori/kereta-bandara" class="text-keraton-200 hover:text-white transition-colors">
+              KRL Jogja - Solo &amp; KA Bandara YIA
+            </a>
+          </li>
+          <li>
+            <a href="/kategori/tiket-wisata" class="text-keraton-200 hover:text-white transition-colors">
+              Tarif &amp; Integrasi Antarmoda Wisata
             </a>
           </li>
         </ul>
@@ -60,28 +66,33 @@ const currentYear = new Date().getFullYear();
 
       <!-- Panduan Populer -->
       <div>
-        <h3 class="text-sm font-semibold tracking-wider text-white uppercase mb-4">
-          Panduan Rute Populer
+        <h3 class="text-xs font-bold tracking-wider text-jogja-300 uppercase mb-4 border-b border-keraton-800 pb-2">
+          Rute Prioritas Wisatawan
         </h3>
-        <ul class="space-y-2.5 text-sm">
+        <ul class="space-y-2.5 text-xs">
           <li>
-            <a href="/panduan/rute-halte-trans-jogja-koridor-1a-prambanan-malioboro" class="text-slate-400 hover:text-white transition-colors">
+            <a href="/panduan/rute-halte-trans-jogja-koridor-1a-prambanan-malioboro" class="text-keraton-200 hover:text-white transition-colors">
               Trans Jogja 1A (Prambanan - Malioboro)
             </a>
           </li>
           <li>
-            <a href="/panduan/cara-naik-ka-bandara-yia-stasiun-tugu-kulon-progo" class="text-slate-400 hover:text-white transition-colors">
+            <a href="/panduan/cara-naik-ka-bandara-yia-stasiun-tugu-kulon-progo" class="text-keraton-200 hover:text-white transition-colors">
               KA Bandara YIA dari Stasiun Tugu
             </a>
           </li>
           <li>
-            <a href="/panduan/jadwal-tarif-krl-commuter-line-jogja-solo-terbaru" class="text-slate-400 hover:text-white transition-colors">
-              Jadwal & Tarif KRL Jogja - Solo
+            <a href="/panduan/jadwal-tarif-krl-commuter-line-jogja-solo-terbaru" class="text-keraton-200 hover:text-white transition-colors">
+              Jadwal &amp; Tarif KRL Jogja - Solo
             </a>
           </li>
           <li>
-            <a href="/panduan/cara-pembayaran-trans-jogja-emoney-qris-tunai" class="text-slate-400 hover:text-white transition-colors">
-              Cara Bayar Trans Jogja (QRIS & E-Money)
+            <a href="/panduan/cara-pembayaran-trans-jogja-emoney-qris-tunai" class="text-keraton-200 hover:text-white transition-colors">
+              Cara Bayar Trans Jogja (QRIS &amp; Kartu)
+            </a>
+          </li>
+          <li>
+            <a href="/panduan/panduan-rute-angkutan-umum-jogja-candi-borobudur" class="text-keraton-200 hover:text-white transition-colors">
+              Transportasi Umum Jogja ke Borobudur
             </a>
           </li>
         </ul>
@@ -89,39 +100,55 @@ const currentYear = new Date().getFullYear();
 
       <!-- Legalitas & Compliance -->
       <div>
-        <h3 class="text-sm font-semibold tracking-wider text-white uppercase mb-4">
-          Informasi & Kebijakan
+        <h3 class="text-xs font-bold tracking-wider text-jogja-300 uppercase mb-4 border-b border-keraton-800 pb-2">
+          Kebijakan &amp; Redaksi
         </h3>
-        <ul class="space-y-2.5 text-sm">
+        <ul class="space-y-2.5 text-xs">
           {siteConfig.legalNavItems.map((legal) => (
             <li>
-              <a href={legal.href} class="text-slate-400 hover:text-white transition-colors">
+              <a href={legal.href} class="text-keraton-200 hover:text-white transition-colors font-medium">
                 {legal.title}
               </a>
             </li>
           ))}
+          <li>
+            <a href="/redaksi" class="text-keraton-200 hover:text-white transition-colors font-medium">
+              Dewan Redaksi &amp; Verifikasi Lapangan
+            </a>
+          </li>
+          <li>
+            <a href="/privacy" class="text-keraton-200 hover:text-white transition-colors">
+              Kebijakan Cookie &amp; Iklan
+            </a>
+          </li>
         </ul>
-
-        <div class="mt-6 p-3 rounded-lg bg-navy-800 border border-slate-700 text-xs text-slate-400 leading-relaxed">
-          <strong class="text-slate-300 block mb-1">Disclaimer Independen:</strong>
-          Situs ini bukan aplikasi resmi Dishub DIY, KAI Commuter, atau PT Railink. Seluruh informasi dihimpun untuk tujuan edukasi dan kemudahan akses informasi publik.
-        </div>
       </div>
 
     </div>
 
-    <!-- Bottom Bar -->
-    <div class="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-      <p>
-        &copy; {currentYear} {siteConfig.name}. Hak Cipta Dilindungi Undang-Undang.
-      </p>
-      <div class="flex flex-wrap items-center gap-4 sm:gap-6">
-        <a href="/redaksi" class="hover:text-slate-300 transition-colors">Dewan Redaksi</a>
-        <a href="/privacy" class="hover:text-slate-300 transition-colors">Kebijakan Privasi</a>
-        <a href="/terms" class="hover:text-slate-300 transition-colors">Syarat & Ketentuan</a>
-        <a href="/kontak" class="hover:text-slate-300 transition-colors">Hubungi Kami</a>
-        <a href="/sitemap.xml" class="hover:text-slate-300 transition-colors">Sitemap XML</a>
+    <!-- Official Transit Disclaimer -->
+    <div class="mt-12 pt-6 border-t border-keraton-800/80 text-[11px] text-keraton-300/70 leading-relaxed">
+      <div class="p-4 rounded-lg bg-keraton-900 border border-keraton-800 flex items-start gap-3">
+        <svg class="w-5 h-5 text-jogja-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <p>
+          <strong>Pemberitahuan Status Independen:</strong> PanduanRuteJogja.com adalah situs panduan informasi publik independen dan bukan merupakan situs resmi dari Dinas Perhubungan DIY, PT KAI, KAI Commuter, maupun pengelola Trans Jogja. Seluruh merek dagang dan nama layanan merupakan hak milik operator masing-masing. Informasi dihimpun dari regulasi tarif resmi dan observasi rute langsung di lapangan.
+        </p>
       </div>
     </div>
+
+    <!-- Copyright -->
+    <div class="mt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-keraton-400 gap-4">
+      <p>© {currentYear} {siteConfig.name}. Seluruh hak cipta dilindungi undang-undang.</p>
+      <div class="flex items-center gap-4 text-[11px]">
+        <a href="/privacy" class="hover:text-white">Privasi</a>
+        <span>•</span>
+        <a href="/terms" class="hover:text-white">Syarat &amp; Ketentuan</a>
+        <span>•</span>
+        <a href="/sitemap.xml" class="hover:text-white">Sitemap XML</a>
+      </div>
+    </div>
+
   </div>
 </footer>

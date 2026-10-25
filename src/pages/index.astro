@@ -25,253 +25,315 @@ const getCategoryCount = (slug: string) => {
       return 0;
   }
 };
+
+// Helper for Line Badge styling
+const getLineBadge = (title: string, category: string) => {
+  const t = title.toUpperCase();
+  if (t.includes('1A')) return { code: '1A', bg: 'bg-emerald-600', text: 'text-white', label: 'Trans Jogja 1A' };
+  if (t.includes('2A')) return { code: '2A', bg: 'bg-emerald-600', text: 'text-white', label: 'Trans Jogja 2A' };
+  if (t.includes('3A')) return { code: '3A', bg: 'bg-emerald-600', text: 'text-white', label: 'Trans Jogja 3A' };
+  if (t.includes('4A') || t.includes('4B')) return { code: '4A/B', bg: 'bg-amber-600', text: 'text-white', label: 'Ring Road 4' };
+  if (t.includes('5A') || t.includes('5B')) return { code: '5A/B', bg: 'bg-amber-600', text: 'text-white', label: 'Ring Road 5' };
+  if (t.includes('KRL') || t.includes('COMMUTER')) return { code: 'KRL', bg: 'bg-red-600', text: 'text-white', label: 'KRL Commuter' };
+  if (t.includes('BANDARA') || t.includes('YIA')) return { code: 'YIA', bg: 'bg-cyan-600', text: 'text-white', label: 'Kereta Bandara' };
+  if (t.includes('PRAMEKS')) return { code: 'PRM', bg: 'bg-blue-600', text: 'text-white', label: 'KA Prameks' };
+  if (t.includes('DAMRI')) return { code: 'DAMRI', bg: 'bg-blue-700', text: 'text-white', label: 'Bus DAMRI' };
+  if (t.includes('TEMAN BUS') || t.includes('PERINTIS')) return { code: 'TB', bg: 'bg-teal-600', text: 'text-white', label: 'Teman Bus' };
+  return { code: 'TJ', bg: 'bg-keraton-800', text: 'text-jogja-300', label: 'Transit Jogja' };
+};
 ---
 
 <BaseLayout
   title={`${siteConfig.name} — Panduan Lengkap Rute & Transportasi Publik Yogyakarta`}
-  description="Portal navigasi independen terlengkap seputar bus Trans Jogja, jadwal KRL Commuter Line Jogja-Solo, KA Bandara YIA, tarif, rute wisata, dan tips transit."
+  description="Portal navigasi independen terlengkap seputar bus Trans Jogja, jadwal real-time KRL Commuter Line Jogja-Solo, KA Bandara YIA, tarif resmi, dan panduan halte transit."
 >
-  <!-- Hero Section -->
-  <section class="relative bg-gradient-to-b from-navy-950 via-navy-900 to-brand-950 text-white overflow-hidden py-16 sm:py-24">
-    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
+  <!-- Hero Section: Yogyakarta Heritage Wayfinding Board -->
+  <section class="relative bg-keraton-950 text-white overflow-hidden py-14 sm:py-20 border-b-4 border-jogja-500">
+    <!-- Subtle Heritage Grid Texture -->
+    <div class="absolute inset-0 opacity-15 bg-[linear-gradient(to_right,#d4af3715_1px,transparent_1px),linear-gradient(to_bottom,#d4af3715_1px,transparent_1px)] bg-[size:24px_24px]"></div>
     
     <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-brand-500/20 text-brand-300 border border-brand-400/30 mb-6 backdrop-blur-sm">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        Direktori Transportasi Publik Terverifikasi 2026
+      
+      <!-- Authentic Plang Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-keraton-900 border border-jogja-400 text-jogja-300 mb-6 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-jogja-400 animate-pulse"></span>
+        DIREKTORI RUTE &amp; JADWAL RESMI TERVERIFIKASI 2026
       </div>
 
-      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight sm:leading-none">
-        Jelajahi Yogyakarta dengan <br class="hidden sm:inline" />
-        <span class="bg-gradient-to-r from-brand-300 via-sky-200 to-white bg-clip-text text-transparent">
-          Transportasi Publik Nyaman & Murah
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+        Panduan Rute &amp; Transportasi <br class="hidden sm:inline" />
+        <span class="text-jogja-300 border-b-2 border-jogja-400 pb-1">
+          Publik Daerah Istimewa Yogyakarta
         </span>
       </h1>
 
-      <p class="mt-5 text-base sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed">
-        Panduan rute lengkap bus Trans Jogja, jadwal real-time KRL Jogja–Solo, kereta bandara YIA, tarif resmi, dan panduan halte transit tanpa tersesat.
+      <p class="mt-5 text-sm sm:text-lg text-keraton-100/90 max-w-3xl mx-auto font-normal leading-relaxed">
+        Peta koridor bus Trans Jogja, jadwal KRL Commuter Line Jogja–Solo, KA Bandara YIA, integrasi halte Stasiun Tugu, dan panduan tarif resmi anti-tersesat.
       </p>
 
       <!-- Search & Quick Navigation Bar -->
       <div class="mt-8 max-w-2xl mx-auto">
-        <div class="relative flex items-center bg-white rounded-2xl shadow-xl overflow-hidden p-1.5 border border-slate-200 focus-within:ring-2 focus-within:ring-brand-400">
-          <div class="pl-4 text-slate-400">
+        <div class="relative flex items-center bg-white rounded-xl shadow-xl overflow-hidden p-1.5 border-2 border-jogja-400 focus-within:ring-2 focus-within:ring-keraton-400">
+          <div class="pl-3.5 text-keraton-800">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </div>
           <input
             type="text"
             id="search-input"
-            placeholder="Cari rute, koridor bus, atau stasiun (contoh: 1A, Bandara YIA, Malioboro, KRL)..."
-            class="w-full px-3 py-2.5 text-sm sm:text-base text-slate-800 focus:outline-none placeholder-slate-400"
+            placeholder="Ketik koridor bus, stasiun, atau tujuan (contoh: 1A, Bandara YIA, Malioboro, KRL)..."
+            class="w-full px-3 py-2.5 text-sm sm:text-base text-slate-900 font-medium focus:outline-none placeholder-slate-400"
           />
           <button
             type="button"
             id="clear-search-btn"
-            class="hidden px-3 text-xs font-semibold text-slate-400 hover:text-slate-600"
+            class="hidden px-3 text-xs font-bold text-slate-500 hover:text-slate-800"
           >
             Reset
           </button>
         </div>
 
-        <!-- Quick Jump Pills -->
-        <div class="mt-3 flex flex-wrap items-center justify-center gap-1.5 text-xs text-slate-300">
-          <span class="text-slate-400">Rute Populer:</span>
-          <a href="/panduan/rute-halte-trans-jogja-koridor-1a-prambanan-malioboro" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-brand-200 transition-colors">Trans Jogja 1A</a>
-          <a href="/panduan/jadwal-tarif-krl-commuter-line-jogja-solo-terbaru" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-brand-200 transition-colors">KRL Jogja-Solo</a>
-          <a href="/panduan/cara-naik-ka-bandara-yia-stasiun-tugu-kulon-progo" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-brand-200 transition-colors">KA Bandara YIA</a>
-          <a href="/panduan/panduan-rute-angkutan-umum-jogja-candi-borobudur" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-brand-200 transition-colors">Ke Borobudur</a>
-          <a href="/panduan/cara-pembayaran-trans-jogja-emoney-qris-tunai" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-brand-200 transition-colors">Bayar QRIS</a>
+        <!-- Quick Jump Commuter Hub Pills -->
+        <div class="mt-3.5 flex flex-wrap items-center justify-center gap-1.5 text-xs">
+          <span class="text-jogja-200 font-semibold">Simpul Utama:</span>
+          <a href="/panduan/lokasi-halte-trans-jogja-terdekat-stasiun-tugu-lempuyangan" class="px-2.5 py-1 rounded-md bg-keraton-900 border border-keraton-700 hover:border-jogja-400 text-keraton-100 transition-colors">Stasiun Tugu</a>
+          <a href="/panduan/rute-halte-trans-jogja-koridor-1a-prambanan-malioboro" class="px-2.5 py-1 rounded-md bg-keraton-900 border border-keraton-700 hover:border-jogja-400 text-keraton-100 transition-colors">Trans Jogja 1A</a>
+          <a href="/panduan/cara-naik-ka-bandara-yia-stasiun-tugu-kulon-progo" class="px-2.5 py-1 rounded-md bg-keraton-900 border border-keraton-700 hover:border-jogja-400 text-keraton-100 transition-colors">KA Bandara YIA</a>
+          <a href="/panduan/jadwal-tarif-krl-commuter-line-jogja-solo-terbaru" class="px-2.5 py-1 rounded-md bg-keraton-900 border border-keraton-700 hover:border-jogja-400 text-keraton-100 transition-colors">KRL Jogja-Solo</a>
+          <a href="/panduan/cara-pembayaran-trans-jogja-emoney-qris-tunai" class="px-2.5 py-1 rounded-md bg-keraton-900 border border-keraton-700 hover:border-jogja-400 text-keraton-100 transition-colors">Tarif &amp; QRIS</a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Category Grid Section -->
+  <!-- Category Grid Section: Transit Pass Tokens -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {siteConfig.categories.map((cat) => (
-        <a
-          href={`/kategori/${cat.slug}`}
-          class="bg-white rounded-2xl p-6 border border-slate-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between group"
-        >
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-brand-50 text-brand-700 border border-brand-200">
-                {getCategoryCount(cat.slug)} Panduan Faktual
-              </span>
-              <span class="text-xs font-semibold text-slate-400 group-hover:text-brand-600 transition-colors flex items-center gap-1">
-                Jelajahi &rarr;
-              </span>
+      {siteConfig.categories.map((cat, idx) => {
+        const borderColors = [
+          'border-t-emerald-600',
+          'border-t-red-600',
+          'border-t-amber-600'
+        ];
+        const badgeBg = [
+          'bg-emerald-50 text-emerald-800 border-emerald-200',
+          'bg-red-50 text-red-800 border-red-200',
+          'bg-amber-50 text-amber-800 border-amber-200'
+        ];
+        return (
+          <a
+            href={`/kategori/${cat.slug}`}
+            class={`ticket-card p-6 border-t-4 ${borderColors[idx % 3]} flex flex-col justify-between group`}
+          >
+            <div>
+              <div class="flex items-center justify-between mb-3.5">
+                <span class={`inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold border ${badgeBg[idx % 3]}`}>
+                  {getCategoryCount(cat.slug)} Rute Terdaftar
+                </span>
+                <span class="text-xs font-bold text-keraton-800 group-hover:text-keraton-600 transition-colors flex items-center gap-1">
+                  Buka Peta &rarr;
+                </span>
+              </div>
+              <h2 class="text-xl font-extrabold text-slate-900 group-hover:text-keraton-800 transition-colors mb-2">
+                {cat.name}
+              </h2>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                {cat.description}
+              </p>
             </div>
-            <h2 class="text-xl font-bold text-navy-900 group-hover:text-brand-600 transition-colors mb-2">
-              {cat.name}
-            </h2>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              {cat.description}
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-brand-600 font-semibold">
-            <span>Lihat Semua Koridor & Rute</span>
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </div>
-        </a>
-      ))}
+            <div class="mt-6 pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-keraton-800">
+              <span class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-jogja-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+                Jadwal, Tarif &amp; Halte
+              </span>
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform text-jogja-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
+          </a>
+        );
+      })}
     </div>
   </section>
 
-  <!-- In-Between Ad Slot -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- In-Between Ad Slot (Compliant & Distanced) -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
     <AdSlot slotType="in-article" />
   </div>
 
   <!-- All Articles Section with Live Search Filter -->
-  <section id="panduan-list" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+  <section id="panduan-list" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b-2 border-keraton-100">
       <div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900 tracking-tight">
-          Daftar Seluruh Panduan Rute & Transportasi
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-2.5 h-2.5 rounded-full bg-keraton-800"></span>
+          <span class="text-xs font-bold uppercase tracking-wider text-keraton-700">Direktori Lengkap DIY</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Peta Panduan Seluruh Koridor &amp; Angkutan
         </h2>
-        <p class="text-sm text-slate-500 mt-1">
-          Menampilkan {sortedArticles.length} panduan lengkap terverifikasi lapangan
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">
+          Menampilkan {sortedArticles.length} artikel panduan resmi dengan jam operasional dan tarif flat
         </p>
       </div>
 
       <!-- Category Filter Pills -->
-      <div class="flex flex-wrap gap-2 text-xs font-semibold">
-        <button type="button" class="filter-btn px-3 py-1.5 rounded-lg bg-navy-900 text-white transition-colors" data-category="all">
-          Semua (20)
+      <div class="flex flex-wrap gap-2 text-xs font-bold">
+        <button type="button" class="filter-btn px-3.5 py-1.5 rounded-lg bg-keraton-800 text-white shadow-sm transition-colors" data-category="all">
+          Semua Rute ({sortedArticles.length})
         </button>
-        <button type="button" class="filter-btn px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition-colors" data-category="trans-jogja">
-          Trans Jogja (7)
+        <button type="button" class="filter-btn px-3.5 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-keraton-50 hover:text-keraton-900 transition-colors" data-category="trans-jogja">
+          Trans Jogja ({transJogjaCount})
         </button>
-        <button type="button" class="filter-btn px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition-colors" data-category="kereta-bandara">
-          KRL & Bandara (7)
+        <button type="button" class="filter-btn px-3.5 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-keraton-50 hover:text-keraton-900 transition-colors" data-category="kereta-bandara">
+          KRL &amp; Bandara ({keretaCount})
         </button>
-        <button type="button" class="filter-btn px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition-colors" data-category="tiket-wisata">
-          Tiket & Wisata (6)
+        <button type="button" class="filter-btn px-3.5 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-keraton-50 hover:text-keraton-900 transition-colors" data-category="tiket-wisata">
+          Wisata &amp; Tiket ({wisataCount})
         </button>
       </div>
     </div>
 
-    <!-- Articles Grid -->
-    <div id="articles-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-      {sortedArticles.map((art) => (
-        <article
-          class="article-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-lg hover:border-brand-300 transition-all flex flex-col justify-between group"
-          data-category={art.data.category}
-          data-title={art.data.title.toLowerCase()}
-          data-description={art.data.description.toLowerCase()}
-        >
-          <div>
-            <a href={`/panduan/${art.slug}`} class="block overflow-hidden relative aspect-[16/9] bg-slate-100">
-              <img
-                src={art.data.featuredImage}
-                alt={art.data.imageAlt || art.data.title}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-              />
-              <span class="absolute top-3 left-3 bg-navy-900/80 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-md">
-                {art.data.routeType}
-              </span>
-            </a>
+    <!-- Articles Grid with Authentic Transit Line Badges -->
+    <div id="articles-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+      {sortedArticles.map((art) => {
+        const badge = getLineBadge(art.data.title, art.data.category);
+        return (
+          <article
+            class="article-card ticket-card overflow-hidden flex flex-col justify-between group"
+            data-category={art.data.category}
+            data-title={art.data.title.toLowerCase()}
+            data-description={art.data.description.toLowerCase()}
+          >
+            <div>
+              <a href={`/panduan/${art.slug}`} class="block overflow-hidden relative aspect-[16/9] bg-slate-100 border-b border-slate-100">
+                <img
+                  src={art.data.featuredImage}
+                  alt={art.data.imageAlt || art.data.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                
+                <!-- Authentic Line Badge Overlay -->
+                <div class="absolute top-3 left-3 flex items-center gap-1.5">
+                  <span class={`font-mono text-xs font-extrabold px-2.5 py-1 rounded shadow-md ${badge.bg} ${badge.text}`}>
+                    {badge.code}
+                  </span>
+                  <span class="bg-slate-900/80 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-1 rounded">
+                    {badge.label}
+                  </span>
+                </div>
 
-            <div class="p-5">
-              <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
-                <span class="uppercase tracking-wider font-semibold text-brand-600">
-                  {art.data.category.replace('-', ' ')}
-                </span>
-                <span class="font-bold text-slate-700">{art.data.fare}</span>
+                <!-- Fare Pill Badge -->
+                <div class="absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm text-keraton-900 text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm border border-slate-200">
+                  {art.data.fare}
+                </div>
+              </a>
+
+              <div class="p-5">
+                <div class="flex items-center justify-between text-[11px] text-slate-400 mb-2">
+                  <span class="uppercase tracking-wider font-bold text-keraton-700">
+                    {art.data.category.replace('-', ' ')}
+                  </span>
+                  <span class="font-medium text-slate-500">
+                    {art.data.halteList?.length || 0} Halte / Titik
+                  </span>
+                </div>
+
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-keraton-800 transition-colors line-clamp-2 leading-snug mb-2">
+                  <a href={`/panduan/${art.slug}`}>
+                    {art.data.title}
+                  </a>
+                </h3>
+
+                <p class="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed font-normal">
+                  {art.data.description}
+                </p>
               </div>
-              <h3 class="text-base sm:text-lg font-bold text-navy-900 group-hover:text-brand-600 transition-colors line-clamp-2 leading-snug mb-2">
-                <a href={`/panduan/${art.slug}`}>
-                  {art.data.title}
-                </a>
-              </h3>
-              <p class="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed">
-                {art.data.description}
-              </p>
             </div>
-          </div>
 
-          <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-            <span class="text-slate-500 font-medium">
-              {art.data.halteList?.length || 0} Titik Halte / Info
-            </span>
-            <a
-              href={`/panduan/${art.slug}`}
-              class="inline-flex items-center gap-1 font-bold text-brand-600 hover:text-brand-700"
-            >
-              <span>Detail Rute</span>
-              <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </article>
-      ))}
+            <div class="px-5 pb-4 pt-3 border-t border-slate-100 bg-slate-50/50 flex items-center justify-between text-xs font-bold text-keraton-800">
+              <span class="text-slate-500 font-medium text-[11px]">
+                Operasional 2026
+              </span>
+              <a
+                href={`/panduan/${art.slug}`}
+                class="inline-flex items-center gap-1 text-keraton-800 hover:text-keraton-950 group-hover:underline"
+              >
+                <span>Lihat Panduan</span>
+                <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        );
+      })}
     </div>
 
     <!-- Empty State for Search Filter -->
-    <div id="no-results" class="hidden text-center py-16 bg-white rounded-2xl border border-slate-200 mt-6">
+    <div id="no-results" class="hidden text-center py-16 bg-white rounded-xl border border-slate-200 mt-6 shadow-sm">
       <svg class="w-12 h-12 text-slate-400 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
-      <h4 class="text-lg font-bold text-navy-900">Tidak ada panduan rute yang cocok</h4>
-      <p class="text-sm text-slate-500 mt-1 max-w-md mx-auto">
-        Coba gunakan kata kunci lain seperti nomor koridor (1A, 2A), nama stasiun (Tugu, YIA), atau metode pembayaran.
+      <h4 class="text-lg font-bold text-slate-900">Tidak ada rute yang cocok dengan pencarian</h4>
+      <p class="text-xs sm:text-sm text-slate-500 mt-1 max-w-md mx-auto">
+        Coba gunakan kata kunci seperti nomor koridor (1A, 2A), stasiun transit (Tugu, YIA), atau metode pembayaran QRIS.
       </p>
     </div>
   </section>
 
   <!-- Educational & Utility Info (AdSense Quality / E-E-A-T) -->
-  <section class="bg-white border-y border-slate-200 py-16">
+  <section class="bg-keraton-50/60 border-y border-keraton-100 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900">
-          Mengapa Memilih Transportasi Publik di Yogyakarta?
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white text-keraton-800 border border-keraton-200 mb-3 shadow-xs">
+          <span>Keuntungan Navigasi Terpadu</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-keraton-950">
+          Mengapa Menggunakan Angkutan Umum di Yogyakarta?
         </h2>
-        <p class="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
-          Menggunakan angkutan umum bukan hanya sekadar menghemat pengeluaran, tetapi juga memberikan pengalaman autentik menikmati dinamika kebudayaan Yogyakarta.
+        <p class="text-xs sm:text-sm text-slate-600 mt-2.5 leading-relaxed">
+          Sistem transportasi publik di Jogja dirancang ramah bagi pejalan kaki dan wisatawan dengan tarif resmi bersubsidi.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
-          <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center font-bold text-lg mb-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div class="ticket-card p-6 border-l-4 border-l-emerald-600">
+          <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-base mb-4 font-mono">
             Rp
           </div>
-          <h3 class="text-lg font-bold text-navy-900 mb-2">Hemat Biaya Signifikan</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Tarif Trans Jogja hanya Rp3.600 flat dan KRL Jogja–Solo Rp8.000. Jauh lebih hemat puluhan kali lipat dibandingkan sewa mobil pribadi atau taksi online saat high season.
+          <h3 class="text-base font-bold text-slate-900 mb-2">Hemat Biaya Signifikan</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Tarif Trans Jogja hanya Rp3.600 flat dan KRL Jogja–Solo Rp8.000. Jauh lebih hemat dibandingkan menyewa kendaraan pribadi saat musim liburan.
           </p>
         </div>
 
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
-          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg mb-4">
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="ticket-card p-6 border-l-4 border-l-cyan-600">
+          <div class="w-10 h-10 rounded-lg bg-cyan-100 text-cyan-800 flex items-center justify-center font-bold text-base mb-4">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h3 class="text-lg font-bold text-navy-900 mb-2">Jadwal Pasti & Bebas Pusing Parkir</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            KA Bandara YIA bebas macet hanya 39 menit. Di Malioboro, mencari parkir mobil saat liburan sangat sulit; naik bus menurunkan Anda tepat di depan pintu mall dan pasar.
+          <h3 class="text-base font-bold text-slate-900 mb-2">Jadwal Tepat &amp; Bebas Macet</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            KA Bandara YIA bebas hambatan hanya 39 menit ke Stasiun Tugu. Halte Trans Jogja di Malioboro menurunkan Anda tepat di depan sentra wisata dan belanja.
           </p>
         </div>
 
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
-          <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-bold text-lg mb-4">
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="ticket-card p-6 border-l-4 border-l-jogja-600">
+          <div class="w-10 h-10 rounded-lg bg-jogja-100 text-jogja-800 flex items-center justify-center font-bold text-base mb-4">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
             </svg>
           </div>
-          <h3 class="text-lg font-bold text-navy-900 mb-2">Jejak Karbon Lebih Rendah</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Mendukung pelestarian kualitas udara Kota Gudeg dan mengurangi beban kepadatan volume kendaraan di kawasan sumbu filosofi Yogyakarta.
+          <h3 class="text-base font-bold text-slate-900 mb-2">Ramah Lingkungan Kota Budaya</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Mengurangi volume kepadatan kendaraan di kawasan sumbu filosofi Keraton–Tugu–Malioboro dan mendukung kelestarian udara segar Yogyakarta.
           </p>
         </div>
       </div>
@@ -279,7 +341,7 @@ const getCategoryCount = (slug: string) => {
   </section>
 
   <!-- Bottom Ad Slot -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
     <AdSlot slotType="in-article-bottom" />
   </div>
 </BaseLayout>
@@ -348,17 +410,18 @@ const getCategoryCount = (slug: string) => {
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       filterBtns.forEach((b) => {
-        b.classList.remove('bg-navy-900', 'text-white');
-        b.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+        b.classList.remove('bg-keraton-800', 'text-white', 'shadow-sm');
+        b.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
       });
 
-      btn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
-      btn.classList.add('bg-navy-900', 'text-white');
+      btn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+      btn.classList.add('bg-keraton-800', 'text-white', 'shadow-sm');
 
       activeCategory = btn.dataset.category || 'all';
       applyFilters();
     });
   });
+
   // Auto-sync search query from URL parameter ?q=... (Googlebot & deep link compatibility)
   const urlParams = new URLSearchParams(window.location.search);
   const qParam = urlParams.get('q');

@@ -14,44 +14,83 @@ interface Props {
 const { title = "Daftar Titik Pemberhentian & Halte Transit", haltes = [], routeDirection } = Astro.props;
 ---
 
-<div class="my-8 bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-  <div class="bg-gradient-to-r from-navy-900 to-brand-800 p-4 sm:p-5 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="my-8 bg-white border-2 border-keraton-100 rounded-xl overflow-hidden shadow-ticket">
+  <!-- Plang Header -->
+  <div class="bg-keraton-900 border-b-2 border-jogja-500 p-4 sm:p-5 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
     <div>
-      <h3 class="text-base sm:text-lg font-bold flex items-center gap-2">
-        <svg class="w-5 h-5 text-brand-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      <div class="flex items-center gap-2 mb-1">
+        <span class="w-2 h-2 rounded-full bg-jogja-400"></span>
+        <span class="text-[10px] font-bold tracking-widest uppercase text-jogja-300 font-mono">SEKUENSI HALTE RESMI</span>
+      </div>
+      <h3 class="text-base sm:text-lg font-bold flex items-center gap-2 text-white">
+        <svg class="w-5 h-5 text-jogja-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
         {title}
       </h3>
       {routeDirection && (
-        <p class="text-xs text-brand-100 mt-0.5">
-          Arah Perjalanan: <span class="font-semibold text-white">{routeDirection}</span>
+        <p class="text-xs text-keraton-200 mt-0.5">
+          Arah Perjalanan: <span class="font-bold text-jogja-300">{routeDirection}</span>
         </p>
       )}
     </div>
-    <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-white/10 text-white w-fit border border-white/20">
-      Total {haltes.length} Titik Halte
+    <span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-bold bg-keraton-800 text-jogja-300 w-fit border border-jogja-500/40 font-mono">
+      {haltes.length} TITIK SINGGAH
     </span>
   </div>
 
-  <div class="overflow-x-auto">
+  <!-- Mobile Visual Subway Stop Line (Under 640px) -->
+  <div class="block sm:hidden p-5 bg-paper-50">
+    <div class="transit-line-track">
+      {haltes.map((halte, idx) => {
+        const isTransfer = Boolean(halte.transit);
+        return (
+          <div class={`transit-stop-node ${isTransfer ? 'transfer' : ''}`}>
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <span class="text-xs font-mono font-bold text-keraton-700 block">
+                  #{String(idx + 1).padStart(2, '0')}
+                </span>
+                <h4 class="text-sm font-bold text-slate-900 leading-snug">
+                  {halte.name}
+                </h4>
+                {halte.location && (
+                  <p class="text-xs text-slate-500 mt-0.5">
+                    {halte.location}
+                  </p>
+                )}
+              </div>
+              {halte.transit && (
+                <span class="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded bg-jogja-100 text-jogja-900 border border-jogja-300">
+                  {halte.transit}
+                </span>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+
+  <!-- Desktop Table (Above 640px) -->
+  <div class="hidden sm:block overflow-x-auto">
     <table class="w-full text-left border-collapse text-sm">
       <thead>
-        <tr class="bg-slate-50 border-b border-slate-200 text-xs uppercase tracking-wider text-slate-500 font-semibold">
-          <th class="py-3 px-4 w-14 text-center">No</th>
-          <th class="py-3 px-4">Nama Halte / Stasiun</th>
-          <th class="py-3 px-4">Titik Acuan / Lokasi</th>
-          <th class="py-3 px-4">Koneksi Antarmoda / Transit</th>
+        <tr class="bg-keraton-50/70 border-b border-keraton-100 text-[11px] uppercase tracking-wider text-keraton-800 font-bold font-mono">
+          <th class="py-3 px-4 w-16 text-center">Urutan</th>
+          <th class="py-3 px-4">Nama Halte / Shelter Transit</th>
+          <th class="py-3 px-4">Patokan Lokasi Penting</th>
+          <th class="py-3 px-4">Koneksi Antarmoda / Transfer</th>
         </tr>
       </thead>
-      <tbody class="divide-y divide-slate-100 text-slate-700">
+      <tbody class="divide-y divide-slate-100 text-slate-800">
         {haltes.map((halte, idx) => (
-          <tr class="hover:bg-brand-50/50 transition-colors">
-            <td class="py-3 px-4 text-center font-mono text-xs font-semibold text-slate-500">
-              {idx + 1}
+          <tr class="hover:bg-keraton-50/40 transition-colors">
+            <td class="py-3 px-4 text-center font-mono text-xs font-bold text-keraton-700">
+              {String(idx + 1).padStart(2, '0')}
             </td>
-            <td class="py-3 px-4 font-semibold text-navy-900">
+            <td class="py-3 px-4 font-bold text-slate-900">
               {halte.name}
             </td>
             <td class="py-3 px-4 text-slate-600 text-xs sm:text-sm">
@@ -59,14 +98,12 @@ const { title = "Daftar Titik Pemberhentian & Halte Transit", haltes = [], route
             </td>
             <td class="py-3 px-4">
               {halte.transit ? (
-                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-brand-100 text-brand-800 border border-brand-200">
-                  <svg class="w-3 h-3 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                  </svg>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-bold bg-jogja-50 text-jogja-900 border border-jogja-300">
+                  <span class="w-1.5 h-1.5 rounded-full bg-jogja-600"></span>
                   {halte.transit}
                 </span>
               ) : (
-                <span class="text-xs text-slate-400 italic">Pemberhentian Biasa</span>
+                <span class="text-xs text-slate-400 italic">Pemberhentian Reguler</span>
               )}
             </td>
           </tr>
@@ -74,8 +111,15 @@ const { title = "Daftar Titik Pemberhentian & Halte Transit", haltes = [], route
       </tbody>
     </table>
   </div>
-  <div class="p-3 bg-slate-50 border-t border-slate-200 text-xs text-slate-500 flex items-center justify-between">
-    <span>* Pastikan melambaikan tangan saat menunggu di halte portabel tepi jalan.</span>
-    <span class="hidden sm:inline">Tarif flat Rp3.600 (Trans Jogja)</span>
+
+  <!-- Table Footer Note -->
+  <div class="p-3.5 bg-paper-100 border-t border-slate-200 text-xs text-slate-600 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 font-medium">
+    <span class="flex items-center gap-1.5">
+      <svg class="w-4 h-4 text-keraton-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      Halte bertanda khusus mendukung perpindahan koridor bus tanpa bayar tiket ulang.
+    </span>
+    <span class="text-keraton-800 font-bold font-mono">TARIF FLAT RP3.600</span>
   </div>
 </div>

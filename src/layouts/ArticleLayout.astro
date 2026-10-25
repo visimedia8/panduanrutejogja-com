@@ -83,86 +83,84 @@ const formattedDate = new Date(publishDate).toLocaleDateString('id-ID', {
     <!-- Breadcrumb -->
     <Breadcrumb items={breadcrumbs.map(b => ({ label: b.name, href: b.url }))} />
 
-    <!-- Article Header -->
+    <!-- Article Header: Authentic Plang Malioboro Signage Style -->
     <header class="mb-8">
       <div class="flex items-center gap-2 mb-3">
         <a
           href={`/kategori/${categoryInfo.slug}`}
-          class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 border border-brand-200 hover:bg-brand-100 transition-colors"
+          class="inline-flex items-center px-3 py-1 rounded-md text-xs font-bold bg-keraton-100 text-keraton-900 border border-keraton-300 hover:bg-keraton-200 transition-colors"
         >
           {categoryInfo.name}
         </a>
-        <span class="text-xs text-slate-400">&bull;</span>
-        <span class="text-xs font-medium text-slate-500">{routeType}</span>
+        <span class="text-xs text-jogja-600 font-bold">•</span>
+        <span class="text-xs font-bold text-slate-600 font-mono">{routeType}</span>
       </div>
 
-      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900 tracking-tight leading-tight mb-4">
+      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
         {title}
       </h1>
 
-      <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-6 font-normal">
+      <p class="text-base sm:text-lg text-slate-700 leading-relaxed mb-6 font-normal">
         {description}
       </p>
 
-      <!-- Meta Author & Date -->
-      <div class="flex flex-wrap items-center justify-between gap-4 py-3 border-y border-slate-200 text-xs sm:text-sm text-slate-500">
+      <!-- Meta Author & Date with E-E-A-T Verification -->
+      <div class="flex flex-wrap items-center justify-between gap-4 py-3.5 border-y-2 border-keraton-100 text-xs sm:text-sm text-slate-600 bg-keraton-50/40 px-3 rounded-lg">
         <div class="flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-full bg-navy-900 text-white flex items-center justify-center font-bold text-xs">
+          <div class="w-8 h-8 rounded-lg bg-keraton-800 text-jogja-300 flex items-center justify-center font-bold text-xs border border-jogja-400 font-mono shadow-xs">
             PRJ
           </div>
           <div>
-            <span class="font-semibold text-slate-800 block">{author}</span>
-            <span class="text-xs text-slate-400">Tim Redaksi & Observasi Lapangan</span>
+            <span class="font-bold text-slate-900 block">{author}</span>
+            <span class="text-[11px] text-slate-500">Tim Observasi Lapangan &amp; Redaksi</span>
           </div>
         </div>
 
-        <div class="flex items-center gap-4 text-xs">
-          <span>Diterbitkan: <strong class="text-slate-700">{formattedDate}</strong></span>
-          <span class="inline-flex items-center gap-1 text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded font-medium">
+        <div class="flex items-center gap-4 text-xs font-medium">
+          <span>Ditinjau: <strong class="text-slate-900">{formattedDate}</strong></span>
+          <span class="inline-flex items-center gap-1 text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded font-bold text-[11px]">
             <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
             </svg>
-            Faktual & Terverifikasi
+            Faktual Terverifikasi 2026
           </span>
         </div>
       </div>
     </header>
 
-    <!-- Quick Transit Summary Card -->
-    <div class="my-6 bg-gradient-to-br from-brand-50 via-white to-slate-50 border border-brand-200/80 rounded-2xl p-5 shadow-sm">
-      <div class="text-xs font-bold uppercase tracking-wider text-brand-700 mb-3 flex items-center gap-1.5">
-        <svg class="w-4 h-4 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        Ringkasan Operasional Cepat
+    <!-- Quick Transit Summary Card: Station Departure Board Style -->
+    <div class="my-6 bg-keraton-900 border-2 border-jogja-500 rounded-xl p-5 text-white shadow-ticket">
+      <div class="text-xs font-bold uppercase tracking-wider text-jogja-300 mb-3 flex items-center gap-2 font-mono">
+        <span class="w-2 h-2 rounded-full bg-jogja-400"></span>
+        RINGKASAN OPERASIONAL TRANSIT
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
-        <div class="bg-white p-3.5 rounded-xl border border-slate-100 shadow-2xs">
-          <span class="text-xs text-slate-400 block mb-0.5 font-medium">Jam Operasional</span>
-          <span class="font-bold text-navy-900">{operationalHours}</span>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 text-sm">
+        <div class="bg-keraton-950/80 p-3.5 rounded-lg border border-keraton-700">
+          <span class="text-[11px] text-jogja-200 block mb-0.5 font-bold uppercase">Jam Operasional</span>
+          <span class="font-extrabold text-white font-mono">{operationalHours}</span>
         </div>
-        <div class="bg-white p-3.5 rounded-xl border border-slate-100 shadow-2xs">
-          <span class="text-xs text-slate-400 block mb-0.5 font-medium">Tarif Resmi</span>
-          <span class="font-bold text-brand-700">{fare}</span>
+        <div class="bg-keraton-950/80 p-3.5 rounded-lg border border-keraton-700">
+          <span class="text-[11px] text-jogja-200 block mb-0.5 font-bold uppercase">Tarif Resmi</span>
+          <span class="font-extrabold text-jogja-300 font-mono text-base">{fare}</span>
         </div>
-        <div class="bg-white p-3.5 rounded-xl border border-slate-100 shadow-2xs">
-          <span class="text-xs text-slate-400 block mb-0.5 font-medium">Tipe Layanan</span>
-          <span class="font-bold text-navy-900">{routeType}</span>
+        <div class="bg-keraton-950/80 p-3.5 rounded-lg border border-keraton-700">
+          <span class="text-[11px] text-jogja-200 block mb-0.5 font-bold uppercase">Layanan &amp; Tiket</span>
+          <span class="font-extrabold text-white">{routeType}</span>
         </div>
       </div>
     </div>
 
     <!-- Featured Image -->
     {featuredImage && (
-      <div class="my-8 rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-100">
+      <div class="my-8 rounded-xl overflow-hidden border-2 border-slate-200 shadow-sm bg-slate-100">
         <img
           src={featuredImage}
           alt={imageAlt || title}
           class="w-full h-auto object-cover max-h-[420px]"
           loading="lazy"
         />
-        <div class="p-2 text-center text-xs text-slate-400 bg-white border-t border-slate-100">
-          Ilustrasi visual & diagram rute: {title}
+        <div class="p-2.5 text-center text-xs font-medium text-slate-600 bg-paper-100 border-t border-slate-200">
+          Dokumentasi rute &amp; diagram jalur: {title}
         </div>
       </div>
     )}
@@ -189,18 +187,18 @@ const formattedDate = new Date(publishDate).toLocaleDateString('id-ID', {
     )}
 
     <!-- Kotak Transit Disclaimer & Official Notice (Anti-Misrepresentation AdSense Policy) -->
-    <div class="my-10 p-5 rounded-2xl bg-amber-50/80 border border-amber-200/90 text-amber-950 text-xs sm:text-sm leading-relaxed shadow-2xs">
-      <div class="flex items-start gap-3">
-        <div class="w-8 h-8 rounded-lg bg-amber-200/80 text-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+    <div class="my-10 p-5 rounded-xl bg-amber-50/90 border-2 border-amber-300 text-amber-950 text-xs sm:text-sm leading-relaxed shadow-sm">
+      <div class="flex items-start gap-3.5">
+        <div class="w-8 h-8 rounded-lg bg-amber-200 text-amber-900 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
           </svg>
         </div>
         <div>
-          <h4 class="font-bold text-amber-900 text-sm mb-1">
-            Pemberitahuan Resmi & Batasan Tanggung Jawab Informasi
+          <h4 class="font-bold text-amber-950 text-sm mb-1">
+            Pemberitahuan Resmi &amp; Batasan Tanggung Jawab Informasi
           </h4>
-          <p class="text-xs sm:text-sm text-amber-900/90 leading-relaxed">
+          <p class="text-xs sm:text-sm text-amber-900 leading-relaxed font-normal">
             <strong>PanduanRuteJogja.com</strong> adalah portal panduan independen utilitas publik dan <strong>bukan merupakan situs resmi</strong> milik Dinas Perhubungan D.I. Yogyakarta, PT Kereta Api Indonesia (Persero), KAI Commuter, maupun PT Railink. Jadwal keberangkatan, rute persilangan, dan tarif resmi dapat disesuaikan sewaktu-waktu oleh otoritas perhubungan terkait kondisi lalu lintas atau regulasi dinas. Selalu lakukan konfirmasi jadwal langsung di stasiun/halte atau via aplikasi resmi (Access by KAI / KRL Access).
           </p>
         </div>
@@ -208,40 +206,44 @@ const formattedDate = new Date(publishDate).toLocaleDateString('id-ID', {
     </div>
 
     <!-- Editorial Integrity / Author Box (AdSense E-E-A-T) -->
-    <div class="mt-8 p-6 bg-slate-100/90 rounded-2xl border border-slate-200 shadow-2xs">
+    <div class="mt-8 p-6 bg-keraton-50/80 rounded-xl border-2 border-keraton-200 shadow-sm">
       <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brand-700 to-navy-900 text-white flex items-center justify-center font-bold text-base shadow-sm flex-shrink-0">
+        <div class="w-12 h-12 rounded-lg bg-keraton-800 text-jogja-300 flex items-center justify-center font-bold text-base border-2 border-jogja-400 font-mono shadow-xs flex-shrink-0">
           PRJ
         </div>
         <div class="flex-1">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-            <h4 class="text-base font-bold text-navy-900">Ditinjau oleh Dewan Redaksi PanduanRuteJogja</h4>
-            <a href="/redaksi" class="text-xs font-semibold text-brand-600 hover:text-brand-800 underline">
-              Lihat Profil Penulis & Editor &rarr;
+            <h4 class="text-base font-bold text-slate-900">Ditinjau oleh Dewan Redaksi PanduanRuteJogja</h4>
+            <a href="/redaksi" class="text-xs font-bold text-keraton-800 hover:text-keraton-950 underline">
+              Lihat Standar Verifikasi &rarr;
             </a>
           </div>
-          <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+          <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed font-normal">
             Artikel panduan ini disusun berdasarkan observasi lapangan, pengecekan berkala Gapeka KAI Commuter, regulasi Dinas Perhubungan D.I. Yogyakarta, serta pengujian rute halte secara langsung untuk akurasi data mobilitas publik.
           </p>
         </div>
       </div>
     </div>
 
-    <!-- Rekomendasi Panduan Rute Terkait (AdSense Navigational Value & Low Bounce Rate) -->
+    <!-- Rekomendasi Panduan Rute Terkait (Ticket Cards Grid) -->
     {relatedArticles && relatedArticles.length > 0 && (
-      <section class="mt-14 pt-10 border-t border-slate-200">
+      <section class="mt-14 pt-10 border-t-2 border-slate-200">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
           <div>
-            <h3 class="text-xl font-extrabold text-navy-900 tracking-tight">
-              Panduan Rute Terkait & Lanjutan Perjalanan
+            <div class="flex items-center gap-1.5 mb-1">
+              <span class="w-2 h-2 rounded-full bg-keraton-800"></span>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-keraton-700">Integrasi Antarmoda</span>
+            </div>
+            <h3 class="text-xl font-extrabold text-slate-900 tracking-tight">
+              Panduan Rute Terkait &amp; Lanjutan Perjalanan
             </h3>
-            <p class="text-xs sm:text-sm text-slate-500 mt-1">
-              Jelajahi panduan rute transportasi umum lainnya yang terintegrasi di wilayah D.I. Yogyakarta.
+            <p class="text-xs text-slate-500 mt-0.5">
+              Jelajahi panduan rute transportasi umum lainnya yang terhubung di wilayah D.I. Yogyakarta.
             </p>
           </div>
           <a
             href={`/kategori/${categoryInfo.slug}`}
-            class="text-xs font-bold text-brand-600 hover:text-brand-800 transition-colors inline-flex items-center gap-1"
+            class="text-xs font-bold text-keraton-800 hover:text-keraton-950 transition-colors inline-flex items-center gap-1"
           >
             <span>Semua di {categoryInfo.name}</span>
             <span>&rarr;</span>
@@ -252,7 +254,7 @@ const formattedDate = new Date(publishDate).toLocaleDateString('id-ID', {
           {relatedArticles.map((rel) => (
             <a
               href={`/panduan/${rel.slug}`}
-              class="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-2xs hover:shadow-md hover:border-brand-300 transition-all flex flex-col justify-between"
+              class="ticket-card overflow-hidden flex flex-col justify-between group"
             >
               <div>
                 <div class="aspect-[16/9] w-full overflow-hidden bg-slate-100 border-b border-slate-100 relative">
@@ -262,23 +264,23 @@ const formattedDate = new Date(publishDate).toLocaleDateString('id-ID', {
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
-                  <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full text-[10px] font-bold bg-navy-900/80 text-white backdrop-blur-xs">
+                  <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-slate-900/80 text-white backdrop-blur-xs font-mono">
                     {rel.routeType}
                   </span>
                 </div>
                 <div class="p-4">
-                  <h4 class="text-sm font-bold text-navy-900 group-hover:text-brand-600 transition-colors line-clamp-2 leading-snug mb-2">
+                  <h4 class="text-sm font-bold text-slate-900 group-hover:text-keraton-800 transition-colors line-clamp-2 leading-snug mb-2">
                     {rel.title}
                   </h4>
-                  <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                  <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed font-normal">
                     {rel.description}
                   </p>
                 </div>
               </div>
-              <div class="px-4 py-3 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs">
-                <span class="font-bold text-brand-700">{rel.fare}</span>
-                <span class="font-medium text-slate-500 group-hover:text-navy-900 flex items-center gap-1">
-                  Baca Panduan &rarr;
+              <div class="px-4 py-3 bg-paper-100 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-keraton-800">
+                <span class="font-mono text-keraton-900">{rel.fare}</span>
+                <span class="text-keraton-800 group-hover:text-keraton-950 flex items-center gap-1">
+                  Buka Rute &rarr;
                 </span>
               </div>
             </a>
@@ -288,21 +290,21 @@ const formattedDate = new Date(publishDate).toLocaleDateString('id-ID', {
     )}
 
     <!-- Navigation Back to Category & Home -->
-    <div class="mt-12 pt-6 border-t border-slate-200 flex justify-between items-center text-sm">
+    <div class="mt-12 pt-6 border-t-2 border-slate-200 flex justify-between items-center text-xs sm:text-sm font-bold">
       <a
         href={`/kategori/${categoryInfo.slug}`}
-        class="inline-flex items-center gap-2 text-brand-600 hover:text-brand-800 font-semibold transition-colors"
+        class="inline-flex items-center gap-2 text-keraton-800 hover:text-keraton-950 transition-colors"
       >
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
         Kembali ke Panduan {categoryInfo.name}
       </a>
       <a
         href="/#panduan-list"
-        class="text-slate-500 hover:text-navy-900 transition-colors"
+        class="text-slate-600 hover:text-keraton-900 transition-colors"
       >
-        Semua Panduan Rute &rarr;
+        Semua Direktori Rute &rarr;
       </a>
     </div>
 
