@@ -1,0 +1,239 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { siteConfig } from '../config/site';
+
+const breadcrumbs = [
+  { name: 'Hubungi Kami', url: `${siteConfig.url}/kontak/` }
+];
+---
+
+<BaseLayout
+  title={`Hubungi Redaksi — ${siteConfig.name}`}
+  description="Kirim masukan, koreksi rute halte, pertanyaan seputar transportasi Jogja, atau kerjasama ke alamat email resmi kontak@panduanrutejogja.com."
+  breadcrumbs={breadcrumbs}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <Breadcrumb items={breadcrumbs.map(b => ({ label: b.name, href: b.url }))} />
+
+    <header class="mb-10 text-center sm:text-left">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 border border-brand-200 mb-3">
+        Layanan Komunikasi & Koreksi Publik
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+        Hubungi Tim Redaksi PanduanRuteJogja.com
+      </h1>
+      <p class="mt-3 text-lg text-slate-600 leading-relaxed max-w-2xl">
+        Kami menyambut baik laporan perubahan rute, penutupan halte sementara, penyesuaian tarif, maupun pertanyaan umum terkait perjalanan Anda di Yogyakarta.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Kolom Info Kontak Utama -->
+      <div class="md:col-span-1 space-y-6">
+        
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-bold text-navy-900 uppercase tracking-wider mb-2">
+            Email Korespondensi
+          </h3>
+          <p class="text-xs text-slate-500 mb-2">
+            Surat elektronik resmi (teks polos tanpa enkripsi/obfuscation):
+          </p>
+          <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 font-mono text-sm font-bold text-brand-700 select-all flex items-center justify-between">
+            <span id="email-text">{siteConfig.contactEmail}</span>
+            <button
+              type="button"
+              id="copy-email-btn"
+              class="text-xs text-slate-500 hover:text-brand-600 underline font-sans"
+              title="Salin Email"
+            >
+              Salin
+            </button>
+          </div>
+          <span id="copy-feedback" class="hidden text-[11px] text-emerald-600 font-semibold mt-1">
+            ✓ Alamat email berhasil disalin ke clipboard!
+          </span>
+          <span class="block text-[11px] text-slate-400 mt-2">
+            Waktu respons: Maksimal 1x24 jam pada hari kerja.
+          </span>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-slate-100 text-navy-900 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-bold text-navy-900 uppercase tracking-wider mb-2">
+            Studio & Pos Observasi
+          </h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            {siteConfig.organization.address}
+          </p>
+          <div class="mt-3 pt-3 border-t border-slate-100 text-xs">
+            <a href="/redaksi" class="text-brand-600 hover:underline font-semibold flex items-center gap-1">
+              <span>Profil Tim Dewan Redaksi</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="p-5 bg-brand-50/70 border border-brand-200 rounded-2xl text-xs text-brand-900 leading-relaxed">
+          <strong class="font-bold block mb-1">Catatan Penting Pengaduan Darurat:</strong>
+          Jika Anda mengalami kehilangan barang di dalam armada bus atau stasiun kereta api, harap segera menghubungi Customer Service resmi PT KAI di nomor 121 atau pos petugas halte Trans Jogja terdekat.
+        </div>
+
+      </div>
+
+      <!-- Kolom Formulir Kirim Pesan Interaktif -->
+      <div class="md:col-span-2">
+        <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm relative">
+          <h2 class="text-xl font-bold text-navy-900 mb-2">
+            Formulir Masukan & Laporan Rute
+          </h2>
+          <p class="text-sm text-slate-500 mb-6">
+            Gunakan formulir di bawah ini untuk mengirimkan koreksi data rute atau pertanyaan seputar transportasi Yogyakarta langsung ke redaksi.
+          </p>
+
+          <form id="contact-form" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="contact-name" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+                  Nama Lengkap *
+                </label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  required
+                  placeholder="Contoh: Rian Pratama"
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"
+                />
+              </div>
+
+              <div>
+                <label for="contact-email" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+                  Alamat Email Anda *
+                </label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  required
+                  placeholder="nama@email.com"
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="contact-topic" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+                Kategori Laporan / Pertanyaan
+              </label>
+              <select
+                id="contact-topic"
+                name="topic"
+                class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors bg-white"
+              >
+                <option value="Koreksi Rute Trans Jogja">Koreksi Titik Halte / Jalur Trans Jogja</option>
+                <option value="Info Jadwal KRL & Kereta">Perubahan Jadwal KRL / KA Bandara</option>
+                <option value="Saran Panduan Baru">Usulan Topik / Panduan Transportasi Baru</option>
+                <option value="Pertanyaan Umum">Pertanyaan Rute & Mobilitas Umum</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="contact-message" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+                Detail Pesan / Informasi Koreksi *
+              </label>
+              <textarea
+                id="contact-message"
+                name="message"
+                rows="5"
+                required
+                placeholder="Tuliskan halte yang mengalami perubahan, jadwal keberangkatan terbaru, atau catatan yang ingin Anda sampaikan..."
+                class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              id="submit-btn"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-600 text-white font-semibold hover:bg-brand-700 transition-colors shadow-sm cursor-pointer"
+            >
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+              </svg>
+              <span>Kirimkan Pesan ke Redaksi</span>
+            </button>
+          </form>
+
+          <!-- Feedback Modal Sukses -->
+          <div id="success-modal" class="hidden absolute inset-0 bg-white/95 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center p-6 text-center z-20">
+            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4">
+              <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-navy-900 mb-2">Pesan Berhasil Terkirim!</h3>
+            <p class="text-sm text-slate-600 max-w-md mb-6 leading-relaxed">
+              Terima kasih atas partisipasi Anda. Tim Redaksi PanduanRuteJogja.com akan meninjau laporan Anda dan menindaklanjuti dalam waktu 1x24 jam kerja.
+            </p>
+            <button
+              type="button"
+              id="reset-form-btn"
+              class="px-5 py-2.5 rounded-xl bg-navy-900 text-white text-xs font-semibold hover:bg-navy-800 transition-colors"
+            >
+              Kirim Pesan Lainnya
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  const copyBtn = document.getElementById('copy-email-btn');
+  const copyFeedback = document.getElementById('copy-feedback');
+  const emailText = document.getElementById('email-text');
+
+  copyBtn?.addEventListener('click', () => {
+    if (emailText) {
+      navigator.clipboard.writeText(emailText.textContent || 'kontak@panduanrutejogja.com');
+      if (copyFeedback) {
+        copyFeedback.classList.remove('hidden');
+        setTimeout(() => {
+          copyFeedback.classList.add('hidden');
+        }, 3000);
+      }
+    }
+  });
+
+  const contactForm = document.getElementById('contact-form') as HTMLFormElement | null;
+  const successModal = document.getElementById('success-modal');
+  const resetBtn = document.getElementById('reset-form-btn');
+
+  contactForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (successModal) {
+      successModal.classList.remove('hidden');
+    }
+    contactForm.reset();
+  });
+
+  resetBtn?.addEventListener('click', () => {
+    if (successModal) {
+      successModal.classList.add('hidden');
+    }
+  });
+</script>

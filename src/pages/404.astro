@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../config/site';
+
+const breadcrumbs = [
+  { name: '404 Tidak Ditemukan', url: `${siteConfig.url}/404/` }
+];
+---
+
+<BaseLayout
+  title={`404: Halaman Rute Tidak Ditemukan — ${siteConfig.name}`}
+  description="Halaman yang Anda tuju mungkin telah dialihkan, halte tidak aktif, atau alamat tautan rute salah ketik."
+  breadcrumbs={breadcrumbs}
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center">
+    
+    <div class="w-20 h-20 rounded-3xl bg-brand-50 text-brand-600 border border-brand-200 flex items-center justify-center mx-auto mb-6 shadow-sm">
+      <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+      </svg>
+    </div>
+
+    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-700 border border-amber-200 mb-4">
+      Kesalahan Navigasi (Galat 404)
+    </span>
+
+    <h1 class="text-3xl sm:text-5xl font-extrabold text-navy-900 tracking-tight mb-4">
+      Rute atau Halte Tidak Ditemukan
+    </h1>
+
+    <p class="text-base sm:text-lg text-slate-600 max-w-xl mx-auto leading-relaxed mb-8">
+      Maaf, tautan yang Anda tuju mungkin telah mengalami perubahan jalur, penutupan halte sementara, atau terdapat salah ketik pada alamat URL.
+    </p>
+
+    <!-- Form Pencarian Cepat di 404 -->
+    <div class="max-w-md mx-auto mb-10">
+      <form action="/" method="GET" class="flex items-center bg-white rounded-2xl border border-slate-300 p-1.5 shadow-sm focus-within:ring-2 focus-within:ring-brand-500">
+        <input
+          type="text"
+          name="q"
+          placeholder="Cari rute lain (contoh: KRL, 1A, Bandara YIA)..."
+          class="w-full px-3 py-2 text-sm text-slate-800 focus:outline-none"
+        />
+        <button
+          type="submit"
+          class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold rounded-xl transition-colors"
+        >
+          Cari
+        </button>
+      </form>
+    </div>
+
+    <!-- Pilihan Navigasi Cepat -->
+    <div class="p-6 bg-white rounded-2xl border border-slate-200 text-left mb-8 shadow-xs">
+      <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 text-center sm:text-left">
+        Pilihan Rute Populer yang Tersedia:
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+        <a href="/panduan/rute-halte-trans-jogja-koridor-1a-prambanan-malioboro" class="p-3 rounded-xl bg-slate-50 hover:bg-brand-50 border border-slate-100 flex items-center justify-between group transition-colors">
+          <span class="font-semibold text-navy-900 group-hover:text-brand-600">Trans Jogja 1A (Prambanan - Malioboro)</span>
+          <span class="text-slate-400 group-hover:text-brand-600">&rarr;</span>
+        </a>
+        <a href="/panduan/jadwal-tarif-krl-commuter-line-jogja-solo-terbaru" class="p-3 rounded-xl bg-slate-50 hover:bg-brand-50 border border-slate-100 flex items-center justify-between group transition-colors">
+          <span class="font-semibold text-navy-900 group-hover:text-brand-600">KRL Commuter Line Jogja - Solo</span>
+          <span class="text-slate-400 group-hover:text-brand-600">&rarr;</span>
+        </a>
+        <a href="/panduan/cara-naik-ka-bandara-yia-stasiun-tugu-kulon-progo" class="p-3 rounded-xl bg-slate-50 hover:bg-brand-50 border border-slate-100 flex items-center justify-between group transition-colors">
+          <span class="font-semibold text-navy-900 group-hover:text-brand-600">KA Bandara YIA (Stasiun Tugu)</span>
+          <span class="text-slate-400 group-hover:text-brand-600">&rarr;</span>
+        </a>
+        <a href="/panduan/cara-pembayaran-trans-jogja-emoney-qris-tunai" class="p-3 rounded-xl bg-slate-50 hover:bg-brand-50 border border-slate-100 flex items-center justify-between group transition-colors">
+          <span class="font-semibold text-navy-900 group-hover:text-brand-600">Panduan Bayar QRIS & E-Money</span>
+          <span class="text-slate-400 group-hover:text-brand-600">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Tombol Kembali ke Beranda -->
+    <a
+      href="/"
+      class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-navy-900 text-white font-bold text-sm hover:bg-navy-800 transition-colors shadow-md"
+    >
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+      </svg>
+      <span>Kembali ke Beranda Utama</span>
+    </a>
+
+  </div>
+</BaseLayout>

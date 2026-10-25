@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420">
+  <defs>
+    <linearGradient id="bg-grad-lokasi-halte-trans-jogja-terdekat-stasiun-tugu-lempuyangan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+    <linearGradient id="badge-grad-lokasi-halte-trans-jogja-terdekat-stasiun-tugu-lempuyangan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="420" fill="url(#bg-grad-lokasi-halte-trans-jogja-terdekat-stasiun-tugu-lempuyangan)" />
+  
+  <!-- Circuit & transit line motifs -->
+  <path d="M0 60 H800 M0 140 H800 M0 220 H800 M0 300 H800 M0 380 H800" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1.5" />
+  <path d="M120 0 V420 M260 0 V420 M400 0 V420 M540 0 V420 M680 0 V420" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1.5" />
+
+  <!-- Metro curve line -->
+  <path d="M60 360 C 240 360, 320 280, 500 280 S 700 340, 760 340" fill="none" stroke="#0284c7" stroke-width="6" stroke-opacity="0.3" />
+
+  <!-- Category & Badge -->
+  <rect x="50" y="55" width="160" height="32" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+  <text x="130" y="76" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="11" fill="#94a3b8" text-anchor="middle" letter-spacing="1">
+    TRANS JOGJA
+  </text>
+
+  <rect x="220" y="55" width="180" height="32" rx="16" fill="url(#badge-grad-lokasi-halte-trans-jogja-terdekat-stasiun-tugu-lempuyangan)" />
+  <text x="310" y="76" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="12" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">
+    KONEKSI STASIUN
+  </text>
+
+  <!-- Big Title -->
+  <text x="50" y="160" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="36" fill="#ffffff">
+    Halte Dekat Stasiun Tugu & Lempuyangan
+  </text>
+
+  <text x="50" y="200" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="16" fill="#94a3b8">
+    Panduan Rute &bull; Jam Operasional &bull; Tarif Resmi &bull; Halte Transit
+  </text>
+
+  <!-- Route Status Tag -->
+  <rect x="50" y="240" width="220" height="42" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.6" />
+  <circle cx="72" cy="261" r="5" fill="#10b981" />
+  <text x="90" y="267" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="13" fill="#e2e8f0">
+    Rute Aktif & Terverifikasi
+  </text>
+
+  <!-- Right Visual Icon Box -->
+  <path d="M600 240 Q660 160 720 240 T760 180" fill="none" stroke="#38bdf8" stroke-width="6" stroke-linecap="round" stroke-dasharray="8 6"/>
+        <circle cx="600" cy="240" r="12" fill="#0284c7" stroke="#ffffff" stroke-width="3"/>
+        <circle cx="720" cy="240" r="12" fill="#10b981" stroke="#ffffff" stroke-width="3"/>
+        <circle cx="760" cy="180" r="12" fill="#f59e0b" stroke="#ffffff" stroke-width="3"/>
+
+  <!-- Footer Watermark -->
+  <text x="50" y="375" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="13" fill="#64748b">
+    PanduanRuteJogja.com &bull; Inisiatif Utilitas Transportasi Publik DIY
+  </text>
+</svg>

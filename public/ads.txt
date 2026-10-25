@@ -1,0 +1,4 @@
+# Google AdSense Publisher Verification File
+# Ganti ca-pub-XXXXXXXXXXXXXXXX dengan Publisher ID akun AdSense Anda setelah disetujui.
+# Format: google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

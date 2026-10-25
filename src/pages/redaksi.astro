@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { siteConfig } from '../config/site';
+
+const breadcrumbs = [
+  { name: 'Tim Redaksi & Standar Editorial', url: `${siteConfig.url}/redaksi/` }
+];
+---
+
+<BaseLayout
+  title={`Tim Redaksi & Standar Editorial (E-E-A-T) — ${siteConfig.name}`}
+  description="Mengenal dewan redaksi, analis transportasi, dan metodologi observasi lapangan faktual PanduanRuteJogja.com untuk menjamin akurasi informasi."
+  breadcrumbs={breadcrumbs}
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <Breadcrumb items={breadcrumbs.map(b => ({ label: b.name, href: b.url }))} />
+
+    <header class="mb-10 text-center sm:text-left">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 border border-brand-200 mb-3">
+        Transparansi Editorial & Standar E-E-A-T
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+        Dewan Redaksi & Verifikator Lapangan
+      </h1>
+      <p class="mt-3 text-lg text-slate-600 leading-relaxed max-w-3xl">
+        Seluruh artikel dan panduan rute di {siteConfig.name} disusun, diteliti, dan diverifikasi langsung oleh praktisi serta pemerhati transportasi publik independen Yogyakarta.
+      </p>
+    </header>
+
+    <!-- Profil Anggota Dewan Redaksi -->
+    <div class="space-y-6 mb-12">
+      {siteConfig.editorialTeam.map((member, index) => (
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm flex flex-col md:flex-row gap-6 items-start">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-700 to-navy-900 text-white flex-shrink-0 flex items-center justify-center font-bold text-xl shadow-md">
+            {member.name.split(' ').map(n => n[0]).slice(0, 2).join('')}
+          </div>
+          <div class="flex-1">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+              <h2 class="text-xl font-bold text-navy-900">
+                {member.name}
+              </h2>
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 border border-brand-200 w-fit">
+                {member.expertise}
+              </span>
+            </div>
+            <p class="text-sm font-semibold text-brand-600 mb-3">
+              {member.role}
+            </p>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              {member.bio}
+            </p>
+            <div class="pt-3 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-500">
+              <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span>Email Resmi:</span>
+              <a href={`mailto:${member.email}`} class="font-mono text-brand-600 hover:underline">
+                {member.email}
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Metodologi Observasi & Etika Jurnalistik -->
+    <div class="prose-transit bg-white p-6 sm:p-10 rounded-2xl border border-slate-200 shadow-sm space-y-8">
+      <section>
+        <h2 class="!mt-0 text-xl font-bold text-navy-900">
+          Metodologi Verifikasi Faktual di Lapangan
+        </h2>
+        <p>
+          Kami meyakini bahwa panduan transportasi yang baik tidak bisa hanya ditulis berdasarkan data brosur di balik meja. Setiap koridor bus Trans Jogja, relasi KRL Commuter Line, KA Bandara, dan angkutan perintis ditinjau melalui protokol riset 3 tahap:
+        </p>
+        <ol>
+          <li>
+            <strong>Penelusuran Fisik (Ground Checking):</strong> Tim kami menaiki langsung armada dari titik awal (terminal pemberangkatan) hingga titik akhir untuk mencatat waktu tempuh aktual, titik kemacetan (bottleneck), ketersediaan fasilitas halte, dan kesiapan mesin tap pembayaran non-tunai.
+          </li>
+          <li>
+            <strong>Sinkronisasi Regulasi Resmi:</strong> Membandingkan temuan lapangan dengan Surat Keputusan (SK) Gubernur DIY tentang tarif angkutan umum, Grafik Perjalanan Kereta Api (Gapeka) resmi PT KAI, serta pengumuman resmi PT Railink dan Dinas Perhubungan DIY.
+          </li>
+          <li>
+            <strong>Pembaruan Berkala (Continuous Updating):</strong> Melakukan peninjauan ulang setiap kali terdapat penutupan jalan karena revitalisasi infrastruktur, musim liburan (peak season), atau perubahan rute koridor lingkar.
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-navy-900">
+          Kebijakan Independensi & Bebas Iklan Terselubung
+        </h2>
+        <p>
+          {siteConfig.name} tidak menerima kompensasi finansial atau sponsor dari operator transportasi manapun untuk merekomendasikan rute tertentu. Ulasan mengenai kekurangan suatu layanan (seperti keterbatasan frekuensi armada malam hari atau kondisi halte portabel yang sempit) ditulis secara apa adanya demi kepentingan dan keselamatan pengguna publik.
+        </p>
+      </section>
+
+      <section class="p-5 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-600 leading-relaxed not-prose">
+        <strong class="text-slate-800 block mb-1">Pedoman Koreksi Konten:</strong>
+        Jika Anda menemukan ketidaksesuaian titik halte atau tarif tiket yang telah berubah di lapangan, silakan kirimkan laporan beserta foto/bukti melalui formulir di <a href="/kontak" class="text-brand-600 underline font-semibold">Halaman Kontak</a> atau email ke <span class="font-mono font-bold text-slate-700">kontak@panduanrutejogja.com</span>.
+      </section>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,116 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import AdSlot from '../components/AdSlot.astro';
+import JsonLd from '../components/JsonLd.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+import { siteConfig } from '../config/site';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  article?: boolean;
+  publishDate?: string;
+  updatedDate?: string;
+  breadcrumbs?: { name: string; url: string }[];
+  faqs?: { question: string; answer: string }[];
+}
+
+const {
+  title = siteConfig.title,
+  description = siteConfig.description,
+  image = '/images/og-default.png',
+  article = false,
+  publishDate,
+  updatedDate,
+  breadcrumbs = [],
+  faqs = []
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, siteConfig.url).toString();
+const fullImageUrl = new URL(image, siteConfig.url).toString();
+---
+
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Google AdSense Account Ownership Verification Meta Tag -->
+    <meta name="google-adsense-account" content={siteConfig.adsense.clientId} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content={siteConfig.author} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook (1200x630 Raster PNG/WebP for Universal Preview) -->
+    <meta property="og:type" content={article ? 'article' : 'website'} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content={siteConfig.name} />
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={fullImageUrl} />
+
+    <!-- Google AdSense Auto Ads Script (Placeholder / Ready for Production) -->
+    {siteConfig.adsense.enabled && siteConfig.adsense.clientId !== 'ca-pub-XXXXXXXXXXXXXXXX' && (
+      <script
+        async
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteConfig.adsense.clientId}`}
+        crossorigin="anonymous"
+      ></script>
+    )}
+
+    <!-- JSON-LD Structured Data -->
+    <JsonLd
+      type={article ? 'article' : 'website'}
+      title={title}
+      description={description}
+      url={canonicalURL}
+      publishDate={publishDate}
+      updatedDate={updatedDate}
+      featuredImage={image}
+      breadcrumbs={breadcrumbs}
+      faqs={faqs}
+    />
+  </head>
+  <body class="min-h-screen flex flex-col bg-slate-50 text-slate-800 font-sans selection:bg-brand-500 selection:text-white">
+    <!-- Header Navigation -->
+    <Header />
+
+    <!-- Top Leaderboard Ad Slot -->
+    <div class="px-4">
+      <AdSlot slotType="header-leaderboard" />
+    </div>
+
+    <!-- Main Content Slot -->
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <!-- Mobile Sticky Bottom Ad Slot -->
+    <AdSlot slotType="sticky-bottom" />
+
+    <!-- Cookie Consent Banner (Google Consent Mode v2 / GDPR / ePrivacy) -->
+    <CookieBanner />
+
+    <!-- Footer -->
+    <Footer />
+  </body>
+</html>

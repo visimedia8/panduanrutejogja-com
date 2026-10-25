@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <defs>
+    <linearGradient id="logo-icon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+  <!-- Icon -->
+  <rect x="10" y="10" width="60" height="60" rx="16" fill="url(#logo-icon-grad)" />
+  <path d="M26 34 L52 34 M52 34 L42 24 M52 34 L42 44" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M54 50 L28 50 M28 50 L38 40 M28 50 L38 60" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Text Brand -->
+  <text x="85" y="44" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="24" fill="#0f172a">
+    Panduan<tspan fill="#0284c7">Rute</tspan>Jogja
+  </text>
+  <text x="86" y="62" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="10" fill="#64748b" letter-spacing="1.5">
+    PORTAL TRANSPORTASI PUBLIK DIY
+  </text>
+</svg>

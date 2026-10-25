@@ -1,0 +1,135 @@
+---
+import { siteConfig } from '../config/site';
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  type: 'website' | 'article';
+  title?: string;
+  description?: string;
+  url?: string;
+  publishDate?: string;
+  updatedDate?: string;
+  featuredImage?: string;
+  breadcrumbs?: BreadcrumbItem[];
+  faqs?: FAQItem[];
+}
+
+const {
+  type = 'website',
+  title = siteConfig.title,
+  description = siteConfig.description,
+  url = siteConfig.url,
+  publishDate,
+  updatedDate,
+  featuredImage,
+  breadcrumbs = [],
+  faqs = []
+} = Astro.props;
+
+const schemas: any[] = [];
+
+// Base Organization Schema
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: siteConfig.organization.name,
+  url: siteConfig.url,
+  logo: `${siteConfig.url}/images/logo.svg`,
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: siteConfig.contactEmail,
+    contactType: 'customer support'
+  }
+};
+
+schemas.push(organizationSchema);
+
+// WebSite Schema
+if (type === 'website') {
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${siteConfig.url}/?q={search_term_string}`,
+      'query-input': 'required name=search_term_string'
+    }
+  });
+}
+
+// Article Schema
+if (type === 'article') {
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': url
+    },
+    headline: title,
+    description: description,
+    image: featuredImage ? [`${siteConfig.url}${featuredImage}`] : [`${siteConfig.url}/images/og-default.png`],
+    datePublished: publishDate,
+    dateModified: updatedDate || publishDate,
+    author: {
+      '@type': 'Person',
+      name: siteConfig.author,
+      url: `${siteConfig.url}/redaksi`
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteConfig.url}/images/logo.svg`
+      }
+    }
+  });
+}
+
+// BreadcrumbList Schema
+if (breadcrumbs.length > 0) {
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.map((crumb, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      name: crumb.name,
+      item: crumb.url
+    }))
+  });
+}
+
+// FAQPage Schema
+if (faqs.length > 0) {
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
+    }))
+  });
+}
+---
+
+{schemas.map((schema) => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+))}

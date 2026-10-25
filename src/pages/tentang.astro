@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { siteConfig } from '../config/site';
+
+const breadcrumbs = [
+  { name: 'Tentang Kami', url: `${siteConfig.url}/tentang/` }
+];
+---
+
+<BaseLayout
+  title={`Tentang Kami — ${siteConfig.name}`}
+  description="Mengenal inisiatif independen PanduanRuteJogja.com, visi mobilitas publik Yogyakarta, standar redaksi, dan komitmen penyediaan informasi rute faktual."
+  breadcrumbs={breadcrumbs}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <Breadcrumb items={breadcrumbs.map(b => ({ label: b.name, href: b.url }))} />
+
+    <header class="mb-10 text-center sm:text-left">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 border border-brand-200 mb-3">
+        Inisiatif Utilitas Publik Independen
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+        Tentang PanduanRuteJogja.com
+      </h1>
+      <p class="mt-3 text-lg text-slate-600 leading-relaxed max-w-3xl">
+        Membantu warga lokal, mahasiswa, komuter harian, dan wisatawan menjelajahi setiap sudut Daerah Istimewa Yogyakarta dengan transportasi publik yang nyaman, murah, dan terintegrasi.
+      </p>
+    </header>
+
+    <div class="prose-transit space-y-8">
+      
+      <!-- Latar Belakang -->
+      <section class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+        <h2 class="!mt-0 text-xl sm:text-2xl font-bold text-navy-900 flex items-center gap-2">
+          <span class="w-2.5 h-6 rounded bg-brand-600 inline-block"></span>
+          Latar Belakang & Misi Kami
+        </h2>
+        <p>
+          Daerah Istimewa Yogyakarta memiliki sistem transportasi publik yang sangat kaya dan terus berkembang, mulai dari jaringan bus perkotaan <strong>Trans Jogja</strong>, kereta komuter <strong>KRL Commuter Line Jogja–Solo</strong>, kereta bandara <strong>KA Bandara YIA</strong>, kereta diesel lokal <strong>Prameks</strong>, hingga angkutan perintis kawasan aglomerasi Sleman dan Bantul.
+        </p>
+        <p>
+          Namun, informasi rute, titik halte transit, metode pembayaran non-tunai, dan integrasi antarstasiun sering kali tersebar di berbagai kanal yang terpisah atau sulit dipahami oleh masyarakat awam dan wisatawan yang baru pertama kali menginjakkan kaki di Yogyakarta.
+        </p>
+        <p>
+          <strong>PanduanRuteJogja.com</strong> lahir sebagai portal utilitas independen non-komersial berorientasi masyarakat untuk merangkum seluruh informasi perjalanan secara sistematis, faktual, dan berbasis pengalaman nyata di lapangan.
+        </p>
+      </section>
+
+      <!-- Prinsip Utama Kami -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 not-prose">
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center font-bold mb-4">
+            01
+          </div>
+          <h3 class="text-base font-bold text-navy-900 mb-2">Observasi Lapangan</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Data halte, waktu tempuh, dan prosedur transit kami catat langsung melalui penelusuran fisik di koridor bus dan stasiun aktif.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center font-bold mb-4">
+            02
+          </div>
+          <h3 class="text-base font-bold text-navy-900 mb-2">Bebas Bias & Independen</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Kami bukan kepanjangan tangan operator komersial manapun. Ulasan, kelebihan, dan kelemahan rute kami sampaikan secara objektif.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center font-bold mb-4">
+            03
+          </div>
+          <h3 class="text-base font-bold text-navy-900 mb-2">Ramah Wisatawan & Warga</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Bahasa panduan dirancang lugas tanpa istilah birokrasi rumit, mempermudah siapapun bernavigasi tanpa takut tersesat.
+          </p>
+        </div>
+      </div>
+
+      <!-- Standar Redaksi & Verifikasi Faktual -->
+      <section class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+        <h2 class="!mt-0 text-xl sm:text-2xl font-bold text-navy-900 flex items-center gap-2">
+          <span class="w-2.5 h-6 rounded bg-brand-600 inline-block"></span>
+          Standar Redaksi & Kebijakan Pembaruan (E-E-A-T)
+        </h2>
+        <p>
+          Tim redaksi kami rutin melakukan audit berkala terhadap jadwal keberangkatan, skema tarif flat vs progresif, ketersediaan mesin tap QRIS di halte portabel, serta penyesuaian rekayasa lalu lintas saat libur panjang (peak season).
+        </p>
+        <p>
+          Jika terdapat perubahan jalur resmi oleh Dinas Perhubungan DIY atau penyesuaian Gapeka (Grafik Perjalanan Kereta Api) oleh PT Kereta Api Indonesia, artikel panduan terkait akan segera diperbarui dengan catatan tanggal modifikasi terbaru (Date Modified).
+        </p>
+      </section>
+
+      <!-- Pernyataan Independensi Resmi -->
+      <section class="p-6 sm:p-8 bg-slate-100 rounded-2xl border border-slate-300/80">
+        <h2 class="!mt-0 text-lg font-bold text-navy-900">
+          Pernyataan Independensi (Disclaimer Non-Afiliasi)
+        </h2>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          <strong>PanduanRuteJogja.com</strong> merupakan media panduan independen milik inisiatif masyarakat dan <strong>TIDAK BERAFILIASI</strong> secara struktural maupun hukum dengan Dinas Perhubungan D.I. Yogyakarta, PT Kereta Api Indonesia (Persero), PT Kereta Commuter Indonesia (KAI Commuter), PT Railink, DAMRI, maupun PT Jogja Tugu Trans. Seluruh merek dagang, logo, dan nama layanan adalah hak cipta dari masing-masing pemegang merek resmi.
+        </p>
+      </section>
+
+      <!-- Kontak Cepat -->
+      <div class="pt-4 text-center">
+        <p class="text-sm text-slate-600 mb-3">
+          Memiliki koreksi informasi halte, saran rute baru, atau pertanyaan kerjasama?
+        </p>
+        <a
+          href="/kontak"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-600 text-white font-semibold hover:bg-brand-700 transition-colors shadow-sm"
+        >
+          Hubungi Tim Redaksi Kami &rarr;
+        </a>
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>

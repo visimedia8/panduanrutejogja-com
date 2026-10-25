@@ -1,0 +1,71 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+  const panduanEntries = await getCollection('panduan');
+  
+  return panduanEntries.map((entry) => {
+    // Ambil panduan terkait: utamakan kategori yang sama, exclude diri sendiri
+    const sameCategory = panduanEntries.filter(
+      (e) => e.slug !== entry.slug && e.data.category === entry.data.category
+    );
+    const otherCategories = panduanEntries.filter(
+      (e) => e.slug !== entry.slug && e.data.category !== entry.data.category
+    );
+    
+    const relatedList = [...sameCategory, ...otherCategories].slice(0, 3).map((e) => ({
+      slug: e.slug,
+      title: e.data.title,
+      description: e.data.description,
+      category: e.data.category,
+      featuredImage: e.data.featuredImage,
+      routeType: e.data.routeType,
+      fare: e.data.fare
+    }));
+
+    return {
+      params: { slug: entry.slug },
+      props: { 
+        entry,
+        related: relatedList
+      },
+    };
+  });
+}
+
+interface Props {
+  entry: CollectionEntry<'panduan'>;
+  related: {
+    slug: string;
+    title: string;
+    description: string;
+    category: 'trans-jogja' | 'kereta-bandara' | 'tiket-wisata';
+    featuredImage: string;
+    routeType: string;
+    fare: string;
+  }[];
+}
+
+const { entry, related } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<ArticleLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  category={entry.data.category}
+  publishDate={entry.data.publishDate}
+  updatedDate={entry.data.updatedDate}
+  author={entry.data.author}
+  featuredImage={entry.data.featuredImage}
+  imageAlt={entry.data.imageAlt}
+  halteList={entry.data.halteList}
+  operationalHours={entry.data.operationalHours}
+  fare={entry.data.fare}
+  routeType={entry.data.routeType}
+  faqs={entry.data.faqs}
+  relatedArticles={related}
+>
+  <Content />
+</ArticleLayout>

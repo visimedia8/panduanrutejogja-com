@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { siteConfig } from '../config/site';
+
+const breadcrumbs = [
+  { name: 'Syarat & Ketentuan', url: `${siteConfig.url}/terms/` }
+];
+---
+
+<BaseLayout
+  title={`Syarat & Ketentuan Penggunaan — ${siteConfig.name}`}
+  description="Ketentuan penggunaan portal informasi PanduanRuteJogja.com, batasan tanggung jawab akurasi jadwal, tarif transportasi, dan hak kekayaan intelektual."
+  breadcrumbs={breadcrumbs}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <Breadcrumb items={breadcrumbs.map(b => ({ label: b.name, href: b.url }))} />
+
+    <header class="mb-10 text-center sm:text-left">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 border border-brand-200 mb-3">
+        Ketentuan Hukum Layanan Informasi
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+        Syarat & Ketentuan Penggunaan (Terms of Service)
+      </h1>
+      <p class="mt-3 text-sm text-slate-500">
+        Terakhir diperbarui: 25 Oktober 2026 &bull; Mengikat seluruh pengunjung {siteConfig.name}
+      </p>
+    </header>
+
+    <div class="prose-transit bg-white p-6 sm:p-10 rounded-2xl border border-slate-200 shadow-sm space-y-8">
+      
+      <section>
+        <h2 class="!mt-0">1. Ketentuan Umum</h2>
+        <p>
+          Selamat datang di <strong>{siteConfig.name}</strong>. Dengan mengakses dan menggunakan portal ini, Anda menyatakan telah membaca, memahami, dan menyetujui untuk terikat oleh Syarat dan Ketentuan Penggunaan ini. Jika Anda tidak menyetujui salah satu bagian dari ketentuan ini, mohon untuk tidak melanjutkan penggunaan situs kami.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Sifat Informasi dan Layanan Portal</h2>
+        <p>
+          {siteConfig.name} adalah situs penyedia utilitas panduan informasi publik yang berfokus pada rute transportasi umum di wilayah Daerah Istimewa Yogyakarta. Seluruh isi konten yang kami publikasikan—termasuk peta rute, nomor koridor, letak halte, estimasi waktu perjalanan, tarif tiket, dan jam operasional—disusun berdasarkan pengamatan langsung, publikasi instansi terkait, dan data lapangan terbuka.
+        </p>
+        <p>
+          Portal ini berfungsi semata-mata sebagai <strong>referensi edukasi dan asistensi navigasi perjalanan</strong>, dan bukan merupakan sistem pemesanan tiket resmi atau aplikasi pengendali armada.
+        </p>
+      </section>
+
+      <section>
+        <h2>3. Batasan Akurasi Jadwal & Perubahan Tarif (Disclaimer)</h2>
+        <p>
+          Kami berupaya semaksimal mungkin untuk memastikan seluruh data yang disajikan akurat dan mutakhir. Namun, pengguna wajib memahami dan menyepakati bahwa:
+        </p>
+        <ul>
+          <li><strong>Perubahan Operasional Sewaktu-Waktu:</strong> Jadwal keberangkatan, rute jalan, dan interval kedatangan (headway) bus Trans Jogja, KRL Commuter Line, KA Bandara YIA, dan DAMRI dapat mengalami perubahan mendadak akibat kondisi lalu lintas, bencana cuaca, penutupan jalan karena acara kebudayaan, atau rekayasa operasional oleh otoritas terkait.</li>
+          <li><strong>Penyesuaian Tarif Resmi:</strong> Tarif angkutan dapat disesuaikan oleh Pemerintah Daerah DIY atau operator terkait sewaktu-waktu tanpa pemberitahuan terlebih dahulu di portal kami.</li>
+          <li><strong>Konfirmasi Mandiri:</strong> Pengguna disarankan untuk tetap melakukan konfirmasi ulang dengan petugas resmi di stasiun keberangkatan, halte transit, atau melalui aplikasi resmi operator (seperti Access by KAI untuk tiket kereta api).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>4. Pembatasan Tanggung Jawab (Limitation of Liability)</h2>
+        <p>
+          Dalam keadaan apa pun, pengelola dan tim redaksi {siteConfig.name} <strong>tidak bertanggung jawab</strong> atas kerugian materiil, non-materiil, langsung, atau tidak langsung yang dialami oleh pengguna, termasuk namun tidak terbatas pada:
+        </p>
+        <ul>
+          <li>Ketinggalan jadwal penerbangan pesawat di Bandara Internasional Yogyakarta (YIA).</li>
+          <li>Ketinggalan jadwal kereta api jarak jauh atau kereta komuter di stasiun manapun.</li>
+          <li>Keterlambatan tiba di tempat kerja, instansi pendidikan, atau agenda pribadi.</li>
+          <li>Biaya tambahan yang timbul akibat beralih ke moda transportasi darurat lainnya.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>5. Hak Cipta dan Kekayaan Intelektual</h2>
+        <p>
+          Seluruh artikel naratif, panduan step-by-step, grafik diagram rute orisinal, serta tata letak antarmuka di {siteConfig.name} dilindungi oleh Undang-Undang Hak Cipta Republik Indonesia.
+        </p>
+        <p>
+          Pengutipan sebagian materi untuk keperluan non-komersial diperkenankan dengan syarat mencantumkan tautan aktif (dofollow backlink) ke URL artikel sumber di {siteConfig.name}. Dilarang keras melakukan duplikasi otomatis (scraping), reproduksi massal tanpa izin tertulis dari redaksi.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Tautan ke Situs Pihak Ketiga</h2>
+        <p>
+          Portal kami dapat memuat tautan menuju situs web eksternal pihak ketiga (misalnya situs resmi instansi pemerintah, Google Maps, atau layanan pembayaran digital). Kami tidak memiliki kendali atas isi, kebijakan privasi, atau praktik situs web pihak ketiga tersebut dan tidak bertanggung jawab atas kerugian yang timbul dari interaksi Anda dengan situs eksternal.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Perubahan Ketentuan</h2>
+        <p>
+          Kami berhak merevisi Syarat & Ketentuan ini sewaktu-waktu sesuai dengan perkembangan hukum dan penambahan fitur layanan portal. Pembaruan akan langsung berlaku sejak tanggal dipublikasikan di halaman ini.
+        </p>
+      </section>
+
+      <section>
+        <h2>8. Kontak Hukum & Yurisdiksi</h2>
+        <p>
+          Syarat dan Ketentuan ini tunduk pada dan ditafsirkan sesuai dengan hukum Negara Kesatuan Republik Indonesia. Jika timbul perselisihan yang timbul dari atau sehubungan dengan penggunaan situs ini, penyelesaian akan diselesaikan secara musyawarah untuk mufakat atau melalui yurisdiksi Pengadilan Negeri di Daerah Istimewa Yogyakarta.
+        </p>
+        <p>
+          Pertanyaan mengenai ketentuan ini dapat dialamatkan ke: <strong>{siteConfig.contactEmail}</strong>.
+        </p>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>

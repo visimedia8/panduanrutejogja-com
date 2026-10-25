@@ -1,0 +1,63 @@
+---
+---
+
+<div
+  id="cookie-consent-banner"
+  class="hidden fixed bottom-4 left-4 right-4 md:left-8 md:right-8 max-w-4xl md:mx-auto z-50 bg-navy-950/95 backdrop-blur-md text-white border border-slate-700/80 rounded-2xl p-4 sm:p-5 shadow-2xl transition-all duration-300"
+  role="region"
+  aria-label="Pemberitahuan Persetujuan Cookie"
+>
+  <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <div class="flex items-start gap-3">
+      <div class="w-9 h-9 rounded-xl bg-brand-500/20 text-brand-300 flex items-center justify-center flex-shrink-0 mt-0.5">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+      </div>
+      <div>
+        <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
+          Kami menggunakan cookie dan teknologi serupa untuk menganalisis lalu lintas navigasi dan menyajikan pengalaman terbaik sesuai standar kepatuhan privasi. Pelajari selengkapnya di <a href="/privacy" class="text-brand-300 underline font-semibold hover:text-white">Kebijakan Privasi & Cookie</a> kami.
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2.5 w-full sm:w-auto justify-end flex-shrink-0">
+      <button
+        type="button"
+        id="reject-cookie-btn"
+        class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold border border-slate-600 transition-colors cursor-pointer"
+      >
+        Tolak Non-Esensial
+      </button>
+      <button
+        type="button"
+        id="accept-cookie-btn"
+        class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold transition-colors shadow-sm cursor-pointer"
+      >
+        Setujui Semua Cookie
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const banner = document.getElementById('cookie-consent-banner');
+  const acceptBtn = document.getElementById('accept-cookie-btn');
+  const rejectBtn = document.getElementById('reject-cookie-btn');
+
+  // Check consent status from localStorage
+  const consent = localStorage.getItem('prj_cookie_consent');
+  if (!consent && banner) {
+    banner.classList.remove('hidden');
+  }
+
+  acceptBtn?.addEventListener('click', () => {
+    localStorage.setItem('prj_cookie_consent', 'accepted');
+    if (banner) banner.classList.add('hidden');
+  });
+
+  rejectBtn?.addEventListener('click', () => {
+    localStorage.setItem('prj_cookie_consent', 'rejected');
+    if (banner) banner.classList.add('hidden');
+  });
+</script>

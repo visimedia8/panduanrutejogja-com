@@ -1,0 +1,57 @@
+---
+import { siteConfig } from '../config/site';
+
+interface Props {
+  slotType: 'header-leaderboard' | 'in-article' | 'in-article-bottom' | 'sticky-bottom';
+  className?: string;
+}
+
+const { slotType, className = '' } = Astro.props;
+const adsConfig = siteConfig.adsense;
+
+let slotId = '';
+let minHeightClass = 'min-h-[100px]';
+let containerClass = 'max-w-4xl mx-auto my-6';
+
+switch (slotType) {
+  case 'header-leaderboard':
+    slotId = adsConfig.slots.headerLeaderboard;
+    minHeightClass = 'min-h-[90px]';
+    containerClass = 'max-w-4xl mx-auto my-4 hidden md:block';
+    break;
+  case 'in-article':
+    slotId = adsConfig.slots.inArticleMiddle;
+    minHeightClass = 'min-h-[250px]';
+    containerClass = 'max-w-xl mx-auto my-8';
+    break;
+  case 'in-article-bottom':
+    slotId = adsConfig.slots.inArticleBottom;
+    minHeightClass = 'min-h-[250px]';
+    containerClass = 'max-w-xl mx-auto my-8';
+    break;
+  case 'sticky-bottom':
+    slotId = adsConfig.slots.mobileStickyBottom;
+    minHeightClass = 'min-h-[50px]';
+    containerClass = 'fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur border-t border-slate-200 md:hidden p-2 shadow-lg';
+    break;
+}
+---
+
+{adsConfig.enabled && (
+  <div class={`ad-container text-center ${containerClass} ${className}`}>
+    <div class="text-[10px] font-semibold tracking-wider text-slate-400 uppercase mb-1">
+      Iklan / Advertisement
+    </div>
+    <div class={`bg-slate-50 border border-dashed border-slate-300 rounded-lg flex flex-col items-center justify-center p-3 text-slate-400 text-xs ${minHeightClass} transition-colors hover:border-slate-400`}>
+      <ins class="adsbygoogle block w-full"
+           style="display:block"
+           data-ad-client={adsConfig.clientId}
+           data-ad-slot={slotId}
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <span class="text-[11px] text-slate-400 mt-1 select-none">
+        Slot Iklan Terverifikasi — {slotType}
+      </span>
+    </div>
+  </div>
+)}

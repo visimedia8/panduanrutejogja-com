@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { siteConfig } from '../config/site';
+
+const breadcrumbs = [
+  { name: 'Kebijakan Privasi', url: `${siteConfig.url}/privacy/` }
+];
+---
+
+<BaseLayout
+  title={`Kebijakan Privasi (Privacy Policy) — ${siteConfig.name}`}
+  description="Kebijakan privasi resmi PanduanRuteJogja.com terkait perlindungan data pengguna, penggunaan cookies, log files, dan kepatuhan Google AdSense."
+  breadcrumbs={breadcrumbs}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <Breadcrumb items={breadcrumbs.map(b => ({ label: b.name, href: b.url }))} />
+
+    <header class="mb-10 text-center sm:text-left">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 border border-brand-200 mb-3">
+        Kepatuhan Privasi & Regulasi Digital
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+        Kebijakan Privasi (Privacy Policy)
+      </h1>
+      <p class="mt-3 text-sm text-slate-500">
+        Terakhir diperbarui: 25 Oktober 2026 &bull; Berlaku untuk seluruh pengunjung {siteConfig.name}
+      </p>
+    </header>
+
+    <div class="prose-transit bg-white p-6 sm:p-10 rounded-2xl border border-slate-200 shadow-sm space-y-8">
+      
+      <section>
+        <h2 class="!mt-0">1. Pendahuluan</h2>
+        <p>
+          Di <strong>{siteConfig.name}</strong>, salah satu prioritas utama kami adalah menjaga privasi pengunjung kami. Dokumen Kebijakan Privasi ini berisi jenis informasi yang dikumpulkan dan dicatat oleh portal kami serta bagaimana kami menggunakannya secara bertanggung jawab.
+        </p>
+        <p>
+          Jika Anda memiliki pertanyaan tambahan atau memerlukan informasi lebih lanjut mengenai Kebijakan Privasi kami, jangan ragu untuk menghubungi kami melalui surat elektronik di <strong>{siteConfig.contactEmail}</strong>.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Berkas Log (Log Files)</h2>
+        <p>
+          {siteConfig.name} mengikuti prosedur standar dalam penggunaan berkas log. Berkas-berkas ini mencatat aktivitas pengunjung saat mengakses situs web. Hal ini merupakan bagian dari layanan hosting untuk kebutuhan analisis analitik performa server.
+        </p>
+        <p>
+          Informasi yang dikumpulkan oleh berkas log meliputi:
+        </p>
+        <ul>
+          <li>Alamat protokol internet (IP address)</li>
+          <li>Jenis peramban (browser type) dan versi perangkat lunak</li>
+          <li>Penyedia Layanan Internet (ISP)</li>
+          <li>Stempel tanggal dan waktu kunjungan (date/time stamp)</li>
+          <li>Halaman rujukan/keluar (referring/exit pages)</li>
+          <li>Jumlah klik untuk menganalisis tren, mengelola situs, dan melacak pergerakan pengguna</li>
+        </ul>
+        <p>
+          Informasi ini <strong>tidak dikaitkan</strong> dengan data pribadi apapun yang dapat mengidentifikasi identitas individu Anda secara langsung di dunia nyata.
+        </p>
+      </section>
+
+      <section>
+        <h2>3. Cookie dan Web Beacon</h2>
+        <p>
+          Seperti kebanyakan situs web modern, {siteConfig.name} menggunakan 'cookies'. Cookie ini digunakan untuk menyimpan preferensi pengunjung dan halaman di situs web yang diakses atau dikunjungi. Informasi ini digunakan untuk mengoptimalkan pengalaman pengguna dengan menyesuaikan konten halaman web berdasarkan jenis peramban atau informasi lainnya.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Cookie Google DoubleClick DART (Google AdSense)</h2>
+        <p>
+          Google adalah salah satu vendor pihak ketiga di situs kami. Google juga menggunakan cookie, yang dikenal sebagai cookie DART, untuk menayangkan iklan kepada pengunjung situs kami berdasarkan kunjungan mereka ke {siteConfig.url} dan situs lain di internet.
+        </p>
+        <p>
+          Namun, pengunjung dapat memilih untuk menolak penggunaan cookie DART dengan mengunjungi Kebijakan Privasi jaringan iklan dan konten Google di URL berikut:
+          <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-600 underline">
+            https://policies.google.com/technologies/ads
+          </a>
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Mitra Iklan Pihak Ketiga</h2>
+        <p>
+          Beberapa pengiklan di situs kami mungkin menggunakan cookie dan web beacon. Mitra periklanan utama kami mencakup:
+        </p>
+        <ul>
+          <li><strong>Google AdSense:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a></li>
+        </ul>
+        <p>
+          Server iklan atau jaringan iklan pihak ketiga ini menggunakan teknologi seperti cookie, JavaScript, atau Web Beacon yang digunakan dalam iklan masing-masing yang muncul di {siteConfig.name}. Mereka secara otomatis menerima alamat IP Anda saat ini terjadi. Teknologi ini digunakan untuk mengukur efektivitas kampanye iklan mereka dan/atau untuk mempersonalisasi konten iklan yang Anda lihat di situs web yang Anda kunjungi.
+        </p>
+        <p>
+          <em>Harap dicatat bahwa {siteConfig.name} tidak memiliki akses atau kontrol terhadap cookie yang digunakan oleh pengiklan pihak ketiga tersebut.</em>
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Pengaturan dan Penonaktifan Cookie</h2>
+        <p>
+          Anda dapat memilih untuk menonaktifkan cookie melalui opsi peramban individual Anda. Informasi lebih rinci tentang pengelolaan cookie dengan peramban web tertentu dapat ditemukan di situs web resmi masing-masing peramban (Google Chrome, Mozilla Firefox, Safari, Microsoft Edge).
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Privasi Anak-Anak (COPPA)</h2>
+        <p>
+          Bagian penting lain dari prioritas kami adalah menambahkan perlindungan bagi anak-anak saat menggunakan internet. Kami mendorong orang tua dan wali untuk mengamati, berpartisipasi, dan/atau memantau serta memandu aktivitas daring anak-anak mereka.
+        </p>
+        <p>
+          {siteConfig.name} tidak secara sadar mengumpulkan Informasi Identifikasi Pribadi apapun dari anak-anak di bawah usia 13 tahun. Jika Anda menduga bahwa anak Anda memberikan informasi semacam ini di situs web kami, kami sangat menganjurkan Anda untuk segera menghubungi kami dan kami akan melakukan upaya terbaik kami untuk segera menghapus informasi tersebut dari catatan kami.
+        </p>
+      </section>
+
+      <section>
+        <h2>8. Persetujuan Pengguna (Consent)</h2>
+        <p>
+          Dengan menggunakan situs web kami ({siteConfig.url}), Anda dengan ini menyetujui Kebijakan Privasi kami dan menyetujui seluruh syarat dan ketentuannya.
+        </p>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
