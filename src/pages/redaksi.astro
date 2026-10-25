@@ -32,32 +32,45 @@ const breadcrumbs = [
     <div class="space-y-6 mb-12">
       {siteConfig.editorialTeam.map((member, index) => (
         <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm flex flex-col md:flex-row gap-6 items-start">
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-700 to-navy-900 text-white flex-shrink-0 flex items-center justify-center font-bold text-xl shadow-md">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-700 to-navy-900 text-white flex-shrink-0 flex items-center justify-center font-bold text-xl shadow-md border-2 border-brand-400/40 relative">
             {member.name.split(' ').map(n => n[0]).slice(0, 2).join('')}
+            <span class="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 rounded-full border-2 border-white flex items-center justify-center text-white text-[9px]" title="Terverifikasi Dewan Redaksi">
+              ✓
+            </span>
           </div>
           <div class="flex-1">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-              <h2 class="text-xl font-bold text-navy-900">
-                {member.name}
-              </h2>
+              <div>
+                <h2 class="text-xl font-bold text-navy-900 inline-block mr-2">
+                  {member.name}
+                </h2>
+                <span class="font-mono text-[11px] text-slate-400">ID: PRJ-DIY-0{index + 1}</span>
+              </div>
               <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 border border-brand-200 w-fit">
                 {member.expertise}
               </span>
             </div>
-            <p class="text-sm font-semibold text-brand-600 mb-3">
-              {member.role}
+            <p class="text-sm font-semibold text-brand-600 mb-3 flex items-center gap-1.5">
+              <span>{member.role}</span>
+              <span class="text-slate-300">&bull;</span>
+              <span class="text-xs text-slate-500 font-normal">Observator Mandiri Wilayah DIY</span>
             </p>
             <p class="text-sm text-slate-600 leading-relaxed mb-4">
               {member.bio}
             </p>
-            <div class="pt-3 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-500">
-              <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              <span>Email Resmi:</span>
-              <a href={`mailto:${member.email}`} class="font-mono text-brand-600 hover:underline">
-                {member.email}
-              </a>
+            <div class="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500">
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span>Email Resmi:</span>
+                <a href={`mailto:${member.email}`} class="font-mono text-brand-600 font-bold hover:underline">
+                  {member.email}
+                </a>
+              </div>
+              <span class="inline-flex items-center gap-1 text-[11px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 font-medium">
+                Pemeriksa Faktual Lapangan
+              </span>
             </div>
           </div>
         </div>

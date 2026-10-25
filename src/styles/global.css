@@ -88,3 +88,40 @@
   color: #0c4a6e;
   font-style: italic;
 }
+
+/* Markdown tables in prose */
+.prose-transit table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.5rem 0;
+  font-size: 0.875rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.prose-transit th {
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.prose-transit td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.prose-transit tr:last-child td {
+  border-bottom: none;
+}
+
+.prose-transit tr:nth-child(even) {
+  background-color: #f8fafc;
+}

@@ -35,33 +35,73 @@ Dokumen ini adalah ringkasan teknis dan checklist kepatuhan untuk pengajuan **Pa
 
 ---
 
-## 3. Cara Mengaktifkan Kode Iklan Google AdSense
+## 3. Prosedur Pengajuan Anti-Gagal (Zero-Rejection Checklist)
 
-Setelah akun Google AdSense disetujui, cukup ubah satu baris konfigurasi di file:
-`src/config/site.ts`
+Ikuti 4 langkah ini secara berurutan agar permohonan AdSense **TIDAK DITOLAK** oleh bot otomatis Google:
+
+### Langkah A: Setup Domain & SSL di Cloudflare / Vercel
+1. Hubungkan repositori GitHub `visimedia8/panduanrutejogja-com` ke Cloudflare Pages atau Vercel.
+2. Pasang domain kustom `panduanrutejogja.com` dan pastikan SSL (HTTPS) aktif.
+
+### Langkah B: Daftarkan ke Google Search Console (GSC) Dulu (WAJIB!)
+> ⚠️ **JANGAN langsung daftar AdSense sebelum situs terindeks Google!**
+1. Buka [Google Search Console](https://search.google.com/search-console).
+2. Tambahkan properti `https://panduanrutejogja.com`.
+3. Masukkan `https://panduanrutejogja.com/sitemap.xml` di menu Sitemaps.
+4. Tunggu 5–10 hari sampai minimal 15–20 artikel berstatus *"URL is on Google"* (hijau) dan mulai ada klik/tayangan organik.
+
+### Langkah C: Update Publisher ID Asli (Hapus Placeholder 'XXXXXXXXXXXXXXXX')
+> ⚠️ **AdSense akan menolak jika masih terdeteksi `ca-pub-XXXXXXXXXXXXXXXX`!**
+1. Buka dasbor Google AdSense -> **Sites** -> **Add site**.
+2. Salin kode Publisher ID Anda (contoh: `pub-9876543210987654`).
+3. Buka file `src/config/site.ts` dan ganti `clientId`:
+   ```typescript
+   clientId: 'ca-pub-9876543210987654', // Ganti dengan milik Anda
+   ```
+4. Buka file `public/ads.txt` dan ganti baris ke-4:
+   ```txt
+   google.com, pub-9876543210987654, DIRECT, f08c47fec0942fa0
+   ```
+5. Commit dan push ke GitHub:
+   ```bash
+   git add .
+   git commit -m "feat(adsense): set official publisher id"
+   git push origin main
+   ```
+6. Buka URL `https://panduanrutejogja.com/ads.txt` di browser untuk memastikan ID Anda sudah muncul.
+
+### Langkah D: Tekan Tombol "Submit / Request Review" di AdSense
+1. Kembali ke dasbor Google AdSense, centang *"I've placed the code on my site"* dan *"I've updated my ads.txt file"*.
+2. Klik tombol **Request review**.
+3. Dalam 3–7 hari kerja, Google akan menyetujui situs Anda.
+
+---
+
+## 4. Cara Mengaktifkan Unit Iklan Setelah Diterima (Approved)
+
+Setelah status domain di AdSense berubah menjadi **Ready (Siap)**, aktifkan penayangan iklan di file `src/config/site.ts`:
 
 ```typescript
 export const siteConfig = {
   // ...
   adsense: {
-    clientId: 'ca-pub-XXXXXXXXXXXXXXXX', // Masukkan ID Publisher Anda di sini
-    enabled: true,
+    clientId: 'ca-pub-9876543210987654', // Publisher ID Anda
+    enabled: true,                         // UBAH DARI false MENJADI true
     slots: {
-      headerLeaderboard: '1234567890',  // ID Slot Leaderboard
-      inArticleMiddle: '2345678901',    // ID Slot Tengah Paragraf
-      inArticleBottom: '3456789012',    // ID Slot Bawah Artikel
-      mobileStickyBottom: '4567890123'  // ID Slot Sticky Mobile
+      headerLeaderboard: '1234567890',      // Buat unit iklan Display di AdSense
+      inArticleMiddle: '2345678901',        // Buat unit iklan In-Article di AdSense
+      inArticleBottom: '3456789012',        // Buat unit iklan In-Article di AdSense
+      mobileStickyBottom: '4567890123'      // Buat unit iklan Anchor/Sticky di AdSense
     }
   },
   // ...
 };
 ```
-
-Setelah mengubah konfigurasi, jalankan `npm run build` dan lakukan deploy ulang.
+Push perubahan ke GitHub (`git push origin main`) dan iklan otomatis tayang secara elegan dan optimal.
 
 ---
 
-## 4. Perintah Operasional
+## 5. Perintah Operasional Lokal
 
 ```bash
 # Menjalankan server pengembangan lokal (Hot Module Replacement)

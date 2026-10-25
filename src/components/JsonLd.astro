@@ -40,14 +40,28 @@ const schemas: any[] = [];
 // Base Organization Schema
 const organizationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': 'NewsMediaOrganization',
   name: siteConfig.organization.name,
   url: siteConfig.url,
-  logo: `${siteConfig.url}/images/logo.svg`,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${siteConfig.url}/images/logo.svg`
+  },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Jl. Malioboro No. 45, Danurejan',
+    addressLocality: 'Yogyakarta',
+    addressRegion: 'D.I. Yogyakarta',
+    postalCode: '55213',
+    addressCountry: 'ID'
+  },
   contactPoint: {
     '@type': 'ContactPoint',
+    telephone: siteConfig.organization.phone,
+    contactType: 'editorial & customer support',
     email: siteConfig.contactEmail,
-    contactType: 'customer support'
+    areaServed: 'ID',
+    availableLanguage: ['id', 'en']
   }
 };
 

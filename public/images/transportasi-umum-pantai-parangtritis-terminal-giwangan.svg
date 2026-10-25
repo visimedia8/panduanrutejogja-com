@@ -14,17 +14,17 @@
   <!-- Background -->
   <rect width="800" height="420" fill="url(#bg-grad-transportasi-umum-pantai-parangtritis-terminal-giwangan)" />
   
-  <!-- Circuit & transit line motifs -->
+  <!-- Circuit &amp; transit line motifs -->
   <path d="M0 60 H800 M0 140 H800 M0 220 H800 M0 300 H800 M0 380 H800" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1.5" />
   <path d="M120 0 V420 M260 0 V420 M400 0 V420 M540 0 V420 M680 0 V420" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1.5" />
 
   <!-- Metro curve line -->
   <path d="M60 360 C 240 360, 320 280, 500 280 S 700 340, 760 340" fill="none" stroke="#0284c7" stroke-width="6" stroke-opacity="0.3" />
 
-  <!-- Category & Badge -->
+  <!-- Category &amp; Badge -->
   <rect x="50" y="55" width="160" height="32" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
   <text x="130" y="76" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="11" fill="#94a3b8" text-anchor="middle" letter-spacing="1">
-    TIKET & WISATA
+    TIKET &amp; WISATA
   </text>
 
   <rect x="220" y="55" width="180" height="32" rx="16" fill="url(#badge-grad-transportasi-umum-pantai-parangtritis-terminal-giwangan)" />
@@ -38,14 +38,14 @@
   </text>
 
   <text x="50" y="200" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="16" fill="#94a3b8">
-    Panduan Rute &bull; Jam Operasional &bull; Tarif Resmi &bull; Halte Transit
+    Panduan Rute &#8226; Jam Operasional &#8226; Tarif Resmi &#8226; Halte Transit
   </text>
 
   <!-- Route Status Tag -->
   <rect x="50" y="240" width="220" height="42" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.6" />
   <circle cx="72" cy="261" r="5" fill="#10b981" />
   <text x="90" y="267" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="13" fill="#e2e8f0">
-    Rute Aktif & Terverifikasi
+    Rute Aktif &amp; Terverifikasi
   </text>
 
   <!-- Right Visual Icon Box -->
@@ -58,6 +58,6 @@
 
   <!-- Footer Watermark -->
   <text x="50" y="375" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="13" fill="#64748b">
-    PanduanRuteJogja.com &bull; Inisiatif Utilitas Transportasi Publik DIY
+    PanduanRuteJogja.com &#8226; Inisiatif Utilitas Transportasi Publik DIY
   </text>
 </svg>
