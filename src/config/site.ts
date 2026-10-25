@@ -30,7 +30,9 @@ export const siteConfig = {
   contactEmail: 'kontak@panduanrutejogja.com',
   organization: {
     name: 'Panduan Rute Jogja Media',
-    address: 'Jl. Malioboro No. 45, Danurejan, Kota Yogyakarta, D.I. Yogyakarta 55213'
+    address: 'Jl. Malioboro No. 45, Danurejan, Kota Yogyakarta, D.I. Yogyakarta 55213',
+    phone: '+62 821-3890-4500',
+    operationalHours: 'Senin – Jumat: 08.30 – 16.30 WIB'
   },
   
   // Google AdSense Configuration

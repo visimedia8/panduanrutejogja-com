@@ -77,6 +77,18 @@ const breadcrumbs = [
           <p class="text-xs text-slate-600 leading-relaxed">
             {siteConfig.organization.address}
           </p>
+          <div class="mt-2.5 pt-2.5 border-t border-slate-100 text-xs text-slate-500 space-y-1">
+            <div class="flex items-center gap-1.5">
+              <span class="font-semibold text-slate-700">Hotline Redaksi:</span>
+              <a href={`tel:${siteConfig.organization.phone.replace(/[^0-9+]/g, '')}`} class="font-mono text-brand-600 font-bold hover:underline">
+                {siteConfig.organization.phone}
+              </a>
+            </div>
+            <div>
+              <span class="font-semibold text-slate-700">Jam Operasional:</span>
+              <span class="block text-slate-600">{siteConfig.organization.operationalHours}</span>
+            </div>
+          </div>
           <div class="mt-3 pt-3 border-t border-slate-100 text-xs">
             <a href="/redaksi" class="text-brand-600 hover:underline font-semibold flex items-center gap-1">
               <span>Profil Tim Dewan Redaksi</span>
