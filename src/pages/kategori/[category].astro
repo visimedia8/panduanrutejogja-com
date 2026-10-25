@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import AdSlot from '../../components/AdSlot.astro';
+import DepartureBoard from '../../components/DepartureBoard.astro';
 import { siteConfig } from '../../config/site';
 
 export async function getStaticPaths() {
@@ -24,20 +25,6 @@ const breadcrumbs = [
   { name: 'Direktori', url: `${siteConfig.url}/` },
   { name: category.name, url: `${siteConfig.url}/kategori/${category.slug}/` },
 ];
-
-const getLineBadge = (title: string) => {
-  const t = title.toUpperCase();
-  if (t.includes('1A')) return { code: '1A', bg: 'bg-emerald-600', text: 'text-white' };
-  if (t.includes('2A')) return { code: '2A', bg: 'bg-emerald-600', text: 'text-white' };
-  if (t.includes('3A')) return { code: '3A', bg: 'bg-emerald-600', text: 'text-white' };
-  if (t.includes('4A') || t.includes('4B')) return { code: '4A/B', bg: 'bg-amber-600', text: 'text-white' };
-  if (t.includes('5A') || t.includes('5B')) return { code: '5A/B', bg: 'bg-amber-600', text: 'text-white' };
-  if (t.includes('KRL') || t.includes('COMMUTER')) return { code: 'KRL', bg: 'bg-red-600', text: 'text-white' };
-  if (t.includes('BANDARA') || t.includes('YIA')) return { code: 'YIA', bg: 'bg-cyan-600', text: 'text-white' };
-  if (t.includes('PRAMEKS')) return { code: 'PRM', bg: 'bg-blue-600', text: 'text-white' };
-  if (t.includes('DAMRI')) return { code: 'DAMRI', bg: 'bg-blue-700', text: 'text-white' };
-  return { code: 'TJ', bg: 'bg-keraton-800', text: 'text-jogja-300' };
-};
 ---
 
 <BaseLayout
@@ -76,70 +63,13 @@ const getLineBadge = (title: string) => {
     <!-- Ad Slot -->
     <AdSlot slotType="in-article" />
 
-    <!-- Article Cards Grid (Ticket Pass Style) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 my-8">
-      {articles.map((art) => {
-        const badge = getLineBadge(art.data.title);
-        return (
-          <article class="ticket-card overflow-hidden flex flex-col justify-between group">
-            <div>
-              <a href={`/panduan/${art.slug}`} class="block overflow-hidden relative aspect-[16/9] bg-slate-100 border-b border-slate-100">
-                <img
-                  src={art.data.featuredImage}
-                  alt={art.data.imageAlt || art.data.title}
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-                <div class="absolute top-3 left-3 flex items-center gap-1.5">
-                  <span class={`font-mono text-xs font-extrabold px-2.5 py-1 rounded shadow-md ${badge.bg} ${badge.text}`}>
-                    {badge.code}
-                  </span>
-                  <span class="bg-slate-900/80 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-1 rounded font-mono">
-                    {art.data.routeType}
-                  </span>
-                </div>
-                <div class="absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm text-keraton-950 text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm border border-slate-200 font-mono">
-                  {art.data.fare}
-                </div>
-              </a>
-
-              <div class="p-5 flex-1 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between text-[11px] text-slate-400 mb-2">
-                    <span class="font-mono text-slate-500 font-medium">
-                      {new Date(art.data.publishDate).toLocaleDateString('id-ID', { month: 'short', day: 'numeric', year: 'numeric' })}
-                    </span>
-                    <span class="font-bold text-keraton-800">{art.data.halteList?.length || 0} Titik Singgah</span>
-                  </div>
-                  <h2 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-keraton-800 transition-colors line-clamp-2 leading-snug mb-2">
-                    <a href={`/panduan/${art.slug}`}>
-                      {art.data.title}
-                    </a>
-                  </h2>
-                  <p class="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed font-normal mb-4">
-                    {art.data.description}
-                  </p>
-                </div>
-
-                <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-keraton-800">
-                  <span class="text-slate-500 font-medium text-[11px]">
-                    Operasional 2026
-                  </span>
-                  <a
-                    href={`/panduan/${art.slug}`}
-                    class="inline-flex items-center gap-1 text-keraton-800 hover:text-keraton-950 group-hover:underline"
-                  >
-                    <span>Detail Rute</span>
-                    <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-        );
-      })}
+    <!-- Category Departure Board Table -->
+    <div class="my-6">
+      <DepartureBoard
+        entries={articles}
+        title={`Papan Informasi Jalur ${category.name}`}
+        showCategoryTabs={false}
+      />
     </div>
 
     <!-- Navigation Back to All Routes -->

@@ -41,6 +41,10 @@ export default {
           'ringroad-bg': '#fffbeb',
           prameks: '#2563eb',
           'prameks-bg': '#eff6ff',
+          damri: '#1d4ed8',
+          'damri-bg': '#eff6ff',
+          tb: '#0d9488',
+          'tb-bg': '#f0fdfa',
         },
         paper: {
           50: '#fcfcf9',

@@ -1,0 +1,183 @@
+---
+import { getHalteIndex } from '../lib/halte-index';
+
+const halteIndex = await getHalteIndex();
+---
+
+<div class="w-full bg-white text-slate-900 rounded-xl border-2 border-jogja-400 shadow-2xl p-3 sm:p-4 text-left">
+  <!-- Search Input Bar -->
+  <div class="relative flex items-center">
+    <div class="absolute left-3.5 text-keraton-800 pointer-events-none">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    </div>
+    <input
+      type="text"
+      id="halte-finder-input"
+      aria-label="Cari halte atau stasiun"
+      placeholder="Cari halte / stasiun (misal: Tugu, Malioboro, Bandara YIA)..."
+      class="w-full pl-11 pr-10 py-3 text-sm sm:text-base font-semibold text-slate-900 placeholder:text-slate-400 bg-paper-50 rounded-lg border border-keraton-200 focus:outline-none focus:ring-2 focus:ring-keraton-500 focus:bg-white transition-all font-sans"
+      autocomplete="off"
+    />
+    <button
+      id="halte-finder-clear"
+      type="button"
+      class="hidden absolute right-3 text-slate-400 hover:text-slate-700 p-1"
+      aria-label="Hapus pencarian"
+    >
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Search Results Container (fixed min-height to prevent CLS) -->
+  <div class="mt-3 min-h-[220px] max-h-[300px] overflow-y-auto rounded-lg border border-slate-100 bg-paper-50 p-2">
+    <!-- Quick Hub Suggestions (Default View) -->
+    <div id="halte-suggestions" class="p-3">
+      <span class="text-[11px] font-bold uppercase tracking-wider text-keraton-800 font-mono block mb-2">
+        SIMPUL TRANSIT UTAMA POPULER:
+      </span>
+      <div class="flex flex-wrap gap-1.5 mb-3">
+        {['Stasiun Tugu', 'Malioboro', 'Stasiun Lempuyangan', 'Bandara YIA', 'Terminal Giwangan', 'Terminal Jombor', 'Prambanan'].map((hub) => (
+          <button
+            type="button"
+            class="hub-chip text-xs font-semibold px-2.5 py-1 rounded bg-white border border-slate-200 text-keraton-900 hover:border-keraton-500 hover:bg-keraton-50 transition-colors cursor-pointer"
+            data-query={hub}
+          >
+            {hub}
+          </button>
+        ))}
+      </div>
+      <p class="text-xs text-slate-500 leading-relaxed">
+        Ketik nama titik pemberhentian untuk melihat seluruh jalur bus Trans Jogja, KRL, atau KA Bandara yang melintas beserta panduan rutenya.
+      </p>
+    </div>
+
+    <!-- Dynamic Results List -->
+    <ul id="halte-results-list" role="listbox" class="hidden divide-y divide-slate-100"></ul>
+
+    <!-- Empty State Message -->
+    <div id="halte-empty-state" class="hidden p-6 text-center text-slate-500">
+      <p class="text-sm font-semibold text-slate-700">Halte tidak ditemukan.</p>
+      <p class="text-xs text-slate-500 mt-1">Coba kata kunci lain seperti: "Tugu", "Malioboro", "Prambanan", atau "Bandara".</p>
+    </div>
+  </div>
+</div>
+
+<!-- Embedded JSON Data for Instant Client-side Search -->
+<script type="application/json" id="halte-index" set:html={JSON.stringify(halteIndex)} />
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const dataEl = document.getElementById('halte-index');
+    const input = document.getElementById('halte-finder-input') as HTMLInputElement | null;
+    const clearBtn = document.getElementById('halte-finder-clear') as HTMLButtonElement | null;
+    const suggestions = document.getElementById('halte-suggestions');
+    const resultsList = document.getElementById('halte-results-list');
+    const emptyState = document.getElementById('halte-empty-state');
+
+    if (!dataEl || !input || !resultsList || !suggestions || !emptyState) return;
+
+    let indexData: any[] = [];
+    try {
+      indexData = JSON.parse(dataEl.textContent || '[]');
+    } catch {
+      indexData = [];
+    }
+
+    function renderResults(query: string) {
+      const q = query.trim().toLowerCase();
+      if (!q) {
+        suggestions?.classList.remove('hidden');
+        resultsList?.classList.add('hidden');
+        emptyState?.classList.add('hidden');
+        clearBtn?.classList.add('hidden');
+        return;
+      }
+
+      clearBtn?.classList.remove('hidden');
+      suggestions?.classList.add('hidden');
+
+      const matches = (indexData || []).filter((item: any) => {
+        const nameMatch = item?.name?.toLowerCase().includes(q);
+        const locMatch = item?.location?.toLowerCase().includes(q);
+        const transMatch = item?.transit?.toLowerCase().includes(q);
+        return nameMatch || locMatch || transMatch;
+      }).slice(0, 8);
+
+      if (matches.length === 0) {
+        resultsList?.classList.add('hidden');
+        emptyState?.classList.remove('hidden');
+        return;
+      }
+
+      emptyState?.classList.add('hidden');
+      resultsList?.classList.remove('hidden');
+
+      resultsList!.innerHTML = '';
+      matches.forEach((item: any) => {
+        const primaryRoute = item?.routes?.[0] || { slug: '', title: '' };
+        const li = document.createElement('li');
+        li.className = 'py-2.5 px-3 hover:bg-white rounded-lg transition-colors';
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'flex items-start justify-between gap-3';
+
+        const left = document.createElement('div');
+        left.className = 'flex-grow min-w-0';
+
+        const titleLink = document.createElement('a');
+        titleLink.href = '/panduan/' + primaryRoute.slug + '/';
+        titleLink.className = 'text-sm font-bold text-slate-900 hover:text-keraton-800 transition-colors block truncate';
+        titleLink.textContent = item.name;
+        left.appendChild(titleLink);
+
+        if (item.location) {
+          const loc = document.createElement('p');
+          loc.className = 'text-xs text-slate-500 truncate mt-0.5';
+          loc.textContent = item.location;
+          left.appendChild(loc);
+        }
+
+        const chipsContainer = document.createElement('div');
+        chipsContainer.className = 'flex items-center gap-1 flex-shrink-0';
+
+        (item?.routes || []).forEach((r: any) => {
+          const chip = document.createElement('a');
+          chip.href = '/panduan/' + r.slug + '/';
+          chip.className = 'inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-extrabold font-mono hover:opacity-90 transition-opacity ' + (r.lineBg || 'bg-keraton-800') + ' ' + (r.lineText || 'text-white');
+          chip.title = r.title || '';
+          chip.textContent = r.lineCode || 'TJ';
+          chipsContainer.appendChild(chip);
+        });
+
+        wrapper.appendChild(left);
+        wrapper.appendChild(chipsContainer);
+        li.appendChild(wrapper);
+        resultsList!.appendChild(li);
+      });
+    }
+
+    input.addEventListener('input', (e) => {
+      renderResults((e.target as HTMLInputElement).value);
+    });
+
+    clearBtn?.addEventListener('click', () => {
+      input.value = '';
+      renderResults('');
+      input.focus();
+    });
+
+    // Quick Hub chip clicks
+    document.querySelectorAll('.hub-chip').forEach((chip) => {
+      chip.addEventListener('click', (e) => {
+        const q = (e.currentTarget as HTMLElement).getAttribute('data-query') || '';
+        input.value = q;
+        renderResults(q);
+        input.focus();
+      });
+    });
+  });
+</script>

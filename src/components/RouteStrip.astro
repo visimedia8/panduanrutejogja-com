@@ -1,0 +1,135 @@
+---
+import { getLineBadge } from '../lib/lines';
+
+interface HalteItem {
+  name: string;
+  location?: string;
+  transit?: string;
+}
+
+interface Props {
+  title: string;
+  category: string;
+  halteList?: HalteItem[];
+  operationalHours: string;
+  fare: string;
+  routeType: string;
+}
+
+const {
+  title,
+  category,
+  halteList = [],
+  operationalHours,
+  fare,
+  routeType
+} = Astro.props;
+
+const badge = getLineBadge(title, category);
+
+// Prepare display nodes if haltes exist
+const hasHaltes = Array.isArray(halteList) && halteList.length > 0;
+
+let displayNodes: { name: string; isMiddleGap?: boolean; count?: number }[] = [];
+
+if (hasHaltes) {
+  if (halteList.length <= 8) {
+    displayNodes = halteList.map(h => ({ name: h.name }));
+  } else {
+    const firstThree = halteList.slice(0, 3).map(h => ({ name: h.name }));
+    const lastThree = halteList.slice(-3).map(h => ({ name: h.name }));
+    const gapCount = halteList.length - 6;
+
+    displayNodes = [
+      ...firstThree,
+      { name: `+${gapCount} Halte`, isMiddleGap: true, count: gapCount },
+      ...lastThree
+    ];
+  }
+}
+---
+
+<div class="my-6 bg-keraton-950 border-2 border-jogja-500 rounded-xl p-4 sm:p-5 text-white shadow-ticket">
+  
+  <!-- Line Badge & Track Strip -->
+  <div class="flex flex-col gap-3">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class={`inline-flex items-center justify-center min-w-[36px] px-2 py-0.5 rounded text-xs font-black font-mono shadow-xs ${badge.bg} ${badge.text}`}>
+          {badge.code}
+        </span>
+        <span class="text-xs font-bold text-jogja-300 font-mono uppercase tracking-wider">
+          SKEMA JALUR &amp; PERJALANAN
+        </span>
+      </div>
+
+      {hasHaltes && (
+        <a
+          href="#urutan-halte"
+          class="text-[11px] font-bold text-jogja-300 hover:text-white underline underline-offset-2 flex items-center gap-1 font-mono"
+        >
+          <span>{halteList.length} Halte Lengkap</span>
+          <span>&darr;</span>
+        </a>
+      )}
+    </div>
+
+    <!-- Horizontal Transit Schematic Track (if haltes exist) -->
+    {hasHaltes && (
+      <div class="w-full overflow-x-auto py-3 min-h-[72px]">
+        <div class="inline-flex items-center gap-0 min-w-full">
+          {displayNodes.map((node, idx) => {
+            const isFirst = idx === 0;
+            const isLast = idx === displayNodes.length - 1;
+
+            return (
+              <div class="flex items-center flex-shrink-0">
+                <!-- Node Marker & Label -->
+                <div class="flex flex-col items-center max-w-[120px] text-center px-1">
+                  <div class={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+                    node.isMiddleGap
+                      ? 'bg-keraton-800 border-jogja-400 text-[9px] text-jogja-200 font-mono font-bold w-auto px-1.5'
+                      : isFirst || isLast
+                        ? 'bg-jogja-500 border-white'
+                        : 'bg-white border-keraton-600'
+                  }`}>
+                    {node.isMiddleGap && `+${node.count}`}
+                  </div>
+                  <span class={`text-[10px] mt-1.5 truncate max-w-[110px] ${
+                    isFirst || isLast ? 'font-bold text-white' : 'text-keraton-200'
+                  }`} title={node.name}>
+                    {node.name}
+                  </span>
+                </div>
+
+                <!-- Connector Line -->
+                {!isLast && (
+                  <div class="w-8 sm:w-12 h-0.5 border-b-2 border-dotted border-jogja-500/60 flex-shrink-0 mx-1"></div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    )}
+  </div>
+
+  <!-- Operational Stat Cells -->
+  <div class="mt-4 pt-3 border-t border-keraton-800 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+    <div class="bg-keraton-900/80 p-2.5 rounded-lg border border-keraton-800">
+      <span class="text-[10px] text-jogja-300 block mb-0.5 font-bold uppercase font-mono">Jam Operasional</span>
+      <span class="font-bold text-white font-mono">{operationalHours}</span>
+    </div>
+
+    <div class="bg-keraton-900/80 p-2.5 rounded-lg border border-keraton-800">
+      <span class="text-[10px] text-jogja-300 block mb-0.5 font-bold uppercase font-mono">Tarif Resmi</span>
+      <span class="font-bold text-jogja-200 font-mono">{fare}</span>
+    </div>
+
+    <div class="bg-keraton-900/80 p-2.5 rounded-lg border border-keraton-800">
+      <span class="text-[10px] text-jogja-300 block mb-0.5 font-bold uppercase font-mono">Jenis Layanan</span>
+      <span class="font-bold text-white">{routeType}</span>
+    </div>
+  </div>
+
+</div>

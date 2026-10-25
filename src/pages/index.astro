@@ -2,7 +2,10 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AdSlot from '../components/AdSlot.astro';
+import HalteFinder from '../components/HalteFinder.astro';
+import DepartureBoard from '../components/DepartureBoard.astro';
 import { siteConfig } from '../config/site';
+import { LINE_ORDER, LINES } from '../lib/lines';
 
 const allPanduan = await getCollection('panduan');
 const sortedArticles = allPanduan.sort(
@@ -12,285 +15,213 @@ const sortedArticles = allPanduan.sort(
 const transJogjaCount = allPanduan.filter((p) => p.data.category === 'trans-jogja').length;
 const keretaCount = allPanduan.filter((p) => p.data.category === 'kereta-bandara').length;
 const wisataCount = allPanduan.filter((p) => p.data.category === 'tiket-wisata').length;
-
-const getCategoryCount = (slug: string) => {
-  switch (slug) {
-    case 'trans-jogja':
-      return transJogjaCount;
-    case 'kereta-bandara':
-      return keretaCount;
-    case 'tiket-wisata':
-      return wisataCount;
-    default:
-      return 0;
-  }
-};
-
-// Helper for Line Badge styling
-const getLineBadge = (title: string, category: string) => {
-  const t = title.toUpperCase();
-  if (t.includes('1A')) return { code: '1A', bg: 'bg-emerald-600', text: 'text-white', label: 'Trans Jogja 1A' };
-  if (t.includes('2A')) return { code: '2A', bg: 'bg-emerald-600', text: 'text-white', label: 'Trans Jogja 2A' };
-  if (t.includes('3A')) return { code: '3A', bg: 'bg-emerald-600', text: 'text-white', label: 'Trans Jogja 3A' };
-  if (t.includes('4A') || t.includes('4B')) return { code: '4A/B', bg: 'bg-amber-600', text: 'text-white', label: 'Ring Road 4' };
-  if (t.includes('5A') || t.includes('5B')) return { code: '5A/B', bg: 'bg-amber-600', text: 'text-white', label: 'Ring Road 5' };
-  if (t.includes('KRL') || t.includes('COMMUTER')) return { code: 'KRL', bg: 'bg-red-600', text: 'text-white', label: 'KRL Commuter' };
-  if (t.includes('BANDARA') || t.includes('YIA')) return { code: 'YIA', bg: 'bg-cyan-600', text: 'text-white', label: 'Kereta Bandara' };
-  if (t.includes('PRAMEKS')) return { code: 'PRM', bg: 'bg-blue-600', text: 'text-white', label: 'KA Prameks' };
-  if (t.includes('DAMRI')) return { code: 'DAMRI', bg: 'bg-blue-700', text: 'text-white', label: 'Bus DAMRI' };
-  if (t.includes('TEMAN BUS') || t.includes('PERINTIS')) return { code: 'TB', bg: 'bg-teal-600', text: 'text-white', label: 'Teman Bus' };
-  return { code: 'TJ', bg: 'bg-keraton-800', text: 'text-jogja-300', label: 'Transit Jogja' };
-};
 ---
 
 <BaseLayout
   title={`${siteConfig.name} — Panduan Lengkap Rute & Transportasi Publik Yogyakarta`}
   description="Portal navigasi independen terlengkap seputar bus Trans Jogja, jadwal real-time KRL Commuter Line Jogja-Solo, KA Bandara YIA, tarif resmi, dan panduan halte transit."
 >
-  <!-- Hero Section: Yogyakarta Heritage Wayfinding Board -->
-  <section class="relative bg-keraton-950 text-white overflow-hidden py-14 sm:py-20 border-b-4 border-jogja-500">
+  <!-- Hero Section: Yogyakarta Heritage Wayfinding Console -->
+  <section class="relative bg-keraton-950 text-white overflow-hidden py-10 sm:py-14 border-b-4 border-jogja-500">
     <!-- Subtle Heritage Grid Texture -->
     <div class="absolute inset-0 opacity-15 bg-[linear-gradient(to_right,#d4af3715_1px,transparent_1px),linear-gradient(to_bottom,#d4af3715_1px,transparent_1px)] bg-[size:24px_24px]"></div>
     
-    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      
-      <!-- Authentic Plang Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-keraton-900 border border-jogja-400 text-jogja-300 mb-6 shadow-sm">
-        <span class="w-2 h-2 rounded-full bg-jogja-400 animate-pulse"></span>
-        DIREKTORI RUTE &amp; JADWAL RESMI TERVERIFIKASI 2026
-      </div>
-
-      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-        Panduan Rute &amp; Transportasi <br class="hidden sm:inline" />
-        <span class="text-jogja-300 border-b-2 border-jogja-400 pb-1">
-          Publik Daerah Istimewa Yogyakarta
-        </span>
-      </h1>
-
-      <p class="mt-5 text-sm sm:text-lg text-keraton-100/90 max-w-3xl mx-auto font-normal leading-relaxed">
-        Peta koridor bus Trans Jogja, jadwal KRL Commuter Line Jogja–Solo, KA Bandara YIA, integrasi halte Stasiun Tugu, dan panduan tarif resmi anti-tersesat.
-      </p>
-
-      <!-- Search & Quick Navigation Bar -->
-      <div class="mt-8 max-w-2xl mx-auto">
-        <div class="relative flex items-center bg-white rounded-xl shadow-xl overflow-hidden p-1.5 border-2 border-jogja-400 focus-within:ring-2 focus-within:ring-keraton-400">
-          <div class="pl-3.5 text-keraton-800">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        
+        <!-- Left Column: Wayfinding Console & Search Tool -->
+        <div class="lg:col-span-7 text-left">
+          <!-- Authentic Plang Badge (No pulse dot) -->
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-bold bg-keraton-900 border border-jogja-400 text-jogja-300 mb-4 font-mono shadow-xs">
+            <span>DIREKTORI RUTE &amp; JADWAL TERVERIFIKASI 2026</span>
           </div>
-          <input
-            type="text"
-            id="search-input"
-            placeholder="Ketik koridor bus, stasiun, atau tujuan (contoh: 1A, Bandara YIA, Malioboro, KRL)..."
-            class="w-full px-3 py-2.5 text-sm sm:text-base text-slate-900 font-medium focus:outline-none placeholder-slate-400"
-          />
-          <button
-            type="button"
-            id="clear-search-btn"
-            class="hidden px-3 text-xs font-bold text-slate-500 hover:text-slate-800"
-          >
-            Reset
-          </button>
+
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-2.5">
+            Panduan Rute &amp; Transportasi <br class="hidden sm:inline" />
+            <span class="text-jogja-300 border-b-2 border-jogja-400 pb-0.5">
+              Publik Daerah Istimewa Yogyakarta
+            </span>
+          </h1>
+
+          <p class="text-xs sm:text-sm text-keraton-100/90 leading-relaxed mb-6">
+            Peta koridor bus Trans Jogja, jadwal KRL Commuter Line Jogja–Solo, KA Bandara YIA, integrasi halte Stasiun Tugu, dan panduan tarif resmi anti-tersesat.
+          </p>
+
+          <!-- Halte & Transit Point Finder Tool -->
+          <HalteFinder />
+
+          <!-- Quick Access Line Badges -->
+          <div class="mt-4 flex flex-wrap items-center gap-1.5 text-xs">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-jogja-300 font-mono mr-1">
+              PINTASAN LINI:
+            </span>
+            {LINE_ORDER.map((code) => {
+              const badge = LINES[code];
+              return (
+                <a
+                  href={`/kategori/${badge.categorySlug}/`}
+                  class={`px-2 py-0.5 rounded text-[11px] font-mono font-bold ${badge.bg} ${badge.text} hover:opacity-90 transition-opacity`}
+                  title={badge.label}
+                >
+                  {badge.code}
+                </a>
+              );
+            })}
+          </div>
         </div>
 
-        <!-- Quick Jump Commuter Hub Pills -->
-        <div class="mt-3.5 flex flex-wrap items-center justify-center gap-1.5 text-xs">
-          <span class="text-jogja-200 font-semibold">Simpul Utama:</span>
-          <a href="/panduan/lokasi-halte-trans-jogja-terdekat-stasiun-tugu-lempuyangan" class="px-2.5 py-1 rounded-md bg-keraton-900 border border-keraton-700 hover:border-jogja-400 text-keraton-100 transition-colors">Stasiun Tugu</a>
-          <a href="/panduan/rute-halte-trans-jogja-koridor-1a-prambanan-malioboro" class="px-2.5 py-1 rounded-md bg-keraton-900 border border-keraton-700 hover:border-jogja-400 text-keraton-100 transition-colors">Trans Jogja 1A</a>
-          <a href="/panduan/cara-naik-ka-bandara-yia-stasiun-tugu-kulon-progo" class="px-2.5 py-1 rounded-md bg-keraton-900 border border-keraton-700 hover:border-jogja-400 text-keraton-100 transition-colors">KA Bandara YIA</a>
-          <a href="/panduan/jadwal-tarif-krl-commuter-line-jogja-solo-terbaru" class="px-2.5 py-1 rounded-md bg-keraton-900 border border-keraton-700 hover:border-jogja-400 text-keraton-100 transition-colors">KRL Jogja-Solo</a>
-          <a href="/panduan/cara-pembayaran-trans-jogja-emoney-qris-tunai" class="px-2.5 py-1 rounded-md bg-keraton-900 border border-keraton-700 hover:border-jogja-400 text-keraton-100 transition-colors">Tarif &amp; QRIS</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Category Grid Section: Transit Pass Tokens -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {siteConfig.categories.map((cat, idx) => {
-        const borderColors = [
-          'border-t-emerald-600',
-          'border-t-red-600',
-          'border-t-amber-600'
-        ];
-        const badgeBg = [
-          'bg-emerald-50 text-emerald-800 border-emerald-200',
-          'bg-red-50 text-red-800 border-red-200',
-          'bg-amber-50 text-amber-800 border-amber-200'
-        ];
-        return (
-          <a
-            href={`/kategori/${cat.slug}`}
-            class={`ticket-card p-6 border-t-4 ${borderColors[idx % 3]} flex flex-col justify-between group`}
-          >
-            <div>
-              <div class="flex items-center justify-between mb-3.5">
-                <span class={`inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold border ${badgeBg[idx % 3]}`}>
-                  {getCategoryCount(cat.slug)} Rute Terdaftar
-                </span>
-                <span class="text-xs font-bold text-keraton-800 group-hover:text-keraton-600 transition-colors flex items-center gap-1">
-                  Buka Peta &rarr;
-                </span>
-              </div>
-              <h2 class="text-xl font-extrabold text-slate-900 group-hover:text-keraton-800 transition-colors mb-2">
-                {cat.name}
-              </h2>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                {cat.description}
-              </p>
-            </div>
-            <div class="mt-6 pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-keraton-800">
-              <span class="flex items-center gap-1">
-                <svg class="w-4 h-4 text-jogja-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                </svg>
-                Jadwal, Tarif &amp; Halte
+        <!-- Right Column: Metro Wayfinding Schematic Map (Stasiun Tugu Interchange) -->
+        <div class="lg:col-span-5 hidden lg:block">
+          <div class="bg-keraton-900/90 border-2 border-jogja-400/80 rounded-2xl p-4 shadow-2xl relative overflow-hidden">
+            <div class="flex items-center justify-between border-b border-keraton-800 pb-2.5 mb-3">
+              <span class="text-[11px] font-bold font-mono text-jogja-300 uppercase tracking-widest flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-jogja-400"></span>
+                SKEMATIK SIMPUL TRANSIT TUGU
               </span>
-              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform text-jogja-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              <span class="text-[10px] text-keraton-200 font-mono">D.I. YOGYAKARTA</span>
+            </div>
+
+            <!-- Handcrafted Inline SVG Metro Diagram -->
+            <div class="w-full aspect-[10/9] flex items-center justify-center">
+              <svg
+                viewBox="0 0 400 360"
+                class="w-full h-full"
+                aria-label="Peta Skematik Simpul Transportasi Stasiun Tugu Yogyakarta"
+                role="img"
+              >
+                <title>Peta Skematik Simpul Transportasi Stasiun Tugu Yogyakarta</title>
+                <defs>
+                  <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+                    <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.5" />
+                  </filter>
+                </defs>
+
+                <!-- Background Subtle Guidelines -->
+                <circle cx="200" cy="180" r="120" fill="none" stroke="#1b4d3e" stroke-width="1" stroke-dasharray="3,3" opacity="0.6" />
+
+                <!-- Spoke: KA Bandara YIA (West, Cyan) -->
+                <line x1="200" y1="180" x2="65" y2="140" stroke="#0891b2" stroke-width="5" stroke-linecap="round" />
+                <circle cx="65" cy="140" r="7" fill="#ffffff" stroke="#0891b2" stroke-width="4" />
+                <text x="65" y="122" fill="#ecfeff" font-size="10" font-weight="bold" font-family="monospace" text-anchor="middle">KA BANDARA (YIA)</text>
+
+                <!-- Spoke: KA Prameks Kutoarjo (South-West, Blue) -->
+                <line x1="200" y1="180" x2="70" y2="270" stroke="#2563eb" stroke-width="5" stroke-linecap="round" />
+                <circle cx="70" cy="270" r="7" fill="#ffffff" stroke="#2563eb" stroke-width="4" />
+                <text x="70" y="292" fill="#eff6ff" font-size="10" font-weight="bold" font-family="monospace" text-anchor="middle">PRAMEKS (KUTOARJO)</text>
+
+                <!-- Spoke: KRL Commuter Line Solo (East, Red) -->
+                <line x1="200" y1="180" x2="335" y2="140" stroke="#dc2626" stroke-width="5" stroke-linecap="round" />
+                <circle cx="335" cy="140" r="7" fill="#ffffff" stroke="#dc2626" stroke-width="4" />
+                <text x="335" y="122" fill="#fef2f2" font-size="10" font-weight="bold" font-family="monospace" text-anchor="middle">KRL (SOLO BALAPAN)</text>
+
+                <!-- Spoke: Trans Jogja Koridor 1A Prambanan (North-East, Emerald) -->
+                <line x1="200" y1="180" x2="320" y2="70" stroke="#059669" stroke-width="5" stroke-linecap="round" />
+                <circle cx="320" cy="70" r="7" fill="#ffffff" stroke="#059669" stroke-width="4" />
+                <text x="320" y="52" fill="#ecfdf5" font-size="10" font-weight="bold" font-family="monospace" text-anchor="middle">1A (PRAMBANAN)</text>
+
+                <!-- Spoke: Trans Jogja Koridor 2A Jombor (North, Emerald) -->
+                <line x1="200" y1="180" x2="200" y2="55" stroke="#059669" stroke-width="5" stroke-linecap="round" />
+                <circle cx="200" cy="55" r="7" fill="#ffffff" stroke="#059669" stroke-width="4" />
+                <text x="200" y="40" fill="#ecfdf5" font-size="10" font-weight="bold" font-family="monospace" text-anchor="middle">2A (JOMBOR / CONDONGCATUR)</text>
+
+                <!-- Spoke: Trans Jogja Koridor 3A / Ring Road (South, Amber) -->
+                <line x1="200" y1="180" x2="200" y2="305" stroke="#d97706" stroke-width="5" stroke-linecap="round" />
+                <circle cx="200" cy="305" r="7" fill="#ffffff" stroke="#d97706" stroke-width="4" />
+                <text x="200" y="326" fill="#fffbeb" font-size="10" font-weight="bold" font-family="monospace" text-anchor="middle">3A / 4A (GIWANGAN &amp; RING ROAD)</text>
+
+                <!-- Central Hub: STASIUN TUGU & MALIOBORO -->
+                <circle cx="200" cy="180" r="32" fill="#09231c" stroke="#d4af37" stroke-width="4" filter="url(#shadow)" />
+                <circle cx="200" cy="180" r="26" fill="#1b4d3e" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="2,2" />
+                <text x="200" y="176" fill="#d4af37" font-size="9" font-weight="900" font-family="monospace" text-anchor="middle">SIMPUL PUSAT</text>
+                <text x="200" y="189" fill="#ffffff" font-size="10" font-weight="bold" font-family="monospace" text-anchor="middle">TUGU / MALIOBORO</text>
               </svg>
             </div>
-          </a>
-        );
-      })}
+
+            <div class="mt-2 text-center text-[10px] text-keraton-200 font-mono">
+              Interchange terintegrasi: Trans Jogja, KA Bandara, KRL, &amp; Prameks
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- In-Between Ad Slot (Compliant & Distanced) -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
-    <AdSlot slotType="in-article" />
-  </div>
-
-  <!-- All Articles Section with Live Search Filter -->
-  <section id="panduan-list" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b-2 border-keraton-100">
-      <div>
-        <div class="flex items-center gap-2 mb-1">
-          <span class="w-2.5 h-2.5 rounded-full bg-keraton-800"></span>
-          <span class="text-xs font-bold uppercase tracking-wider text-keraton-700">Direktori Lengkap DIY</span>
-        </div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-          Peta Panduan Seluruh Koridor &amp; Angkutan
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-500 mt-1">
-          Menampilkan {sortedArticles.length} artikel panduan resmi dengan jam operasional dan tarif flat
-        </p>
-      </div>
-
-      <!-- Category Filter Pills -->
-      <div class="flex flex-wrap gap-2 text-xs font-bold">
-        <button type="button" class="filter-btn px-3.5 py-1.5 rounded-lg bg-keraton-800 text-white shadow-sm transition-colors" data-category="all">
-          Semua Rute ({sortedArticles.length})
-        </button>
-        <button type="button" class="filter-btn px-3.5 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-keraton-50 hover:text-keraton-900 transition-colors" data-category="trans-jogja">
-          Trans Jogja ({transJogjaCount})
-        </button>
-        <button type="button" class="filter-btn px-3.5 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-keraton-50 hover:text-keraton-900 transition-colors" data-category="kereta-bandara">
-          KRL &amp; Bandara ({keretaCount})
-        </button>
-        <button type="button" class="filter-btn px-3.5 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-keraton-50 hover:text-keraton-900 transition-colors" data-category="tiket-wisata">
-          Wisata &amp; Tiket ({wisataCount})
-        </button>
-      </div>
-    </div>
-
-    <!-- Articles Grid with Authentic Transit Line Badges -->
-    <div id="articles-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-      {sortedArticles.map((art) => {
-        const badge = getLineBadge(art.data.title, art.data.category);
-        return (
-          <article
-            class="article-card ticket-card overflow-hidden flex flex-col justify-between group"
-            data-category={art.data.category}
-            data-title={art.data.title.toLowerCase()}
-            data-description={art.data.description.toLowerCase()}
-          >
-            <div>
-              <a href={`/panduan/${art.slug}`} class="block overflow-hidden relative aspect-[16/9] bg-slate-100 border-b border-slate-100">
-                <img
-                  src={art.data.featuredImage}
-                  alt={art.data.imageAlt || art.data.title}
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-                
-                <!-- Authentic Line Badge Overlay -->
-                <div class="absolute top-3 left-3 flex items-center gap-1.5">
-                  <span class={`font-mono text-xs font-extrabold px-2.5 py-1 rounded shadow-md ${badge.bg} ${badge.text}`}>
-                    {badge.code}
-                  </span>
-                  <span class="bg-slate-900/80 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-1 rounded">
-                    {badge.label}
-                  </span>
-                </div>
-
-                <!-- Fare Pill Badge -->
-                <div class="absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm text-keraton-900 text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm border border-slate-200">
-                  {art.data.fare}
-                </div>
+  <!-- Moda & Lini Navigation Strip (No -mt-8 overlap hack) -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="bg-white rounded-xl border border-keraton-200 shadow-sm p-3 sm:p-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+        
+        <!-- Mode 1: Bus Trans Jogja -->
+        <div class="flex items-center justify-between p-2">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-transit-tj"></span>
+              <a href="/kategori/trans-jogja" class="text-sm font-extrabold text-slate-900 hover:text-keraton-800 transition-colors">
+                Bus Trans Jogja
               </a>
-
-              <div class="p-5">
-                <div class="flex items-center justify-between text-[11px] text-slate-400 mb-2">
-                  <span class="uppercase tracking-wider font-bold text-keraton-700">
-                    {art.data.category.replace('-', ' ')}
-                  </span>
-                  <span class="font-medium text-slate-500">
-                    {art.data.halteList?.length || 0} Halte / Titik
-                  </span>
-                </div>
-
-                <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-keraton-800 transition-colors line-clamp-2 leading-snug mb-2">
-                  <a href={`/panduan/${art.slug}`}>
-                    {art.data.title}
-                  </a>
-                </h3>
-
-                <p class="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed font-normal">
-                  {art.data.description}
-                </p>
-              </div>
-            </div>
-
-            <div class="px-5 pb-4 pt-3 border-t border-slate-100 bg-slate-50/50 flex items-center justify-between text-xs font-bold text-keraton-800">
-              <span class="text-slate-500 font-medium text-[11px]">
-                Operasional 2026
+              <span class="text-xs font-mono font-bold text-keraton-800 bg-keraton-50 px-1.5 py-0.2 rounded">
+                {transJogjaCount} Panduan
               </span>
-              <a
-                href={`/panduan/${art.slug}`}
-                class="inline-flex items-center gap-1 text-keraton-800 hover:text-keraton-950 group-hover:underline"
-              >
-                <span>Lihat Panduan</span>
-                <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
             </div>
-          </article>
-        );
-      })}
-    </div>
+            <p class="text-[11px] text-slate-500 mt-1">Koridor 1A–5B, Teman Bus, &amp; Halte Transit</p>
+          </div>
+          <a href="/kategori/trans-jogja" class="text-xs font-bold text-keraton-800 hover:text-keraton-950 p-1">
+            &rarr;
+          </a>
+        </div>
 
-    <!-- Empty State for Search Filter -->
-    <div id="no-results" class="hidden text-center py-16 bg-white rounded-xl border border-slate-200 mt-6 shadow-sm">
-      <svg class="w-12 h-12 text-slate-400 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-      <h4 class="text-lg font-bold text-slate-900">Tidak ada rute yang cocok dengan pencarian</h4>
-      <p class="text-xs sm:text-sm text-slate-500 mt-1 max-w-md mx-auto">
-        Coba gunakan kata kunci seperti nomor koridor (1A, 2A), stasiun transit (Tugu, YIA), atau metode pembayaran QRIS.
-      </p>
+        <!-- Mode 2: Kereta & Bandara -->
+        <div class="flex items-center justify-between p-2 md:pl-6">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-transit-yia"></span>
+              <a href="/kategori/kereta-bandara" class="text-sm font-extrabold text-slate-900 hover:text-keraton-800 transition-colors">
+                Kereta &amp; Bandara
+              </a>
+              <span class="text-xs font-mono font-bold text-keraton-800 bg-keraton-50 px-1.5 py-0.2 rounded">
+                {keretaCount} Panduan
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-1">KA Bandara YIA, KRL Jogja–Solo, Prameks, DAMRI</p>
+          </div>
+          <a href="/kategori/kereta-bandara" class="text-xs font-bold text-keraton-800 hover:text-keraton-950 p-1">
+            &rarr;
+          </a>
+        </div>
+
+        <!-- Mode 3: Tiket & Wisata -->
+        <div class="flex items-center justify-between p-2 md:pl-6">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-jogja-500"></span>
+              <a href="/kategori/tiket-wisata" class="text-sm font-extrabold text-slate-900 hover:text-keraton-800 transition-colors">
+                Tiket &amp; Wisata
+              </a>
+              <span class="text-xs font-mono font-bold text-keraton-800 bg-keraton-50 px-1.5 py-0.2 rounded">
+                {wisataCount} Panduan
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-1">E-Money, QRIS, Angkutan Candi Borobudur &amp; Parangtritis</p>
+          </div>
+          <a href="/kategori/tiket-wisata" class="text-xs font-bold text-keraton-800 hover:text-keraton-950 p-1">
+            &rarr;
+          </a>
+        </div>
+
+      </div>
     </div>
+  </section>
+
+  <!-- Departure Board Section (High-Contrast Function-First Transit Portal) -->
+  <section id="panduan-list" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+    <DepartureBoard entries={sortedArticles} title="Papan Informasi Rute &amp; Jadwal Resmi" showCategoryTabs={true} />
   </section>
 
   <!-- Educational & Utility Info (AdSense Quality / E-E-A-T) -->
-  <section class="bg-keraton-50/60 border-y border-keraton-100 py-16">
+  <section class="bg-keraton-50/60 border-y border-keraton-100 py-14">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="text-center max-w-3xl mx-auto mb-10">
         <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white text-keraton-800 border border-keraton-200 mb-3 shadow-xs">
           <span>Keuntungan Navigasi Terpadu</span>
         </div>
@@ -303,7 +234,7 @@ const getLineBadge = (title: string, category: string) => {
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-        <div class="ticket-card p-6 border-l-4 border-l-emerald-600">
+        <div class="ticket-card p-6 border-l-4 border-l-transit-tj">
           <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-base mb-4 font-mono">
             Rp
           </div>
@@ -313,7 +244,7 @@ const getLineBadge = (title: string, category: string) => {
           </p>
         </div>
 
-        <div class="ticket-card p-6 border-l-4 border-l-cyan-600">
+        <div class="ticket-card p-6 border-l-4 border-l-transit-yia">
           <div class="w-10 h-10 rounded-lg bg-cyan-100 text-cyan-800 flex items-center justify-center font-bold text-base mb-4">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -345,89 +276,3 @@ const getLineBadge = (title: string, category: string) => {
     <AdSlot slotType="in-article-bottom" />
   </div>
 </BaseLayout>
-
-<script>
-  // Client-side search and category filtering
-  const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
-  const clearBtn = document.getElementById('clear-search-btn');
-  const cards = document.querySelectorAll('.article-card') as NodeListOf<HTMLElement>;
-  const filterBtns = document.querySelectorAll('.filter-btn') as NodeListOf<HTMLButtonElement>;
-  const noResults = document.getElementById('no-results');
-
-  let activeCategory = 'all';
-  let searchQuery = '';
-
-  function applyFilters() {
-    let visibleCount = 0;
-
-    cards.forEach((card) => {
-      const cardCategory = card.dataset.category || '';
-      const cardTitle = card.dataset.title || '';
-      const cardDesc = card.dataset.description || '';
-
-      const matchesCat = activeCategory === 'all' || cardCategory === activeCategory;
-      const matchesSearch = !searchQuery || cardTitle.includes(searchQuery) || cardDesc.includes(searchQuery);
-
-      if (matchesCat && matchesSearch) {
-        card.style.display = 'flex';
-        visibleCount++;
-      } else {
-        card.style.display = 'none';
-      }
-    });
-
-    if (noResults) {
-      if (visibleCount === 0) {
-        noResults.classList.remove('hidden');
-      } else {
-        noResults.classList.add('hidden');
-      }
-    }
-
-    if (clearBtn && searchInput) {
-      if (searchQuery.length > 0) {
-        clearBtn.classList.remove('hidden');
-      } else {
-        clearBtn.classList.add('hidden');
-      }
-    }
-  }
-
-  searchInput?.addEventListener('input', (e) => {
-    searchQuery = (e.target as HTMLInputElement).value.toLowerCase().trim();
-    applyFilters();
-  });
-
-  clearBtn?.addEventListener('click', () => {
-    if (searchInput) {
-      searchInput.value = '';
-      searchQuery = '';
-      applyFilters();
-      searchInput.focus();
-    }
-  });
-
-  filterBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach((b) => {
-        b.classList.remove('bg-keraton-800', 'text-white', 'shadow-sm');
-        b.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
-      });
-
-      btn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
-      btn.classList.add('bg-keraton-800', 'text-white', 'shadow-sm');
-
-      activeCategory = btn.dataset.category || 'all';
-      applyFilters();
-    });
-  });
-
-  // Auto-sync search query from URL parameter ?q=... (Googlebot & deep link compatibility)
-  const urlParams = new URLSearchParams(window.location.search);
-  const qParam = urlParams.get('q');
-  if (qParam && searchInput) {
-    searchInput.value = qParam;
-    searchQuery = qParam.toLowerCase().trim();
-    applyFilters();
-  }
-</script>

@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import HalteTable from '../components/HalteTable.astro';
+import RouteStrip from '../components/RouteStrip.astro';
 import FAQSection from '../components/FAQSection.astro';
 import AdSlot from '../components/AdSlot.astro';
 import { siteConfig } from '../config/site';
@@ -128,27 +129,15 @@ const formattedDate = new Date(publishDate).toLocaleDateString('id-ID', {
       </div>
     </header>
 
-    <!-- Quick Transit Summary Card: Station Departure Board Style -->
-    <div class="my-6 bg-keraton-900 border-2 border-jogja-500 rounded-xl p-5 text-white shadow-ticket">
-      <div class="text-xs font-bold uppercase tracking-wider text-jogja-300 mb-3 flex items-center gap-2 font-mono">
-        <span class="w-2 h-2 rounded-full bg-jogja-400"></span>
-        RINGKASAN OPERASIONAL TRANSIT
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 text-sm">
-        <div class="bg-keraton-950/80 p-3.5 rounded-lg border border-keraton-700">
-          <span class="text-[11px] text-jogja-200 block mb-0.5 font-bold uppercase">Jam Operasional</span>
-          <span class="font-extrabold text-white font-mono">{operationalHours}</span>
-        </div>
-        <div class="bg-keraton-950/80 p-3.5 rounded-lg border border-keraton-700">
-          <span class="text-[11px] text-jogja-200 block mb-0.5 font-bold uppercase">Tarif Resmi</span>
-          <span class="font-extrabold text-jogja-300 font-mono text-base">{fare}</span>
-        </div>
-        <div class="bg-keraton-950/80 p-3.5 rounded-lg border border-keraton-700">
-          <span class="text-[11px] text-jogja-200 block mb-0.5 font-bold uppercase">Layanan &amp; Tiket</span>
-          <span class="font-extrabold text-white">{routeType}</span>
-        </div>
-      </div>
-    </div>
+    <!-- Transit Route Schematic Strip & Operational Summary -->
+    <RouteStrip
+      title={title}
+      category={category}
+      halteList={halteList}
+      operationalHours={operationalHours}
+      fare={fare}
+      routeType={routeType}
+    />
 
     <!-- Featured Image -->
     {featuredImage && (
