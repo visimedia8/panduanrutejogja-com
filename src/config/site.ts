@@ -41,7 +41,7 @@ export const siteConfig = {
   // tag iklan kosong atau teks dummy yang bisa dianggap "Site Under Construction".
   // Setelah akun Google AdSense di-approve, ubah 'enabled' menjadi true dan masukkan Client ID asli.
   adsense: {
-    clientId: 'ca-pub-XXXXXXXXXXXXXXXX',
+    clientId: 'ca-pub-4090835276472949',
     enabled: false,
     slots: {
       headerLeaderboard: '1234567890',

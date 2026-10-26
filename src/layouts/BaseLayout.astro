@@ -68,14 +68,12 @@ const fullImageUrl = new URL(image, siteConfig.url).toString();
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={fullImageUrl} />
 
-    <!-- Google AdSense Auto Ads Script (Placeholder / Ready for Production) -->
-    {siteConfig.adsense.enabled && siteConfig.adsense.clientId !== 'ca-pub-XXXXXXXXXXXXXXXX' && (
-      <script
-        async
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteConfig.adsense.clientId}`}
-        crossorigin="anonymous"
-      ></script>
-    )}
+    <!-- Google AdSense Verification & Auto Ads Script -->
+    <script
+      async
+      src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteConfig.adsense.clientId}`}
+      crossorigin="anonymous"
+    ></script>
 
     <!-- JSON-LD Structured Data -->
     <JsonLd
