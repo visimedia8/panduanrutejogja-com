@@ -58,6 +58,31 @@ Perjalanan menuju pesisir selatan berpusat di terminal induk terbesar Yogyakarta
 
 ---
 
+## Tabel Jadwal Keberangkatan & Tarif Bus AKDP Jogja – Parangtritis
+
+Berikut rincian jadwal operasional bus pedesaan/AKDP rute Terminal Giwangan menuju Sub-Terminal Parangtritis PP:
+
+| Sesi Perjalanan | Titik Keberangkatan Awal | Jam Keberangkatan Pertama | Jam Keberangkatan Terakhir | Estimasi Interval (Headway) | Tarif Resmi Tunai |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Pemberangkatan Pagi** | Terminal Giwangan (Peron AKDP) | 06.00 WIB | 11.30 WIB | 20 – 30 Menit Sekali | Rp15.000 – Rp20.000 / orang |
+| **Pemberangkatan Siang** | Terminal Giwangan (Peron AKDP) | 12.00 WIB | 16.00 WIB | 30 – 40 Menit Sekali | Rp15.000 – Rp20.000 / orang |
+| **Kepulangan Siang** | Sub-Terminal Parangtritis | 10.30 WIB | 14.30 WIB | 30 Menit Sekali | Rp15.000 – Rp20.000 / orang |
+| **Kepulangan Sore (Armada Terakhir)** | Sub-Terminal Parangtritis | 15.00 WIB | 17.00 WIB | 20 – 30 Menit (Padat Wisatawan) | Rp15.000 – Rp20.000 / orang |
+
+---
+
+## Titik Singgah Strategis & Konektivitas Destinasi Bantul
+
+| Titik Singgah / Halte | Lokasi di Jalan Parangtritis | Destinasi Wisata Terdekat | Jarak dari Terminal Giwangan |
+| :--- | :--- | :--- | :--- |
+| **Kampus ISI Sewon** | Km 6,5 Sewon Bantul | Institut Seni Indonesia, Galeri Seni Budaya | &plusmn; 6,5 km (15 menit) |
+| **Simpang Jejeran** | Km 10 Wonokromo | Sentra Sate Klatak Pasar Jejeran | &plusmn; 10 km (22 menit) |
+| **Manding Sentra Kulit** | Km 11 Sabdodadi | Pasar Kerajinan Jaket & Sepatu Kulit Manding | &plusmn; 11,5 km (26 menit) |
+| **Jembatan Kretek Opak** | Km 22 Kretek | Muara Sungai Opak & Gerbang Retribusi TPR | &plusmn; 22 km (45 menit) |
+| **Sub-Terminal Parangtritis** | Pesisir Pantai Selatan | Pantai Parangtritis, Parangkusumo, Gumuk Pasir | &plusmn; 28 km (55 menit) |
+
+---
+
 ## Tips Berwisata Aman di Pantai Parangtritis
 
 1. **Jadwal Kepulangan Terakhir:** Bus umum terakhir dari Sub-Terminal Parangtritis menuju Terminal Giwangan Jogja berangkat pada pukul **17.00 – 17.30 WIB**. Jika Anda berniat menikmati pemandangan sunset hingga matahari benar-benar tenggelam (sekitar pukul 17.45 WIB), pastikan Anda sudah memesan transportasi daring kepulangan lebih awal.

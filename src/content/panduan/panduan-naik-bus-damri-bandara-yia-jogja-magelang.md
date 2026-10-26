@@ -62,6 +62,34 @@ Armada DAMRI yang dioperasikan terdiri dari bus sedang berpendingin udara (*AC*)
 
 ---
 
+## Tabel Rute Pool, Tarif Resmi, & Estimasi Waktu Tempuh DAMRI YIA
+
+Perum DAMRI menetapkan skema tarif tetap terjangkau untuk seluruh rute pemadu moda bandara di D.I. Yogyakarta dan Jawa Tengah:
+
+| Rute Layanan DAMRI | Titik Terminus di Kota / Destinasi | Tarif Tiket Per Orang | Jarak Tempuh | Estimasi Waktu Tempuh | Armada Bus |
+|---|---|---|---|---|---|
+| YIA &rarr; Pool DAMRI Malioboro | Halaman Grand Inna Malioboro | Rp70.000 | 45 Km | 75 - 90 Menit | Bus Medium AC (29 Seat) |
+| YIA &rarr; Sleman City Hall (SCH) | Lobi Utama Sleman City Hall | Rp70.000 | 52 Km | 80 - 100 Menit | Bus Medium AC / HiAce |
+| YIA &rarr; Terminal Condongcatur | Shelter Khusus Damri Condongcatur | Rp75.000 | 50 Km | 80 - 95 Menit | Bus Medium AC |
+| YIA &rarr; Terminal Tidar Magelang | Terminal Tipe A Tidar Magelang | Rp80.000 | 68 Km | 90 - 110 Menit | Toyota HiAce / Bus Medium |
+| YIA &rarr; Kompleks Candi Borobudur | Gerbang Pintu Wisata Candi Borobudur | Rp80.000 | 62 Km | 85 - 100 Menit | Toyota HiAce KSPN |
+| YIA &rarr; Stasiun Purworejo / Kutoarjo | Alun-Alun Kota Purworejo | Rp50.000 | 38 Km | 50 - 60 Menit | Toyota HiAce / Mikrobus |
+
+---
+
+## Tabel Jadwal Keberangkatan Harian Bus DAMRI Bandara YIA
+
+Jadwal keberangkatan bus DAMRI disinkronkan dengan kedatangan maskapai penerbangan di Bandara YIA mulai pukul 06.00 hingga 21.00 WIB:
+
+| Sesi Operasional | Jam Keberangkatan dari Bandara YIA | Jam Keberangkatan dari Pool Kota / Magelang | Jeda Kedatangan (Headway) |
+|---|---|---|---|
+| Keberangkatan Pagi | 06.00, 07.00, 08.00, 09.00 WIB | 04.00, 05.00, 06.00, 07.00 WIB | Setiap 60 Menit Sekali |
+| Keberangkatan Siang | 10.30, 11.30, 12.30, 13.30 WIB | 08.30, 09.30, 10.30, 11.30 WIB | Setiap 60 Menit Sekali |
+| Keberangkatan Sore | 14.30, 15.30, 16.30, 17.30 WIB | 12.30, 13.30, 14.30, 15.30 WIB | Setiap 60 Menit Sekali |
+| Keberangkatan Malam | 18.30, 19.30, 20.30, 21.00 WIB | 16.30, 17.30, 18.30, 19.00 WIB | Menyesuaikan jadwal flight malam |
+
+---
+
 ## Lokasi Loket & Prosedur Pembelian Tiket
 
 Loket resmi bus DAMRI berada di **Lantai 1 Gedung Parkir Bandara YIA** (berdekatan dengan pintu keluar lobi kedatangan penumpang). 

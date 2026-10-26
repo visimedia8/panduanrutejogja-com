@@ -17,22 +17,22 @@ const breadcrumbs = [
     <Breadcrumb items={breadcrumbs.map(b => ({ label: b.name, href: b.url }))} />
 
     <header class="mb-10 text-center sm:text-left">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 border border-brand-200 mb-3">
-        Transparansi Editorial & Standar E-E-A-T
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-keraton-100 text-keraton-900 border border-jogja-400 mb-3 font-mono">
+        TRANSPARANSI EDITORIAL &amp; STANDAR E-E-A-T
       </div>
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
-        Dewan Redaksi & Verifikator Lapangan
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+        Dewan Redaksi, Analis &amp; Verifikator Lapangan
       </h1>
-      <p class="mt-3 text-lg text-slate-600 leading-relaxed max-w-3xl">
-        Seluruh artikel dan panduan rute di {siteConfig.name} disusun, diteliti, dan diverifikasi langsung oleh praktisi serta pemerhati transportasi publik independen Yogyakarta.
+      <p class="mt-3 text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
+        Seluruh artikel, panduan rute bus Trans Jogja, jadwal KRL Jogja–Solo, KA Bandara YIA, dan informasi tiket di {siteConfig.name} disusun, diteliti secara in-situ, serta diverifikasi langsung oleh praktisi mobilitas dan pemerhati tata transportasi publik Daerah Istimewa Yogyakarta.
       </p>
     </header>
 
     <!-- Profil Anggota Dewan Redaksi -->
     <div class="space-y-6 mb-12">
       {siteConfig.editorialTeam.map((member, index) => (
-        <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm flex flex-col md:flex-row gap-6 items-start">
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-700 to-navy-900 text-white flex-shrink-0 flex items-center justify-center font-bold text-xl shadow-md border-2 border-brand-400/40 relative">
+        <div class="bg-white rounded-2xl border-2 border-slate-200 p-6 sm:p-8 shadow-sm flex flex-col md:flex-row gap-6 items-start">
+          <div class="w-16 h-16 rounded-2xl bg-keraton-900 text-jogja-300 flex-shrink-0 flex items-center justify-center font-bold text-xl shadow-md border-2 border-jogja-400 relative font-mono">
             {member.name.split(' ').map(n => n[0]).slice(0, 2).join('')}
             <span class="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 rounded-full border-2 border-white flex items-center justify-center text-white text-[9px]" title="Terverifikasi Dewan Redaksi">
               ✓
@@ -41,16 +41,16 @@ const breadcrumbs = [
           <div class="flex-1">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
               <div>
-                <h2 class="text-xl font-bold text-navy-900 inline-block mr-2">
+                <h2 class="text-xl font-bold text-slate-900 inline-block mr-2">
                   {member.name}
                 </h2>
                 <span class="font-mono text-[11px] text-slate-400">ID: PRJ-DIY-0{index + 1}</span>
               </div>
-              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 border border-brand-200 w-fit">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-keraton-50 text-keraton-800 border border-keraton-200 w-fit">
                 {member.expertise}
               </span>
             </div>
-            <p class="text-sm font-semibold text-brand-600 mb-3 flex items-center gap-1.5">
+            <p class="text-sm font-semibold text-keraton-800 mb-3 flex items-center gap-1.5">
               <span>{member.role}</span>
               <span class="text-slate-300">&bull;</span>
               <span class="text-xs text-slate-500 font-normal">Observator Mandiri Wilayah DIY</span>
@@ -64,11 +64,11 @@ const breadcrumbs = [
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 <span>Email Resmi:</span>
-                <a href={`mailto:${member.email}`} class="font-mono text-brand-600 font-bold hover:underline">
+                <a href={`mailto:${member.email}`} class="font-mono text-keraton-800 font-bold hover:underline">
                   {member.email}
                 </a>
               </div>
-              <span class="inline-flex items-center gap-1 text-[11px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 font-medium">
+              <span class="inline-flex items-center gap-1 text-[11px] text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 font-bold">
                 Pemeriksa Faktual Lapangan
               </span>
             </div>
@@ -78,40 +78,116 @@ const breadcrumbs = [
     </div>
 
     <!-- Metodologi Observasi & Etika Jurnalistik -->
-    <div class="prose-transit bg-white p-6 sm:p-10 rounded-2xl border border-slate-200 shadow-sm space-y-8">
+    <div class="space-y-8 bg-white p-6 sm:p-10 rounded-2xl border-2 border-slate-200 shadow-sm text-slate-700 text-sm sm:text-base leading-relaxed">
+      
       <section>
-        <h2 class="!mt-0 text-xl font-bold text-navy-900">
-          Metodologi Verifikasi Faktual di Lapangan
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+          <span class="w-2.5 h-6 rounded bg-keraton-800 inline-block"></span>
+          Standar Kredibilitas &amp; Protokol Verifikasi In-Situ
         </h2>
-        <p>
-          Kami meyakini bahwa panduan transportasi yang baik tidak bisa hanya ditulis berdasarkan data brosur di balik meja. Setiap koridor bus Trans Jogja, relasi KRL Commuter Line, KA Bandara, dan angkutan perintis ditinjau melalui protokol riset 3 tahap:
+        <p class="mb-4">
+          Kami memegang teguh prinsip bahwa informasi panduan rute dan jadwal transportasi publik menyangkut efisiensi waktu, rasa aman, serta keselamatan perjalanan manusia nyata. Sebuah kesalahan pada nama halte transfer, nomor koridor, atau jam keberangkatan bus terakhir dapat mengakibatkan seorang penumpang tertinggal kereta api jarak jauh atau terjebak di pinggiran kota saat malam hari.
         </p>
-        <ol>
-          <li>
-            <strong>Penelusuran Fisik (Ground Checking):</strong> Tim kami menaiki langsung armada dari titik awal (terminal pemberangkatan) hingga titik akhir untuk mencatat waktu tempuh aktual, titik kemacetan (bottleneck), ketersediaan fasilitas halte, dan kesiapan mesin tap pembayaran non-tunai.
-          </li>
-          <li>
-            <strong>Sinkronisasi Regulasi Resmi:</strong> Membandingkan temuan lapangan dengan Surat Keputusan (SK) Gubernur DIY tentang tarif angkutan umum, Grafik Perjalanan Kereta Api (Gapeka) resmi PT KAI, serta pengumuman resmi PT Railink dan Dinas Perhubungan DIY.
-          </li>
-          <li>
-            <strong>Pembaruan Berkala (Continuous Updating):</strong> Melakukan peninjauan ulang setiap kali terdapat penutupan jalan karena revitalisasi infrastruktur, musim liburan (peak season), atau perubahan rute koridor lingkar.
-          </li>
+        <p class="mb-4">
+          Oleh karena itu, redaksi {siteConfig.name} tidak pernah mempublikasikan konten hasil kurasi pasif dari mesin pencari atau ringkasan brosur daring tanpa pengujian langsung. Setiap rute baru, penyesuaian tarif, dan pembaruan jadwal wajib melalui <strong>Standar Prosedur Operasional (SOP) Verifikasi Lapangan</strong>:
+        </p>
+      </section>
+
+      <!-- Tabel SOP Verifikasi & Siklus Audit -->
+      <section>
+        <h3 class="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-keraton-800"></span>
+          Matriks Siklus Audit &amp; Validasi Data Transportasi DIY
+        </h3>
+        <div class="overflow-x-auto border-2 border-slate-200 rounded-xl">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-slate-50 text-slate-800 font-bold border-b-2 border-slate-200">
+              <tr>
+                <th class="p-3">Kategori Moda</th>
+                <th class="p-3">Frekuensi Audit</th>
+                <th class="p-3">Parameter Uji Lapangan</th>
+                <th class="p-3">Sumber Primer Pembanding</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 text-slate-700">
+              <tr class="hover:bg-slate-50">
+                <td class="p-3 font-bold text-keraton-900">Trans Jogja (BRT)</td>
+                <td class="p-3 font-mono">Tiap 2 Minggu</td>
+                <td class="p-3">Kesiapan gate halte, mesin EDC portabel, headway armada di jam sibuk</td>
+                <td class="p-3">Dinas Perhubungan D.I. Yogyakarta &amp; PT AMI</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3 font-bold text-keraton-900">KRL Jogja – Solo</td>
+                <td class="p-3 font-mono">Tiap Bulan / Perubahan Gapeka</td>
+                <td class="p-3">Ketepatan waktu tiba/berangkat, scanner QR gate, tarif penyesuaian</td>
+                <td class="p-3">PT Kereta Commuter Indonesia &amp; Daop 6</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3 font-bold text-keraton-900">KA Bandara YIA (Railink)</td>
+                <td class="p-3 font-mono">Tiap 2 Minggu</td>
+                <td class="p-3">Jadwal trip Xpress vs Reguler, ketersediaan vending machine stasiun</td>
+                <td class="p-3">PT Railink &amp; Bandara Internasional YIA</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3 font-bold text-keraton-900">Bus Wisata &amp; Pedesaan</td>
+                <td class="p-3 font-mono">Tiap Musim Liburan</td>
+                <td class="p-3">Jam armada kepulangan terakhir, tarif tunai kondektur, halte perintis</td>
+                <td class="p-3">Paguyuban Angkutan Terminal Giwangan &amp; Jombor</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Instrumen Observasi Analis -->
+      <section>
+        <h3 class="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-keraton-800"></span>
+          Standar Instrumen &amp; Telemetri Analis Lapangan
+        </h3>
+        <p class="mb-4">
+          Saat melakukan observasi fisik (*ground checking*), analis lapangan {siteConfig.name} dibekali dengan instrumen pengukur standar:
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-xs sm:text-sm">
+          <li><strong>GPS Logging Receiver:</strong> Merekam koordinat presisi titik henti halte portabel, rambu TPB Teman Bus, dan akses pejalan kaki trotoar ramah disabilitas.</li>
+          <li><strong>Peralatan Uji Transaksi Multi-NFC:</strong> Kartu uji Mandiri e-Money, BCA Flazz, BNI TapCash, BRI Brizzi, serta aplikasi GoTransit dan Access by KAI untuk mendeteksi kegagalan sistem pembaca kartu di halte transit.</li>
+          <li><strong>Pencatat Waktu Presisi (Digital Chronometer):</strong> Mengukur durasi transit antar-armada, waktu tunggu penumpang (*passenger waiting time*), dan durasi tempuh antar-halte.</li>
+        </ul>
+      </section>
+
+      <!-- Kebijakan Koreksi & Hak Jawab -->
+      <section>
+        <h3 class="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-keraton-800"></span>
+          Kebijakan Ralat, Koreksi Faktual, dan Hak Jawab (SLA 24 Jam)
+        </h3>
+        <p class="mb-4">
+          Kami menyadari bahwa regulasi rute lalu lintas, penutupan jalan karena revitalisasi, atau kebijakan operasional stasiun dapat berubah sewaktu-waktu akibat diskresi dinas setempat. {siteConfig.name} memberlakukan kebijakan koreksi cepat (*fast-track correction policy*):
+        </p>
+        <ol class="list-decimal pl-5 space-y-2 text-xs sm:text-sm">
+          <li><strong>Penerimaan Laporan:</strong> Setiap masukan, keluhan, atau ralat data yang dikirimkan pembaca melalui surel redaksi atau formulir kontak resmi akan ditinjau oleh editor piket dalam waktu maksimal <strong>4 jam kerja</strong>.</li>
+          <li><strong>Verifikasi Silang:</strong> Analis lapangan atau editor terkait melakukan konfirmasi data ke pos pantau halte/stasiun bersangkutan dalam waktu maksimal <strong>12 jam kerja</strong>.</li>
+          <li><strong>Pembaruan Terbuka (Public Changelog):</strong> Jika ditemukan kekeliruan data, artikel panduan segera direvisi dengan menyertakan kotak catatan ralat transparan (*Correction Notice*) yang mencantumkan tanggal perbaikan dan substansi perubahan.</li>
         </ol>
       </section>
 
+      <!-- Independensi Finansial & Kode Etik -->
       <section>
-        <h2 class="text-xl font-bold text-navy-900">
-          Kebijakan Independensi & Bebas Iklan Terselubung
-        </h2>
+        <h3 class="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-keraton-800"></span>
+          Independensi Finansial &amp; Bebas Dari Konflik Kepentingan
+        </h3>
         <p>
-          {siteConfig.name} tidak menerima kompensasi finansial atau sponsor dari operator transportasi manapun untuk merekomendasikan rute tertentu. Ulasan mengenai kekurangan suatu layanan (seperti keterbatasan frekuensi armada malam hari atau kondisi halte portabel yang sempit) ditulis secara apa adanya demi kepentingan dan keselamatan pengguna publik.
+          {siteConfig.name} tidak menerima subsidi operasional dari APBD Pemerintah Provinsi D.I. Yogyakarta maupun dana sponsor tersembunyi dari operator bus komersial manapun. Seluruh analisis kelemahan moda (misalnya waktu tunggu yang terlalu lama pada koridor tertentu, kondisi armada tanpa pendingin udara, atau penumpukan penumpang pada jam pulang kerja) disajikan secara lugas dan faktual untuk mendorong perbaikan mutu layanan publik secara berkesinambungan.
         </p>
       </section>
 
-      <section class="p-5 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-600 leading-relaxed not-prose">
-        <strong class="text-slate-800 block mb-1">Pedoman Koreksi Konten:</strong>
-        Jika Anda menemukan ketidaksesuaian titik halte atau tarif tiket yang telah berubah di lapangan, silakan kirimkan laporan beserta foto/bukti melalui formulir di <a href="/kontak" class="text-brand-600 underline font-semibold">Halaman Kontak</a> atau email ke <span class="font-mono font-bold text-slate-700">kontak@panduanrutejogja.com</span>.
+      <!-- Kontak Redaksi -->
+      <section class="p-5 bg-paper-100 rounded-xl border-2 border-slate-300 text-xs text-slate-700 leading-relaxed">
+        <strong class="text-slate-900 block mb-1 font-bold">Kanal Komunikasi Dewan Redaksi:</strong>
+        Untuk korespondensi jurnalistik, undangan peliputan perhubungan, atau ralat informasi rute mendesak, silakan layangkan surat ke <a href="mailto:redaksi@panduanrutejogja.com" class="font-mono font-bold text-keraton-900 underline">redaksi@panduanrutejogja.com</a> atau kirimkan pesan langsung melalui <a href="/kontak" class="text-keraton-800 font-bold underline">Halaman Kontak Resmi</a>.
       </section>
+
     </div>
   </div>
 </BaseLayout>

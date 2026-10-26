@@ -77,6 +77,41 @@ Lintasan Koridor 2A menawarkan perpaduan pemandangan kota modern, kawasan pendid
 
 ---
 
+## Matriks Jadwal Keberangkatan & Estimasi Tiba Koridor 2A
+
+Berikut estimasi waktu tempuh dan titik persinggahan penting bus Trans Jogja Koridor 2A dari Terminal Condongcatur menuju Terminal Jombor:
+
+| Waktu Keberangkatan Condongcatur | Tiba di Halte RS Yap / Terban (UGM) | Tiba di Halte Malioboro 1 & 2 | Tiba di Halte Ngabean | Tiba di Terminal Jombor | Status Layanan |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **05.30 WIB** | 05.48 WIB | 06.02 WIB | 06.12 WIB | 06.35 WIB | Armada Pagi Pertama |
+| **06.00 WIB** | 06.20 WIB | 06.35 WIB | 06.46 WIB | 07.12 WIB | Jam Masuk Sekolah / Kampus |
+| **06.30 WIB** | 06.52 WIB | 07.10 WIB | 07.22 WIB | 07.50 WIB | Jam Sibuk Kerja (*Peak Morning*) |
+| **07.00 WIB** | 07.25 WIB | 07.45 WIB | 07.58 WIB | 08.25 WIB | Jam Sibuk Pagi |
+| **08.00 WIB** | 08.22 WIB | 08.40 WIB | 08.52 WIB | 09.18 WIB | Layanan Pagi Reguler |
+| **10.00 WIB** | 10.20 WIB | 10.36 WIB | 10.48 WIB | 11.12 WIB | Layanan Jam Lengang (*Off-Peak*) |
+| **12.00 WIB** | 12.22 WIB | 12.40 WIB | 12.52 WIB | 13.18 WIB | Jam Istirahat Siang |
+| **14.00 WIB** | 14.22 WIB | 14.40 WIB | 14.52 WIB | 15.18 WIB | Layanan Siang Reguler |
+| **16.00 WIB** | 16.25 WIB | 16.48 WIB | 17.02 WIB | 17.32 WIB | Jam Pulang Kerja (*Peak Evening*) |
+| **17.00 WIB** | 17.28 WIB | 17.52 WIB | 18.06 WIB | 18.38 WIB | Jam Sibuk Sore Wisata Malioboro |
+| **18.30 WIB** | 18.52 WIB | 19.12 WIB | 19.24 WIB | 19.50 WIB | Layanan Malam |
+| **20.00 WIB** | 20.20 WIB | 20.35 WIB | 20.46 WIB | 21.10 WIB | Layanan Menjelang Tutup |
+| **21.00 WIB** | 21.18 WIB | 21.32 WIB | 21.42 WIB | 22.05 WIB | Armada Malam Terakhir |
+
+---
+
+## Tabel Rute Halte Penting & Integrasi Koridor
+
+| Nama Halte Utama | Lokasi Kawasan | Titik Minat Wisata / Kampus | Integrasi Moda Lanjutan | Fasilitas Halte |
+| :--- | :--- | :--- | :--- | :--- |
+| **Terminal Condongcatur** | Depok, Sleman | Pasar Condongcatur, Ring Road Utara | Transit Koridor 1B, 3B, 5B | Ruang tunggu beratap, toilet, loket resmi |
+| **Halte RS Mata Yap** | Jl. C. Simanjuntak | Fakultas Teknik & Vokasi UGM | Feeder Kampus UGM | Halte permanen tinggi (*high-deck*) |
+| **Halte SMPN 5 Kotabaru** | Jl. Wardhani | Cagar Budaya Kotabaru, Kridosono | Koridor heritage | Trotoar ramah difabel |
+| **Halte Malioboro 1 & 2** | Jl. Malioboro | Stasiun Tugu, Gedung Agung, Pasar Beringharjo | Koridor 1A, 3A, KRL Jogja-Solo | Gate otomatis, petugas jaga 24 jam |
+| **Halte Ngabean** | Parkir Pariwisata | Kraton Jogja, Taman Sari | Koridor 3A, 9, 10 (Transit Steril) | Shelter transit integrasi luas |
+| **Terminal Jombor** | Jl. Magelang Km 6 | Monjali, Akses Bus ke Borobudur/Semarang | Bus AKAP, Koridor 2B, 5A, 8 | Terminal tipe B dengan fasilitas lengkap |
+
+---
+
 ## Skema Tarif & Akses Pembayaran Non-Tunai
 
 * **Tarif Flat Reguler:** Rp3.600 per orang untuk umum.

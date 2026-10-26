@@ -57,6 +57,19 @@ Pintu keluar selatan langsung berhadapan dengan pusat penginapan murah dan kampu
 
 ---
 
+## Tabel Matriks Halte Terdekat dari Stasiun Tugu dan Lempuyangan
+
+Berikut adalah perbandingan jarak fisik, waktu tempuh jalan kaki, serta koridor bus Trans Jogja yang melayani kedua stasiun utama di Yogyakarta:
+
+| Pintu Keluar Stasiun | Nama Halte Trans Jogja Terdekat | Jarak Fisik (Meter) | Waktu Jalan Kaki | Koridor Bus Tersedia | Destinasi Unggulan yang Terhubung |
+|---|---|---|---|---|---|
+| Pintu Timur Stasiun Tugu (Teteg Malioboro) | Halte Malioboro 1 | 80 Meter | 1 - 2 Menit | 1A, 2A, 3A, 8 | Malioboro, Titik Nol, Keraton, Prambanan, UGM |
+| Pintu Selatan Stasiun Tugu (Jl. Pasar Kembang) | Halte Pasar Kembang / Jlagran | 120 Meter | 2 - 3 Menit | 1B, 3B, 8 | Terminal Ngabean, Bantul, Bandara Adisutjipto |
+| Pintu Selatan Stasiun Lempuyangan | Halte Stasiun Lempuyangan | 45 Meter | 1 Menit | 4A, 4B | Kotabaru, UGM, XT Square, Terminal Giwangan |
+| Pintu Barat Stasiun Tugu (Akses KA Bandara) | Halte Samsat Kota / Tentara Pelajar | 350 Meter | 4 - 5 Menit | 2B, 3B, 11 | Pingit, Tegalrejo, Jombor, Condongcatur |
+
+---
+
 ## Panduan Navigasi Halte di Stasiun Lempuyangan
 
 Bagi para penumpang kereta api kelas ekonomi bersubsidi, Stasiun Lempuyangan adalah titik pemberhentian utama Anda. Akses Trans Jogja di Lempuyangan jauh lebih praktis dan dekat:
@@ -92,3 +105,13 @@ Bagi pelancong yang baru tiba di Stasiun Tugu atau Lempuyangan, berikut panduan 
 Trotoar pedestrian di sepanjang Jalan Malioboro dan Jalan Margo Utomo telah direvitalisasi total dengan standar ramah disabilitas:
 * **Ubin Pemandu Kuning (Guiding Blocks):** Terpasang rapi membimbing penyandang tunanetra mulai dari gerbang keluar timur Stasiun Tugu hingga tepat di depan pintu masuk Halte Malioboro 1.
 * **Bebas Hambatan:** Jalur pedestrian telah disterilkan dari parkir liar sepeda motor dan pedagang kaki lima tanpa izin, sehingga wisatawan yang menyeret koper beroda dapat berjalan dengan lancar tanpa guncangan berat.
+
+---
+
+## Rekayasa Jalur Saat Malioboro Bebas Kendaraan Bermotor (Car Free Night)
+
+Pemerintah Kota Yogyakarta secara berkala memberlakukan kebijakan penutupan arus lalu lintas bagi kendaraan bermotor di sepanjang koridor Jalan Malioboro, khususnya pada setiap malam akhir pekan (Sabtu pukul 18.00–21.00 WIB) serta momentum tradisi *Selasa Wage*:
+
+1. **Penyesuaian Halte Malioboro 1:** Saat Jalan Malioboro ditutup untuk kendaraan bermotor, bus Trans Jogja Koridor 1A, 2A, dan 3A dialihkan melintasi jalur alternatif lingkar barat (Jalan Pasar Kembang &rarr; Jalan Gandekan Lor &rarr; Jalan Bhayangkara &rarr; Jalan KH Ahmad Dahlan).
+2. **Titik Tunggu Alternatif:** Penumpang yang baru turun dari Stasiun Tugu disarankan berjalan kaki menuju **Halte Pasar Kembang** atau **Halte Bhayangkara** untuk menaiki bus lanjutan tanpa terganggu rekayasa penutupan jalan.
+3. **Pengoperasian Kembali Normal:** Setelah pukul 21.00 WIB atau saat pembatas jalan dibuka kembali oleh petugas kepolisian lalu lintas dan Dishub DIY, rute bus Trans Jogja kembali melintasi koridor utama Halte Malioboro 1, 2, dan 3 seperti sedia kala.

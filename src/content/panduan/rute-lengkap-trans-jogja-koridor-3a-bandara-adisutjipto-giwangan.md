@@ -75,6 +75,21 @@ Bagi pelancong mandiri bertarif hemat (*budget traveler*), Koridor 3A adalah rut
 
 ---
 
+## Matriks Halte Kunci, Estimasi Durasi, & Koneksi Moda Koridor 3A
+
+Berikut pemetaan lintasan sirkular Trans Jogja Koridor 3A dari Bandara Adisutjipto menuju Terminal Giwangan dan kembali ke timur:
+
+| Titik Halte Utama | Wilayah Administrasi | Estimasi Menit dari Awal | Integrasi Antarmoda | Objek Wisata Terdekat |
+| :--- | :--- | :--- | :--- | :--- |
+| **Halte Bandara Adisutjipto** | Sleman Timur (Jl. Solo) | 0 Menit (Start Hub) | KRL Stasiun Maguwo & Koridor 1A/1B | Bandara Lama Adisutjipto |
+| **Terminal Condongcatur** | Sleman Utara | &plusmn; 20 Menit | Transit Koridor 2A, 2B, 5B | Pasar Condongcatur |
+| **Terminal Jombor** | Sleman Barat Laut | &plusmn; 40 Menit | Koridor 2A, 2B, 5A & Bus AKAP | Taman Pelangi / Monjali |
+| **Halte Ngabean** | Kota Yogyakarta | &plusmn; 60 Menit | Koridor 2A, 9, 10 (Transit Steril) | Kraton Yogyakarta & Taman Sari |
+| **Terminal Giwangan** | Umbulharjo / Bantul | &plusmn; 75 Menit | Koridor 3B, 4A, 4B & Bus AKAP/AKDP | Pasar Giwangan & Bus Parangtritis |
+| **Halte Tegalgendu Kotagede** | Kotagede Heritage | &plusmn; 85 Menit | Feeder Jalur Budaya | Sentra Kerajinan Perak Kotagede |
+
+---
+
 ## Panduan Step-by-Step Berwisata Naik Koridor 3A
 
 1. **Mulai dari Stasiun Maguwo / Adisutjipto:** Masuklah ke Halte Adisutjipto melalui underpass stasiun. Lakukan pembayaran non-tunai di loket gate masuk.

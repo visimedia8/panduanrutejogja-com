@@ -51,6 +51,32 @@ Terletak tepat di sisi timur luar stasiun di kawasan kuliner Selasar Malioboro (
 
 ### 3. Penitipan Bagasi Konvensional KAI
 Tersedia di dekat loket customer service stasiun sisi selatan, melayani penitipan barang dengan dimensi non-standar seperti kardus oleh-oleh bakpia dalam jumlah banyak, sepeda lipat, atau alat musik.
+
+---
+
+## Matriks Komparasi Fasilitas Penitipan Barang Stasiun Tugu
+
+Berikut rincian spesifikasi dimensi loker, estimasi tarif per durasi waktu, serta metode pembayaran resmi pada tiap fasilitas penitipan di kawasan Stasiun Tugu Yogyakarta:
+
+| Kategori Fasilitas | Lokasi Persis | Dimensi Maksimal Bawaan | Estimasi Tarif Resmi | Metode Pembayaran | Fasilitas Tambahan |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Loko Locker Otomatis (Ukuran M)** | Pintu Timur & Koridor KRL | 40 cm x 30 cm x 45 cm (Ransel / Tas Laptop) | Rp20.000 / 3 jam pertama (+Rp10.000/jam lanjutan) | QRIS Cashless Semua Bank / E-Wallet | Buka 24 jam, enkripsi PIN via SMS/WA |
+| **Loko Locker Otomatis (Ukuran L)** | Pintu Timur & Koridor KRL | 60 cm x 45 cm x 50 cm (Koper Kabin 20-24 Inci) | Rp35.000 / 3 jam pertama (+Rp15.000/jam lanjutan) | QRIS Cashless Semua Bank / E-Wallet | Sensor digital pintu otomatis |
+| **Loko Locker Otomatis (Ukuran XL)** | Hall Pintu Timur Stasiun | 85 cm x 55 cm x 60 cm (Koper Jumbo 28 Inci) | Rp50.000 / 3 jam pertama (+Rp20.000/jam lanjutan) | QRIS Cashless Semua Bank / E-Wallet | Pengawasan kamera CCTV 24 jam |
+| **Shower & Locker KAI Wisata** | Selasar Malioboro (Depan Stasiun) | Bebas (Koper Besar, Ransel, Dus Oleh-oleh) | Mulai Rp40.000 / paket penitipan + mandi air hangat | QRIS, Debit, Tunai Resmi | Kamar mandi AC, handuk, sabun, pengering rambut |
+| **Pos Bagasi Manual Stasiun** | Sisi Selatan Dekat Jalur KA Bandara | Barang Non-Standar (Sepeda Lipat, Alat Musik) | Rp25.000 – Rp35.000 / 12 jam | Tunai / QRIS Kasir Stasiun | Dijaga petugas sekuriti berseragam |
+
+---
+
+## Prosedur Step-by-Step Menyewa Loker Pintar Digital di Stasiun Tugu
+
+Penggunaan loker otomatis pintar di Stasiun Tugu menerapkan sistem layanan mandiri (*self-service kiosk*):
+
+1. **Pilih Ukuran Loker:** Sentuh layar monitor kios loker digital, periksa ketersediaan kotak loker (indikator hijau menandakan kosong, indikator merah menandakan terisi), lalu pilih ukuran (Medium, Large, atau Extra Large) yang sesuai dengan dimensi barang bawaan.
+2. **Masukkan Nomor WhatsApp Aktif:** Ketikkan nomor telepon seluler aktif Anda. Nomor ini digunakan sistem sentral untuk mengirimkan tautan token pembuka loker serta notifikasi pengingat durasi sewa.
+3. **Pindai Kode QRIS:** Layar mesin akan memunculkan kode QRIS dinamis dengan nominal tagihan sesuai durasi paket 3 jam pertama. Buka aplikasi m-banking atau e-wallet Anda (BCA, Mandiri, BRI, GoPay, OVO, ShopeePay) dan selesaikan pembayaran.
+4. **Pintu Loker Terbuka Otomatis:** Begitu pembayaran diverifikasi (kurang dari 3 detik), pintu kompartemen loker yang ditentukan akan membuka secara otomatis. Masukkan koper atau tas Anda, tekan pintu hingga berbunyi 'klik' terkunci rapat.
+5. **Proses Pengambilan Barang:** Saat hendak mengambil barang, sentuh tombol 'Pengambilan' di layar utama, masukkan nomor ponsel dan kode PIN rahasia yang telah dikirimkan via WhatsApp. Jika durasi sewa melebihi batas waktu awal 3 jam, sistem akan menampilkan tagihan kelebihan waktu (*overtime*) via QRIS sebelum pintu kompartemen membuka kembali.
 ## Tips Keamanan Maksimal Menyimpan Barang Berharga
 
 Meskipun fasilitas loker di Stasiun Tugu dijaga sekuriti dan terpantau kamera CCTV selama 24 jam penuh, terapkan pedoman keselamatan berikut:

@@ -61,6 +61,21 @@ Aplikasi resmi dari PT Kereta Api Indonesia ini sangat cocok bagi komuter rutin 
 
 ---
 
+## Matriks Komparasi Opsi Pembelian Tiket KRL Jogja-Solo
+
+Berikut perbandingan fitur, fleksibilitas pengembalian dana, dan metode pembayaran antara aplikasi GoTransit, Access by KAI, dan Kartu Multi Trip (KMT) fisik:
+
+| Parameter Fitur | GoTransit (Gojek) | Access by KAI | Kartu Multi Trip (KMT) Fisik | Kartu Uang Elektronik Bank |
+| :--- | :--- | :--- | :--- | :--- |
+| **Bentuk Tiket** | E-Ticket Kode QR Layar Ponsel | E-Ticket Kode QR Layar Ponsel | Kartu Fisik Chip RFID | Kartu Fisik Chip RFID (e-Money, Flazz, dll) |
+| **Sumber Dana Pembayaran** | Saldo GoPay, GoPay Coins | KAI Pay, LinkAja, QRIS Bank | Saldo Terisi di Stasiun | Saldo Rekening Bank Terisi |
+| **Biaya Administrasi** | Gratis (Rp0) | Gratis (Rp0) | Biaya Perdana Kartu Rp30.000 | Biaya Perdana Kartu Bank |
+| **Kecepatan Tap di Gate** | 2 – 4 Detik (Scan Optik) | 2 – 4 Detik (Scan Optik) | Instan &lt; 1 Detik (Tap RFID) | Instan &lt; 1 Detik (Tap RFID) |
+| **Kebijakan Refund Tiket** | Instan 100% via Aplikasi | 1 – 3 Hari Kerja | Saldo Tetap Aman di Kartu | Saldo Tetap Aman di Kartu |
+| **Cocok Digunakan Bagi** | Wisatawan Tanpa Kartu Fisik | Komuter Lintas Moda KAI | Komuter Harian Rutin | Komuter Rutin / Pelajar |
+
+---
+
 ## 4 Tips Penting Menggunakan Tiket QR di Stasiun
 
 * **Tingkatkan Kecerahan Layar Ponsel:** Sebelum mendekatkan layar ponsel ke mesin scanner turnstile, atur tingkat kecerahan (*brightness*) layar smartphone Anda ke tingkat maksimal agar sensor kamera mesin gate dapat membaca barcode dengan cepat.

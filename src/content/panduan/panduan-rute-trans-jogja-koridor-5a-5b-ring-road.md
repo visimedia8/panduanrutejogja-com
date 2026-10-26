@@ -82,6 +82,31 @@ Kehadiran Trans Jogja Koridor 5A dan 5B mengubah paradigma tersebut:
 
 * **Waktu Tempuh Total:** Untuk mengelilingi separuh lingkaran Ring Road (Terminal Jombor ke Terminal Giwangan), waktu yang dibutuhkan berkisar antara **35 hingga 45 menit**. Jauh lebih cepat dibandingkan bus kota jalur dalam yang harus menghadapi puluhan lampu merah simpang kota.
 * **Jam Lengang Ideal:** Pukul 10.00 hingga 14.00 WIB adalah waktu terbaik untuk menaiki rute ini dengan ketersediaan kursi duduk yang sangat leluasa.
+
+---
+
+## Matriks Rute, Halte Kunci, dan Estimasi Durasi Koridor 5A & 5B
+
+Berikut tabel pemetaan halte penting, arah putaran, dan estimasi waktu tempuh antar-zona pada koridor lingkar Ring Road Trans Jogja:
+
+| Koridor & Trayek | Terminal Asal & Tujuan | Halte Transit Kunci | Arah Putaran Rute | Headway Armada | Estimasi Waktu Tempuh |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Trans Jogja 5A (Lingkar Utara-Timur)** | Terminal Jombor &rarr; Terminal Giwangan | Monjali, Kentungan, UPN Ring Road, Flyover Janti, Blok O | Searah jarum jam (*Clockwise*) | 15 – 20 menit | 35 – 45 menit |
+| **Trans Jogja 5B (Lingkar Timur-Utara)** | Terminal Giwangan &rarr; Terminal Jombor | Blok O, Flyover Janti Selatan, Babarsari, RS JIH, Monjali | Berlawanan jarum jam (*Counter-Clockwise*) | 15 – 20 menit | 35 – 45 menit |
+| **Koneksi Janti & Prambanan** | Halte Flyover Janti Selatan | Transfer ke Koridor 1A / 1B | Pertukaran Antarmoda Arteri Solo | Terintegrasi Halte Steril | Transit Gratis (Tanpa Bayar Ulang) |
+| **Koneksi Giwangan & Malioboro** | Peron Bus Terminal Giwangan | Transfer ke Koridor 3A / 4A | Simpul Terminal Induk Selatan | Terintegrasi Peron Pusat | Transit Gratis (Tanpa Bayar Ulang) |
+
+---
+
+## Jadwal Operasional Keberangkatan Harian Koridor 5A & 5B
+
+| Trip Harian | Jam Keberangkatan Awal | Jam Keberangkatan Terakhir | Frekuensi Armada Pagi (06.00–09.00 WIB) | Frekuensi Armada Siang (10.00–15.00 WIB) | Frekuensi Armada Sore (16.00–19.00 WIB) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Koridor 5A (Dari Jombor)** | 05.30 WIB | 20.30 WIB | Setiap 15 Menit | Setiap 20 Menit | Setiap 15 Menit |
+| **Koridor 5B (Dari Giwangan)** | 05.30 WIB | 20.30 WIB | Setiap 15 Menit | Setiap 20 Menit | Setiap 15 Menit |
+
+---
+
 ## Analisis Rute Lingkar Luar dan Pusat Rumah Sakit Rujukan
 
 Jalur Trans Jogja Koridor 5A dan 5B memiliki peran vital sebagai penghubung lingkar lingkar (*orbital route*) yang menghubungkan fasilitas layanan kesehatan rujukan tingkat pertama dan pusat teknologi di Yogyakarta:

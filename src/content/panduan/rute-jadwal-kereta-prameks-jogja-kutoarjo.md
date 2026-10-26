@@ -3,12 +3,12 @@ title: "Rute & Jadwal Kereta Prameks Jogja – Kutoarjo PP Terbaru"
 description: "Panduan lengkap naik KA Prambanan Ekspres (Prameks) relasi Stasiun Tugu Yogyakarta menuju Kutoarjo Purworejo. Tarif subsidi Rp8.000 dan jadwal keberangkatan."
 category: "kereta-bandara"
 publishDate: "2026-10-22"
-updatedDate: "2026-10-22"
+updatedDate: "2026-10-26"
 author: "Tim Redaksi PanduanRuteJogja.com"
 featuredImage: "/images/rute-jadwal-kereta-prameks-jogja-kutoarjo.webp"
 imageAlt: "Rute dan Jadwal Kereta Prameks Jogja Kutoarjo"
-operationalHours: "05.25 – 18.27 WIB"
-fare: "Rp8.000 (Flat)"
+operationalHours: "05.25 – 18.27 WIB (Setiap Hari)"
+fare: "Rp8.000 (Flat Sekali Jalan)"
 routeType: "Kereta Rel Diesel (KRD) Lokal"
 halteList:
   - name: "Stasiun Yogyakarta (Tugu)"
@@ -16,7 +16,7 @@ halteList:
     transit: "KRL Jogja-Solo, KA Jarak Jauh, Trans Jogja"
   - name: "Stasiun Wates"
     location: "Kabupaten Kulon Progo"
-    transit: "Angkutan Lokal Wates"
+    transit: "Angkutan Lokal Wates & KA Bandara YIA"
   - name: "Stasiun Wojo"
     location: "Purworejo Selatan (Akses Timur YIA)"
     transit: "Angkutan Perintis Bagelen"
@@ -35,70 +35,74 @@ faqs:
 
 ## Warisan Legendaris Komuter Prameks Lintas Barat
 
-Bagi masyarakat Daerah Istimewa Yogyakarta dan Jawa Tengah bagian selatan, nama **Kereta Api Prambanan Ekspres (Prameks)** memiliki nilai sejarah yang sangat mendalam. Diluncurkan pertama kali pada era 1990-an menggunakan lokomotif diesel hidrolik, Prameks telah mengabdi selama puluhan tahun sebagai sarana mobilitas utama warga lintas provinsi.
+Kereta Api Prambanan Ekspres (KA Prameks) relasi Stasiun Yogyakarta menuju Stasiun Kutoarjo dioperasikan oleh PT Kereta Commuter Indonesia (KAI Commuter) sebagai layanan komuter andalan berbasis rangkaian Kereta Rel Diesel Elektrik (KRDE) dan Kereta Rel Diesel Indonesia (KRDI). Jalur relasi barat ini membentang sepanjang 64 kilometer melintasi Kota Yogyakarta, Kabupaten Kulon Progo di Daerah Istimewa Yogyakarta, serta Kabupaten Purworejo di Jawa Tengah.
 
-Ketika jalur rel timur (Jogja-Solo) telah dielektrifikasi penuh menjadi KRL Commuter Line modern, nama besar KA Prameks tetap dipertahankan oleh PT Kereta Commuter Indonesia (KAI Commuter) untuk melayani jalur komuter relasi barat yang belum memiliki jaringan listrik aliran atas: **Stasiun Yogyakarta (Tugu) menuju Stasiun Kutoarjo (Kabupaten Purworejo)**.
-
----
-
-## Stasiun Pemberhentian & Karakteristik Wilayah
-
-Perjalanan Prameks membentang sejauh 64 kilometer menyusuri dataran subur Kulon Progo dan pesisir selatan Purworejo:
-1. **Stasiun Yogyakarta (Tugu):** Titik awal pemberangkatan di peron jalur selatan.
-2. **Stasiun Wates (Kulon Progo):** Titik naik-turun komuter pekerja kantoran dan mahasiswa.
-3. **Stasiun Wojo (Purworejo):** Stasiun yang dahulu menjadi stasiun transit utama bus bandara sebelum jalur rel layang YIA beroperasi penuh.
-4. **Stasiun Jenar (Purworejo):** Stasiun di kawasan sentra pertanian dan sentra gula kelapa.
-5. **Stasiun Kutoarjo (Terminus):** Stasiun simpul besar yang melayani pergantian kereta api jarak jauh menuju Bandung, Purwokerto, dan Jakarta, serta angkutan mikrobus pedesaan menuju Kebumen dan Prembun.
+Sebelum elektrifikasi jalur Solo pada awal tahun 2021, armada Prameks melayani relasi panjang dari Kutoarjo hingga Solo Balapan. Saat ini, nama besar Prameks difokuskan untuk melayani koridor komuter barat yang belum terpasang jaringan listrik aliran atas. Layanan ini mengangkut ribuan pekerja komuter, pedagang lokal, mahasiswa, dan wisatawan dengan waktu tempuh rata-rata hanya 65 hingga 75 menit, jauh melampaui efisiensi waktu kendaraan darat di jalan nasional Jogja–Wates–Purworejo yang kerap tersendat kemacetan pasar tumpah dan persimpangan lampu merah.
 
 ---
 
-## Jadwal Keberangkatan & Waktu Tempuh
+## Tabel Jadwal Lengkap KA Prameks Relasi Yogyakarta (Tugu) ke Kutoarjo
 
-KA Prameks beroperasi dengan frekuensi 8 kali perjalanan per hari (4 perjalanan PP):
-* **Dari Stasiun Tugu Jogja:** Keberangkatan pagi pukul 06.37 WIB dan 11.45 WIB, serta keberangkatan sore pukul 13.52 WIB dan 17.50 WIB.
-* **Dari Stasiun Kutoarjo:** Keberangkatan pagi pukul 05.25 WIB dan 09.05 WIB, serta keberangkatan siang/sore pukul 12.20 WIB dan 16.05 WIB.
-* **Waktu Tempuh:** Hanya **1 jam 10 menit hingga 1 jam 15 menit**, menghemat waktu berharga dibandingkan menaiki bus antarkota di jalan raya Wates–Purworejo.
+KA Prameks relasi Stasiun Yogyakarta menuju Stasiun Kutoarjo beroperasi sebanyak 4 kali keberangkatan pulang-pergi (PP) setiap hari dengan ketepatan waktu tinggi. Berikut adalah jadwal keberangkatan resmi pada seluruh stasiun persinggahan:
 
----
+| Nomor Kereta (KA) | Berangkat Stasiun Tugu | Berangkat Stasiun Wates | Berangkat Stasiun Wojo | Berangkat Stasiun Jenar | Tiba Stasiun Kutoarjo | Kategori Jadwal |
+|---|---|---|---|---|---|---|
+| KA 551 (Pagi 1) | 06.37 WIB | 07.05 WIB | 07.20 WIB | 07.31 WIB | 07.45 WIB | Reguler Harian |
+| KA 553 (Siang 1) | 10.26 WIB | 10.54 WIB | 11.09 WIB | 11.20 WIB | 11.34 WIB | Reguler Harian |
+| KA 555 (Siang 2) | 13.48 WIB | 14.16 WIB | 14.31 WIB | 14.42 WIB | 14.56 WIB | Reguler Harian |
+| KA 557 (Sore) | 17.50 WIB | 18.18 WIB | 18.33 WIB | 18.44 WIB | 18.58 WIB | Reguler Harian |
 
-## Tarif Subsidi & Cara Pemesanan Tiket
-
-Pemerintah RI menyubsidi penuh operasional Prameks sehingga harga tiket dipatok tetap **Rp8.000 per penumpang**.
-* **Pemesanan Tiket:** Dapat dilakukan mulai H-7 sebelum hari keberangkatan melalui aplikasi **Access by KAI** pada tab menu "Kereta Lokal".
-* **Ketersediaan Kursi:** Tiket memiliki alokasi tempat duduk bernomor. Bila kuota tempat duduk habis, sistem menjual tiket tanpa tempat duduk (*standing passenger*) maksimal 20% dari kapasitas demi menjaga kenyamanan penumpang.
-## Peran Prameks bagi Perekonomian & Mobilitas Aglomerasi
-
-Kereta Api Prameks bukan sekadar sarana transportasi biasa; bagi ribuan warga Kabupaten Purworejo dan Kulon Progo, kereta ini adalah urat nadi kehidupan ekonomi. Setiap harinya, petani buah lokal, pedagang gula kelapa Jenar, guru, ASN, dan tenaga kesehatan mengandalkan Prameks untuk berangkat bertugas di Yogyakarta pada pagi hari dan pulang ke Kutoarjo pada sore hari.
-
-Dengan tarif flat subsidi Rp8.000 yang tidak pernah naik selama bertahun-tahun, Prameks menjadi simbol komitmen pemerintah dalam menjaga daya beli masyarakat di sektor transportasi perkeretaapian bersubsidi.
+*Waktu tempuh dari Stasiun Tugu ke Stasiun Wates berkisar 28 menit, ke Stasiun Wojo 43 menit, ke Stasiun Jenar 54 menit, dan tiba di Stasiun Kutoarjo dalam 68 menit.*
 
 ---
 
-## Panduan Transit Antarmoda di Stasiun Kutoarjo
+## Tabel Jadwal Lengkap KA Prameks Relasi Kutoarjo ke Yogyakarta (Tugu)
 
-Stasiun Kutoarjo merupakan stasiun terminus besar dengan fasilitas lengkap:
-1. **Sambungan Kereta Api Jarak Jauh:** Penumpang dari Jogja yang hendak menuju Cilacap, Kroya, Purwokerto, Cirebon, atau Bandung dapat berpindah ke kereta api antarkota lintas selatan (seperti KA Kutojaya Selatan, KA Sawunggalih, KA Lodaya, atau KA Malabar) di peron stasiun yang sama.
-2. **Koneksi Angkutan Pedesaan:** Di pelataran luar stasiun Kutoarjo tersedia pangkalan mikrobus angkutan pedesaan menuju pusat kota Purworejo, pantai Ketawang, dan kabupaten tetangga Kebumen.
+Untuk arus mobilitas dari arah Kabupaten Purworejo menuju Kota Yogyakarta, KA Prameks menyediakan 4 jadwal keberangkatan tetap sejak subuh:
+
+| Nomor Kereta (KA) | Berangkat Stasiun Kutoarjo | Berangkat Stasiun Jenar | Berangkat Stasiun Wojo | Berangkat Stasiun Wates | Tiba Stasiun Tugu | Kategori Jadwal |
+|---|---|---|---|---|---|---|
+| KA 552 (Subuh) | 05.25 WIB | 05.39 WIB | 05.50 WIB | 06.05 WIB | 06.35 WIB | Reguler Pekerja |
+| KA 554 (Pagi) | 09.05 WIB | 09.19 WIB | 09.30 WIB | 09.45 WIB | 10.15 WIB | Reguler Harian |
+| KA 556 (Siang) | 12.20 WIB | 12.34 WIB | 12.45 WIB | 13.00 WIB | 13.30 WIB | Reguler Harian |
+| KA 558 (Sore) | 16.05 WIB | 16.19 WIB | 16.30 WIB | 16.45 WIB | 17.15 WIB | Reguler Sore |
+
+*Keberangkatan KA 552 pukul 05.25 WIB dari Kutoarjo merupakan jadwal favorit komuter pekerja dan mahasiswa yang memulai aktivitas pagi di pusat Kota Yogyakarta sebelum pukul 07.00 WIB.*
+
 ---
 
-## Etika Membawa Sepeda & Binatang Peliharaan di KA Prameks
+## Karakteristik 5 Stasiun Pemberhentian Jalur Prameks
 
-Mengikuti aturan operasional resmi PT Kereta Commuter Indonesia, terdapat sejumlah regulasi penting bagi penumpang Prameks:
-* **Ketentuan Membawa Sepeda:** Hanya sepeda lipat (*folding bike*) dengan dimensi maksimal roda 22 inci yang diperkenankan masuk ke dalam gerbong penumpang. Sepeda lipat wajib dilipat sempurna sebelum melewati gerbang pemeriksaan boarding tiket. Sepeda standar non-lipat dilarang dibawa ke dalam kabin.
-* **Larangan Binatang:** Demi kenyamanan bersama dan alasan higienitas kabin berpendingin udara, segala jenis hewan peliharaan (kucing, anjing, burung, reptil) dilarang keras dibawa ke dalam kereta api lokal Prameks.
-## Strategi Pemesanan Tiket H-7 di Aplikasi Access by KAI
+Jalur komuter KA Prameks melayani 5 stasiun aktif dengan peran ekonomi strategis bagi masyarakat setempat:
 
-Kereta Api Prambanan Ekspres (KA Prameks) rute Yogyakarta – Kutoarjo (PP) merupakan moda kereta api lokal legendaris yang memiliki permintaan tiket (*demand*) sangat tinggi, terutama pada hari Jumat sore, Sabtu, Minggu, serta masa liburan panjang nasional. Mengingat kapasitas angkut tempat duduk dibatasi oleh KAI demi kenyamanan dan keselamatan, berikut strategi jitu agar tidak kehabisan tiket:
+1. **Stasiun Yogyakarta (Tugu):** Terletak di pusat Kota Yogyakarta. Pintu masuk penumpang KA Prameks berada di peron selatan (Jalan Pasar Kembang), terintegrasi dengan akses Trans Jogja Jalur 1A, 2A, 3A, serta gate antarmoda KA Bandara YIA dan KRL Commuter Line Jogja-Solo.
+2. **Stasiun Wates (Kulon Progo):** Terletak di pusat ibu kota Kabupaten Kulon Progo. Menjadi simpul naik-turun komuter terbesar di luar stasiun terminus, terhubung dengan angkutan kota Wates dan kawasan kantor pemerintahan kabupaten.
+3. **Stasiun Wojo (Purworejo Timur):** Berlokasi di Bagelen, Purworejo. Stasiun ini sempat menjadi stasiun transit bus bandara utama pada masa awal operasional Bandara YIA. Saat ini melayani mobilitas warga perbatasan Kulon Progo dan Purworejo pesisir.
+4. **Stasiun Jenar (Purworejo):** Berada di kawasan sentra pertanian dan sentra produksi gula kelapa Jenar. Menjadi stasiun persinggahan penting bagi para petani dan pedagang hasil bumi yang memasarkan produknya ke pasar-pasar tradisional di Yogyakarta.
+5. **Stasiun Kutoarjo (Terminus):** Stasiun simpul besar bertipe peron pulau di barat Kabupaten Purworejo. Di stasiun ini, penumpang dapat melanjutkan perjalanan menuju Kroya, Purwokerto, Cirebon, Bandung, dan Jakarta menggunakan Kereta Api Jarak Jauh, atau menyambung angkutan umum minibus pedesaan menuju Kabupaten Kebumen dan Wonosobo.
 
-1. **Pemesanan Dibuka Tepat H-7:** Tiket KA Prameks mulai dapat dipesan tepat 7 hari sebelum tanggal keberangkatan mulai pukul 00.00 WIB tengah malam melalui aplikasi Access by KAI. Jangan menunda pembelian tiket hingga hari-H perjalanan terutama untuk jadwal keberangkatan pagi (06.37 WIB) dan sore hari (17.50 WIB).
-2. **Kapasitas Penumpang Berdiri (Standing Capacity):** Apabila kuota tiket tempat duduk (duduk 100%) telah habis terjual, sistem aplikasi terkadang membuka kuota tambahan tiket tanpa tempat duduk (*tiket berdiri*) maksimal 20% dari kapasitas gerbong. Waktu tempuh perjalanan sekitar 65–75 menit, sehingga pastikan kondisi fisik Anda siap jika terpaksa mengambil tiket berdiri.
-3. **Pembelian di Loket Stasiun (Go Show):** Pembelian tiket langsung di loket stasiun (*Go Show*) hanya dilayani mulai 3 jam sebelum jadwal keberangkatan kereta, dan itu pun hanya jika kuota tiket di aplikasi masih tersisa. Sangat tidak disarankan mengandalkan pembelian tiket di loket fisik saat akhir pekan.
+---
 
-## Karakteristik Stasiun Pemberhentian Jalur Prameks
+## Matriks Kuota Tiket, Aturan Pemesanan, & Regulasi Bagasi
 
-Sepanjang relasi perjalanan dari Stasiun Tugu Yogyakarta menuju Stasiun Kutoarjo di Kabupaten Purworejo, rangkaian KA Prameks berhenti di beberapa stasiun persilangan penting:
+Kementerian Perhubungan menetapkan subsidi Public Service Obligation (PSO) flat sebesar **Rp8.000 per orang**. Berikut adalah matriks operasional pemesanan tiket resmi:
 
-- **Stasiun Wates (Kabupaten Kulon Progo):** Simpul perhentian utama di pusat ibu kota Kulon Progo. Penumpang dapat turun di sini untuk mengakses pusat pemerintahan Pemkab Kulon Progo, Alun-Alun Wates, atau berpindah moda ke angkutan pedesaan menuju kawasan perbukitan Menoreh.
-- **Stasiun Wojo (Purworejo Timur):** Terletak tepat di perbatasan Purworejo dan Kulon Progo. Dahulu stasiun ini menjadi stasiun transit utama menuju Bandara YIA sebelum jalur rel bandara resmi tersambung.
-- **Stasiun Jenar (Purworejo):** Melayani mobilitas warga lokal kecamatan Purwodadi dan Bagelen yang hendak berniaga atau bersekolah di Yogyakarta.
-- **Stasiun Kutoarjo (Stasiun Akhir):** Stasiun terminus bertipe pulau besar di barat Kabupaten Purworejo. Di stasiun ini, penumpang dapat melanjutkan perjalanan menaiki Kereta Api Jarak Jauh menuju Kroya, Purwokerto, Bandung, dan Jakarta, atau menyambung angkutan kota/minibus antarkota menuju Kebumen dan Wonosobo.
+| Parameter Ketentuan | Ketentuan Resmi PT KAI Commuter | Keterangan & Catatan |
+|---|---|---|
+| Harga Tiket Flat | Rp8.000 per penumpang | Berlaku sama untuk relasi dekat maupun jauh |
+| Kanal Pemesanan Online | Aplikasi Access by KAI (Menu Kereta Lokal) | Pembayaran via KAIPay, QRIS, LinkAja, Virtual Account |
+| Periode Buka Pemesanan | H-7 sebelum hari keberangkatan (Pukul 00.00 WIB) | Wajib dipesan awal untuk akhir pekan dan hari libur |
+| Kuota Tempat Duduk | 100% dari kapasitas kursi terpasang | Memiliki nomor tempat duduk tertera pada e-boarding pass |
+| Kuota Tiket Berdiri | Maksimal 20% dari kapasitas tempat duduk | Otomatis dibuka bila kuota kursi duduk telah habis |
+| Pembelian Go Show di Loket | Mulai 3 jam sebelum jadwal keberangkatan | Hanya dilayani jika kuota online masih memiliki sisa kursi |
+| Ketentuan Bagasi Sepeda | Hanya sepeda lipat (folding bike) maks. 22 inci | Sepeda wajib dilipat; sepeda non-lipat dilarang masuk |
+| Larangan Membawa Hewan | Dilarang keras segala jenis hewan peliharaan | Menjaga higienitas kabin penumpang berpendingin udara |
+
+---
+
+## Integrasi Antarmoda di Stasiun Kutoarjo & Stasiun Tugu
+
+Penumpang KA Prameks menikmati fasilitas kemudahan transit multimoda di kedua ujung perjalanan:
+
+* **Di Stasiun Kutoarjo:** Penumpang yang hendak melanjutkan perjalanan ke arah barat dapat berpindah peron menuju KA Sawunggalih, KA Kutojaya Selatan, KA Lodaya, atau KA Bogowonto. Di area pintu keluar stasiun tersedia pangkalan minibus AKDP menuju Kebumen, Prembun, dan Alun-Alun Purworejo.
+* **Di Stasiun Tugu Yogyakarta:** Penumpang langsung terhubung dengan lorong selatan stasiun menuju gate KA Bandara YIA untuk penerbangan lanjutan di Kulon Progo, atau berpindah ke peron timur menaiki KRL Commuter Line menuju Solo Balapan dan Palur tanpa perlu keluar dari area perimeter stasiun.

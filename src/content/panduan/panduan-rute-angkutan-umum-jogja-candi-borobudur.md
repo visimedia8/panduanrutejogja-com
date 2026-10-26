@@ -91,6 +91,26 @@ Bagi wisatawan mandiri yang mengutamakan efisiensi biaya perjalanan dari Kota Yo
 
 Hal penting yang wajib diantisipasi oleh wisatawan adalah jam operasional bus kepulangan (*return trip*) dari Terminal Candi Borobudur menuju Yogyakarta:
 
+| Rute & Moda Transportasi | Titik Awal Keberangkatan | Pemberangkatan Pertama | Pemberangkatan Terakhir | Interval Keberangkatan (Headway) | Estimasi Waktu Tempuh |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Bus Medium Ekonomi Cemara Tunggal** | Terminal Jombor Sleman | 06.00 WIB | 16.30 WIB | 20 – 30 menit sekali | 60 – 75 menit (via Muntilan) |
+| **Bus Medium Ekonomi Kepulangan** | Terminal Bus Borobudur | 06.30 WIB | 16.30 WIB | 20 – 30 menit sekali | 60 – 75 menit (ke Jombor) |
+| **DAMRI KSPN HiAce (Pagi/Siang)** | Pool Stasiun Tugu Jogja | 07.00 WIB | 14.30 WIB | Sesuai slot jadwal tiket | 75 – 90 menit (via Tempel/Dekso) |
+| **DAMRI KSPN HiAce (Kepulangan)** | Terminal Candi Borobudur | 09.00 WIB | 18.00 WIB | Sesuai jadwal aplikasi DAMRI | 75 – 90 menit (ke Tugu Jogja) |
+| **Trans Jogja Penghubung (Koridor 2A)** | Halte Malioboro 1 & 2 | 05.30 WIB | 21.00 WIB | 12 – 15 menit sekali | 40 – 45 menit (ke Jombor) |
+
+---
+
+## Prosedur Step-by-Step Naik Bus di Terminal Jombor Menuju Candi Borobudur
+
+Bagi wisatawan pemula yang baru pertama kali berkunjung ke Terminal Jombor, ikuti alur transit praktis berikut untuk menghindari calo liar:
+
+1. **Turun di Halte Trans Jogja Terminal Jombor:** Bus Trans Jogja Koridor 2A atau Koridor 5A akan menurunkan Anda tepat di peron integrasi halte dalam Terminal Jombor.
+2. **Menuju Jalur Peron Antarkota:** Berjalanlah keluar dari bilik loket Trans Jogja ke arah area landasan bus antarkota sisi utara terminal. Anda akan melihat deretan bus medium bercat hijau atau perak dengan kaca depan bertuliskan trayek Magelang / Borobudur.
+3. **Konfirmasi Tujuan ke Pengemudi:** Tanyakan langsung kepada pengemudi atau kondektur di pintu bus: *"Niki jurusan langsung Terminal Borobudur nggih, Pak?"* untuk memastikan bus tersebut langsung menuju terminal kawasan candi dan bukan bus jurusan Terminal Tidar Kota Magelang.
+4. **Pembayaran Tiket di Atas Bus:** Tidak ada loket penjualan tiket resmi di darat untuk bus medium ekonomi. Duduklah dengan nyaman di kursi kosong, dan kondektur akan mendatangi kursi Anda untuk memungut ongkos (Rp20.000 – Rp25.000) saat bus sudah melaju di Jalan Raya Magelang.
+5. **Turun di Terminal Borobudur:** Bus akan berhenti di pelataran Terminal Borobudur. Dari terminal, Anda hanya perlu berjalan kaki menyusuri koridor pedestrian beratap sejauh 500 meter menuju pintu masuk loket tiket Candi Borobudur.
+
 - **Bus Terakhir Menuju Terminal Jombor:** Bus medium ekonomi jurusan Borobudur – Yogyakarta dari Terminal Borobudur umumnya beroperasi dari pukul 06.00 WIB hingga **pukul 16.30 WIB**. Setelah pukul 17.00 WIB, armada bus ekonomi sudah tidak diberangkatkan lagi ke Yogyakarta.
 - **Layanan Shuttle KSPN DAMRI Malam:** Bagi wisatawan yang menikmati matahari terbenam (*sunset*) di sekitar perbukitan Menoreh atau kawasan Svargabumi dan Punthuk Setumbu, armada shuttle KSPN DAMRI memiliki jadwal keberangkatan terakhir sekitar pukul 18.00–18.30 WIB (selalu lakukan konfirmasi jadwal harian ke petugas konter DAMRI Borobudur saat Anda tiba di pagi hari).
 - **Rencana Cadangan Transportasi:** Jika Anda tertinggal jadwal bus terakhir di Borobudur, alternatifnya adalah menaiki angkutan pedesaan/ojek lokal sejauh 8 km menuju Simpang Tiga Muntilan di Jalan Raya Magelang–Jogja, lalu menyetop bus antarkota jurusan Semarang–Jogja atau Surabaya–Jogja yang melintas selama 24 jam penuh.

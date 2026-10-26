@@ -57,6 +57,34 @@ Dinas Perhubungan DIY merancang koridor 4 sebagai sistem rute lingkar berpasanga
 
 ---
 
+## Tabel Simpul Transit & Estimasi Waktu Tempuh Koridor 4A dan 4B
+
+Untuk memudahkan perencanaan rute perjalanan, berikut adalah rincian estimasi waktu tempuh antar-simpul perhentian utama:
+
+| Segmen Perjalanan | Koridor Bus | Jarak Tempuh (Km) | Estimasi Waktu (Lancar) | Estimasi Waktu (Jam Sibuk) | Titik Transit Terhubung |
+|---|---|---|---|---|---|
+| Terminal Giwangan &rarr; XT Square Umbulharjo | 4A & 4B | 3,2 Km | 8 - 10 Menit | 15 Menit | Jalur 3A, 3B, 7, 9, 11 |
+| XT Square &rarr; Kampus UAD Glagahsari | 4A | 1,8 Km | 5 Menit | 10 Menit | Rute Lingkar Mahasiswa |
+| Halte Glagahsari &rarr; Balai Kota Timoho | 4A | 2,1 Km | 6 - 8 Menit | 12 Menit | Jalur 2B, 10 |
+| Balai Kota Timoho &rarr; Stasiun Lempuyangan | 4A | 3,4 Km | 10 - 12 Menit | 18 Menit | KRL Jogja-Solo & KA Jarak Jauh |
+| Stasiun Lempuyangan &rarr; Kridosono Kotabaru | 4B | 1,5 Km | 5 Menit | 8 Menit | Jalur 1A, 2A, 3A, 8 |
+| Kridosono &rarr; Gembira Loka Zoo Kusumanegara | 4B | 4,1 Km | 12 - 15 Menit | 20 Menit | Jalur 1B, 2B |
+
+---
+
+## Tabel Headway & Frekuensi Operasional Armada 4A/4B
+
+Dinas Perhubungan D.I. Yogyakarta mengalokasikan armada bus medium berpendingin udara dengan pola frekuensi kedatangan sebagai berikut:
+
+| Periode Waktu | Rentang Jam Operasional | Jeda Waktu Antar-Bus (Headway) | Karakteristik Kepadatan Jalur |
+|---|---|---|---|
+| Jam Sibuk Pagi (Peak Morning) | 06.00 – 08.00 WIB | 10 – 12 Menit | Padat komuter pekerja dan pelajar UAD/UIN |
+| Jam Reguler Siang (Off-Peak) | 08.00 – 15.30 WIB | 15 – 20 Menit | Arus penumpang stabil dan longgar |
+| Jam Sibuk Sore (Peak Afternoon) | 15.30 – 18.00 WIB | 10 – 12 Menit | Arus kepulangan menuju Giwangan dan Lempuyangan |
+| Jam Malam Santai (Night Service) | 18.00 – 21.00 WIB | 20 – 25 Menit | Relatif sepi, cocok untuk penjelajah kuliner malam |
+
+---
+
 ## Informasi Tarif, Jam Layanan & Fasilitas
 
 * **Jam Layanan:** 05.30 hingga 21.00 WIB setiap hari.

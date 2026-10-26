@@ -78,6 +78,25 @@ Setelah melewati pertigaan Raden Ronggo, bus mendekati simpul transportasi udara
 Memasuki kawasan perkotaan di bawah *flyover* Janti, rute Koridor 1A mulai menyusuri kawasan pendidikan tinggi dan sentra gaya hidup modern. Bus melintasi depan kampus Universitas Islam Negeri (UIN) Sunan Kalijaga, Lippo Plaza Mall Jogja, bioskop legendaris Empire XXI, hingga Rumah Sakit Bethesda di Jalan Jenderal Sudirman. Dari simpang empat Gramedia Sudirman, bus berbelok ke selatan menuju Jalan Margo Utomo (Jalan Pangeran Mangkubumi), menyuguhkan pemandangan hotel-hotel heritage peninggalan kolonial dan monumen Tugu Pal Putih Yogyakarta yang ikonik.
 
 Pemberhentian klimaks berada di Jalan Malioboro. Bus melintas di lajur khusus transportasi umum dan berhenti berurutan di tiga halte berdesain tertutup (*shelter permanent*):
+
+---
+
+## Matriks Halte Kunci, Waktu Tempuh, & Integrasi Koridor 1A
+
+Berikut pemetaan titik halte utama sepanjang rute Terminal Prambanan hingga Malioboro:
+
+| Halte Utama | Lokasi Wilayah | Waktu Tempuh dari Prambanan | Integrasi Moda Lanjutan | Destinasi Wisata Terdekat |
+| :--- | :--- | :--- | :--- | :--- |
+| **Terminal Prambanan** | Prambanan, Sleman | 0 Menit (Titik Awal) | Bus AKDP Klaten-Jogja | Candi Prambanan, Candi Sewu, Ramayana Ballet |
+| **Halte Candi Kalasan** | Kalasan, Sleman | &plusmn; 12 Menit | Feeder Pedesaan Sleman | Candi Kalasan & Candi Sari |
+| **Halte Bandara Adisutjipto** | Jl. Solo Km 9 | &plusmn; 22 Menit | KRL Stasiun Maguwo & Koridor 3A/3B | Bandara Lama Adisutjipto & Sentra Bakpia |
+| **Halte UIN Sunan Kalijaga** | Simpang Janti Barat | &plusmn; 32 Menit | Koridor 1B & 4A | UIN Sunan Kalijaga & Lippo Plaza Jogja |
+| **Halte RS Bethesda** | Jl. Jenderal Sudirman | &plusmn; 45 Menit | Koridor 2A, 2B, 3A | RS Bethesda & Kawasan Cagar Kotabaru |
+| **Halte Mangkubumi 1** | Jl. Margo Utomo | &plusmn; 52 Menit | Transit Pintu Timur Stasiun Tugu | Monumen Tugu Pal Putih Jogja |
+| **Halte Malioboro 1** | Malioboro Utara | &plusmn; 58 Menit | Koridor 2A, 3A, 8 & KRL Stasiun Tugu | Malioboro Mall & Grand Inna Malioboro |
+| **Halte Malioboro 3** | Malioboro Selatan | &plusmn; 65 Menit | Koridor 2A & Andong Wisata | Pasar Beringharjo, Titik Nol, Benteng Vredeburg |
+
+---
 1. **Halte Malioboro 1 (Grand Inna):** Terletak di ujung utara Malioboro. Titik pemberhentian ini paling pas bagi penumpang yang hendak menuju pintu timur Stasiun Tugu, pusat oleh-oleh Bakpia Pathok, atau menginap di kawasan Sosrowijayan.
 2. **Halte Malioboro 2 (Kepatihan):** Berada persis di depan Kompleks Kantor Gubernur DIY (Kepatihan) dan Malioboro Mall. Sangat ideal untuk pelancong yang ingin berbelanja busana kasual dan cinderamata modern.
 3. **Halte Malioboro 3 (Pasar Beringharjo):** Berada di ujung selatan, berhadapan langsung dengan Pasar Beringharjo, Museum Benteng Vredeburg, Gedung Agung (Istana Kepresidenan), dan kawasan cagar budaya Titik Nol Kilometer.

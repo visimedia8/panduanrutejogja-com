@@ -55,6 +55,20 @@ Di dalam satu kawasan seluas belasan hektar yang tertata rapi ini, seorang pelan
 
 ---
 
+## Matriks Konektivitas Antarmoda di Kawasan Stasiun Tugu Hub
+
+Berikut tabel panduan integrasi moda transportasi di Stasiun Besar Yogyakarta (Tugu Hub):
+
+| Moda Transportasi | Lokasi Pintu / Peron | Akses Jalur Penghubung | Estimasi Waktu Berjalan | Destinasi Jaringan Terhubung |
+| :--- | :--- | :--- | :--- | :--- |
+| **KRL Commuter Line** | Peron Jalur 3 & 6 (Utara) | Gate turnstile RFID utara & selatan | 1 – 2 menit dari peron utama | Lempuyangan, Maguwo, Klaten, Solo Balapan, Palur |
+| **KA Bandara YIA (Railink)** | Hall Khusus Pintu Barat Daya (Pasar Kembang) | Underpass penyeberangan bawah tanah / selasar selatan | 5 – 7 menit dari peron kedatangan | Wates & Bandara Internasional Yogyakarta (Kulon Progo) |
+| **Bus Trans Jogja** | Halte Malioboro 1 & Halte Mangkubumi | Trotoar pedestrian timur & utara berkanopi | 2 – 4 menit dari pintu keluar | Malioboro, Prambanan, UGM, Terminal Giwangan, Jombor |
+| **Kereta Api Prameks** | Peron Jalur 1 / Peron Barat | Gate tiket lantai dasar barat | 3 – 5 menit dari hall utama | Jenar, Wojo, Kutoarjo (Purworejo) |
+| **Taksi Resmi & Ojol** | Pangkalan Selatan (Pasar Kembang) & Pintu Barat | Shelter drop-off khusus beratap | 2 – 3 menit dari pintu keluar | Seluruh kawasan aglomerasi DIY |
+
+---
+
 ## Panduan Berpindah Moda Tanpa Bingung
 
 * **Dari Kereta Api Jarak Jauh ke KA Bandara YIA:**

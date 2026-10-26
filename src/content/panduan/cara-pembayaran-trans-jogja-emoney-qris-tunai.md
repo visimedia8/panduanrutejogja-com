@@ -76,6 +76,30 @@ Meskipun sistem digital telah dirancang sangat handal, pengguna terkadang mengal
    Beberapa halte di kawasan terluar mungkin mengalami pelemahan sinyal operator seluler tertentu. Untuk mengantisipasinya, selalu simpan minimal 1 kartu fisik e-money perbankan di dalam dompet Anda sebagai dana cadangan darurat.
 3. **Masa Berlaku Tiket Perjalanan:**
    Satu kali pembayaran tiket flat Rp3.600 berlaku untuk satu rangkaian perjalanan berkelanjutan. Anda berhak melakukan perpindahan koridor bus sepuasnya selama masih berada di dalam shelter halte transit tertutup tanpa melangkah keluar pintu gerbang turnstile.
+## Matriks Perbandingan Metode Pembayaran Trans Jogja
+
+Pemerintah Daerah D.I. Yogyakarta melalui Dinas Perhubungan menerapkan sistem pembayaran terpadu untuk memastikan kenyamanan transaksi tanpa uang tunai di seluruh armada bus:
+
+| Metode Pembayaran | Jenis Media | Biaya Kartu / Akses | Saldo Minimal | Kecepatan Transaksi (Detik) | Keuntungan Utama |
+|---|---|---|---|---|---|
+| Kartu Multi Trip (KMT) | Kartu RFID Khusus | Rp30.000 (saldo Rp10.000) | Rp3.600 | 1 - 2 Detik | Terintegrasi langsung dengan KRL Jogja-Solo |
+| Mandiri e-Money / Flazz / Brizzi / TapCash | Kartu Perbankan (KUE) | Rp25.000 (kartu kosong) | Rp3.600 | 1 - 2 Detik | Dapat digunakan untuk tol, belanja, dan parkir |
+| QRIS Dinamis (Gojek/Shopee/Dana/BCA/dll) | Aplikasi Smartphone | Gratis | Bebas (potong saldo) | 5 - 10 Detik | Praktis tanpa perlu membawa kartu fisik |
+| Kartu Khusus Pelajar / Mahasiswa DIY | Kartu Registrasi Dishub | Biaya cetak kartu subsidi | Rp1.800 | 1 - 2 Detik | Tarif diskon 50% hanya Rp1.800 flat |
+
+---
+
+## Mekanisme Tap-on-Bus (TOB) pada Armada Low-Deck & Halte Portabel
+
+Pada rute-rute koridor tertentu dan halte portabel yang tidak memiliki petugas loket (*ticket counter*), bus Trans Jogja dilengkapi dengan perangkat mesin *Tap-on-Bus (TOB)* otomatis yang terpasang di samping pintu masuk kabin bus:
+
+1. **Siapkan Kartu Sebelum Bus Tiba:** Siapkan kartu uang elektronik Anda di tangan sebelum melangkah naik ke dalam kabin bus agar tidak menghambat arus antrean penumpang di belakang Anda.
+2. **Posisikan Kartu di Sensor Mesin:** Tempelkan kartu fisik Anda tepat pada bidang sensor bertanda logo kartu nirsentuh. Tahan posisi kartu selama 1 hingga 2 detik hingga terdengar bunyi nada konfirmasi (*beep pendek*) dan lampu indikator hijau menyala di layar mesin.
+3. **Pemberitahuan Sisa Saldo di Layar:** Layar mesin TOB akan menampilkan nominal tarif terpotong (Rp3.600) beserta sisa saldo terkini kartu Anda.
+4. **Pembayaran Menggunakan QRIS di Mesin TOB:** Jika Anda memilih metode QRIS, minta pramugara atau sopir untuk menampilkan barcode dinamis pada layar perangkat TOB, lalu scan kode menggunakan aplikasi kamera e-wallet atau mobile banking Anda hingga status transaksi berhasil dikonfirmasi.
+
+---
+
 ## Kebijakan Saldo Minimal Kartu Uang Elektronik Perbankan
 
 Bagi penumpang yang memilih bertransaksi menggunakan kartu uang elektronik (e-Money Mandiri, BCA Flazz, BNI TapCash, BRI Brizzi), pastikan saldo kartu Anda mencukupi sebelum menempelkan kartu (*tapping*) di mesin halte Trans Jogja:

@@ -57,6 +57,23 @@ Banyak wisatawan tidak menyadari bahwa bus **Trans Jogja** dapat difungsikan lay
 
 ### 4. Menikmati Suasana Malam Hari di Titik Nol Kilometer
 Selepas pukul 18.00 WIB malam, kawasan pedestrian Malioboro hingga Titik Nol Kilometer dihiasi alunan musik syahdu seniman jalanan calung dan gamelan. Manfaatkan bus Trans Jogja Koridor 1A atau 2A yang beroperasi hingga pukul 21.30 WIB untuk kembali ke penginapan Anda tanpa perlu menghadapi tarif taksi jam sibuk.
+
+---
+
+## Matriks Komparasi Moda Transportasi di Kawasan Malioboro
+
+Berikut perbandingan pilihan moda transportasi bagi wisatawan di sepanjang koridor Jalan Malioboro:
+
+| Pilihan Moda | Tarif Perjalanan | Kapasitas Angkut | Rute Jelajah | Rekomendasi Situasi |
+| :--- | :--- | :--- | :--- | :--- |
+| **Bus Trans Jogja (1A, 2A, 3A, 8)** | Flat Rp3.600 / orang | 40 – 50 Penumpang | Koridor Arteri & Jalur Bus Khusus | Keliling kota jarak menengah-jauh tanpa macet |
+| **KRL Commuter Line (Stasiun Tugu)** | Flat Rp8.000 / orang | Ratusan Penumpang | Menghubungkan Jogja hingga Palur Solo | Perjalanan antarkota bebas macet jalan raya |
+| **Andong Kereta Kuda Wisata** | Rp100.000 – Rp150.000 / andong | 4 – 5 Orang | Putaran Malioboro – Keraton – Kauman | Wisata keluarga santai menikmati atmosfer budaya |
+| **Becak Kayuh Tradisional** | Rp20.000 – Rp40.000 (Sesuai Nego) | 1 – 2 Orang | Gang perkampungan, Pasar Beringharjo, Dagen | Menjelajah gang kuliner dan pusat batik lokal |
+| **Transportasi Daring (Ojol / Taksi)** | Tarif Dinamis Aplikasi | 1 – 4 Orang | Melalui jalan sirip lingkar luar Malioboro | Keberangkatan langsung menuju hotel larut malam |
+
+---
+
 ## Etika & Kebijakan Kawasan Pedestrian Bebas Asap Rokok
 
 Kawasan Jalan Malioboro telah ditetapkan oleh Pemerintah Kota Yogyakarta sebagai **Kawasan Tanpa Rokok (KTR)**:

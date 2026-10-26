@@ -54,6 +54,18 @@ Halte portabel berupa konstruksi tangga bordes baja berwarna biru yang ditempatk
 
 ---
 
+## Matriks Komparasi Halte Steril Permanen vs Halte Portabel
+
+| Fitur & Fasilitas | Halte Permanen Tertutup (Shelter Bertiket) | Halte Portabel Terbuka (Tangga Bordes) |
+| :--- | :--- | :--- |
+| **Status Area Transit** | Zona Steril Tertutup (*Paid Area*) | Zona Terbuka Non-Steril (Trotoar Jalan) |
+| **Ketentuan Biaya Pindah Bus** | **Gratis (Rp0)** Selama Tidak Keluar Gate | **Wajib Bayar Ulang (Rp3.600)** Tiap Ganti Bus |
+| **Petugas & Fasilitas** | Petugas loket jaga, kursi tunggu, atap kaca/fiber | Tanpa loket, tanpa kursi tunggu, tanpa atap peneduh |
+| **Metode Pembayaran** | Tap di gate turnstile / mesin EDC loket halte | Tap mesin EDC kondektur di atas pintu bus |
+| **Rekomendasi Pemakaian** | Sangat disarankan untuk rute transit berganti bus | Hanya disarankan untuk naik/turun sekali jalan |
+
+---
+
 ## 4 Halte Transit Utama Paling Direkomendasikan
 
 Bila Anda perlu berganti koridor, sangat disarankan untuk merencanakan transit di salah satu dari 4 halte hub besar berikut:

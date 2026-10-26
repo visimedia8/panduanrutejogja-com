@@ -3,7 +3,7 @@ title: "Cara Naik KA Bandara YIA dari Stasiun Tugu ke Bandara Kulon Progo"
 description: "Panduan lengkap naik KA Bandara Internasional Yogyakarta (YIA) dari Stasiun Tugu. Informasi pemesanan tiket, jadwal, fasilitas bagasi, dan estimasi waktu."
 category: "kereta-bandara"
 publishDate: "2026-10-21"
-updatedDate: "2026-10-21"
+updatedDate: "2026-10-26"
 author: "Tim Redaksi PanduanRuteJogja.com"
 featuredImage: "/images/cara-naik-ka-bandara-yia-stasiun-tugu-kulon-progo.webp"
 imageAlt: "Cara Naik Kereta Bandara YIA dari Stasiun Tugu"
@@ -29,70 +29,101 @@ faqs:
 
 ## Solusi Transportasi Tercepat Menuju Bandara YIA
 
-Bandara Internasional Yogyakarta (Yogyakarta International Airport / YIA) yang megah berdiri di pesisir Kapanewon Temon, Kabupaten Kulon Progo. Bandara baru ini berjarak sekitar 45 kilometer di sebelah barat daya pusat Kota Yogyakarta. Jika Anda menempuh perjalanan menggunakan kendaraan pribadi, taksi, atau bus jalan raya melewati Jalan Nasional Wates, waktu tempuh yang dibutuhkan sering kali mencapai 1,5 hingga 2,5 jam, terutama saat terjadi kemacetan di simpang Gamping, Sedayu, dan jembatan Sungai Progo.
+Bandara Internasional Yogyakarta (Yogyakarta International Airport / YIA) di Kapanewon Temon, Kabupaten Kulon Progo berjarak 45 kilometer di barat daya pusat Kota Yogyakarta. Jalur darat melewati Jalan Nasional Wates membutuhkan waktu tempuh antara 90 hingga 150 menit akibat kemacetan di kawasan Gamping, Sedayu, Sentolo, dan persimpangan Wates.
 
-Keberadaan **KA Bandara YIA** yang dioperasikan oleh PT Railink menjadi game-changer transportasi di D.I. Yogyakarta. Melalui jalur rel layang khusus (*elevated railway*), kereta bandara ini menghubungkan Stasiun Tugu di pusat kota langsung ke lobi terminal keberangkatan bandara dalam waktu **hanya 35 hingga 39 menit**, bebas macet, dan berjadwal pasti.
+Layanan Kereta Api Bandara YIA yang dioperasikan oleh PT Railink (KAI Bandara) memangkas waktu tempuh menjadi **hanya 35 menit untuk KA Xpress dan 39 menit untuk KA Reguler**. Menggunakan lintasan rel layang (*elevated track*) ganda bebas perlintasan sebidang, armada kereta ini menjamin ketepatan waktu 100 persen bebas macet jalan raya serta mengantarkan penumpang langsung ke lantai dua lobi keberangkatan bandara.
+
+---
+
+## Tabel Jadwal Keberangkatan KA Bandara YIA Relasi Stasiun Tugu ke YIA
+
+KA Bandara YIA melayani 24 perjalanan per hari dari Stasiun Yogyakarta (Tugu) menuju Bandara YIA, terbagi atas 18 perjalanan Reguler dan 6 perjalanan Xpress:
+
+| No. KA | Jam Berangkat Tugu | Jam Singgah Wates | Jam Tiba Bandara YIA | Tipe Layanan | Tarif Tiket |
+|---|---|---|---|---|---|
+| KA 7051 | 04.30 WIB | - (Langsung) | 05.05 WIB | Xpress Non-Stop | Rp50.000 |
+| KA 501 | 05.00 WIB | 05.26 WIB | 05.39 WIB | Reguler | Rp20.000 |
+| KA 503 | 06.00 WIB | 06.26 WIB | 06.39 WIB | Reguler | Rp20.000 |
+| KA 7053 | 06.30 WIB | - (Langsung) | 07.05 WIB | Xpress Non-Stop | Rp50.000 |
+| KA 505 | 07.00 WIB | 07.26 WIB | 07.39 WIB | Reguler | Rp20.000 |
+| KA 507 | 08.00 WIB | 08.26 WIB | 08.39 WIB | Reguler | Rp20.000 |
+| KA 509 | 09.00 WIB | 09.26 WIB | 09.39 WIB | Reguler | Rp20.000 |
+| KA 7055 | 09.30 WIB | - (Langsung) | 10.05 WIB | Xpress Non-Stop | Rp50.000 |
+| KA 511 | 10.00 WIB | 10.26 WIB | 10.39 WIB | Reguler | Rp20.000 |
+| KA 513 | 11.00 WIB | 11.26 WIB | 11.39 WIB | Reguler | Rp20.000 |
+| KA 515 | 12.00 WIB | 12.26 WIB | 12.39 WIB | Reguler | Rp20.000 |
+| KA 7057 | 12.30 WIB | - (Langsung) | 13.05 WIB | Xpress Non-Stop | Rp50.000 |
+| KA 517 | 13.00 WIB | 13.26 WIB | 13.39 WIB | Reguler | Rp20.000 |
+| KA 519 | 14.00 WIB | 14.26 WIB | 14.39 WIB | Reguler | Rp20.000 |
+| KA 7059 | 14.30 WIB | - (Langsung) | 15.05 WIB | Xpress Non-Stop | Rp50.000 |
+| KA 521 | 15.00 WIB | 15.26 WIB | 15.39 WIB | Reguler | Rp20.000 |
+| KA 523 | 16.00 WIB | 16.26 WIB | 16.39 WIB | Reguler | Rp20.000 |
+| KA 525 | 17.00 WIB | 17.26 WIB | 17.39 WIB | Reguler | Rp20.000 |
+| KA 7061 | 17.30 WIB | - (Langsung) | 18.05 WIB | Xpress Non-Stop | Rp50.000 |
+| KA 527 | 18.00 WIB | 18.26 WIB | 18.39 WIB | Reguler | Rp20.000 |
+| KA 529 | 19.00 WIB | 19.26 WIB | 19.39 WIB | Reguler | Rp20.000 |
+| KA 531 | 20.00 WIB | 20.26 WIB | 20.39 WIB | Reguler | Rp20.000 |
+| KA 533 | 20.55 WIB | 21.21 WIB | 21.34 WIB | Reguler Malam Terakhir | Rp20.000 |
+
+---
+
+## Tabel Jadwal Keberangkatan KA Bandara YIA Relasi Bandara YIA ke Stasiun Tugu
+
+Bagi penumpang yang mendarat di Bandara YIA dan hendak menuju pusat Kota Yogyakarta, berikut adalah jadwal keberangkatan resmi dari Stasiun Bandara YIA:
+
+| No. KA | Jam Berangkat YIA | Jam Singgah Wates | Jam Tiba Stasiun Tugu | Tipe Layanan | Tarif Tiket |
+|---|---|---|---|---|---|
+| KA 502 | 05.12 WIB | 05.25 WIB | 05.51 WIB | Reguler Pagi | Rp20.000 |
+| KA 7052 | 05.45 WIB | - (Langsung) | 06.20 WIB | Xpress Non-Stop | Rp50.000 |
+| KA 504 | 06.54 WIB | 07.07 WIB | 07.33 WIB | Reguler Pagi | Rp20.000 |
+| KA 7054 | 07.25 WIB | - (Langsung) | 08.00 WIB | Xpress Non-Stop | Rp50.000 |
+| KA 506 | 07.54 WIB | 08.07 WIB | 08.33 WIB | Reguler Pagi | Rp20.000 |
+| KA 508 | 08.54 WIB | 09.07 WIB | 09.33 WIB | Reguler Pagi | Rp20.000 |
+| KA 510 | 09.54 WIB | 10.07 WIB | 10.33 WIB | Reguler Siang | Rp20.000 |
+| KA 7056 | 10.25 WIB | - (Langsung) | 11.00 WIB | Xpress Non-Stop | Rp50.000 |
+| KA 512 | 10.54 WIB | 11.07 WIB | 11.33 WIB | Reguler Siang | Rp20.000 |
+| KA 514 | 11.54 WIB | 12.07 WIB | 12.33 WIB | Reguler Siang | Rp20.000 |
+| KA 516 | 12.54 WIB | 13.07 WIB | 13.33 WIB | Reguler Siang | Rp20.000 |
+| KA 7058 | 13.25 WIB | - (Langsung) | 14.00 WIB | Xpress Non-Stop | Rp50.000 |
+| KA 518 | 13.54 WIB | 14.07 WIB | 14.33 WIB | Reguler Siang | Rp20.000 |
+| KA 520 | 14.54 WIB | 15.07 WIB | 15.33 WIB | Reguler Sore | Rp20.000 |
+| KA 7060 | 15.25 WIB | - (Langsung) | 16.00 WIB | Xpress Non-Stop | Rp50.000 |
+| KA 522 | 15.54 WIB | 16.07 WIB | 16.33 WIB | Reguler Sore | Rp20.000 |
+| KA 524 | 16.54 WIB | 17.07 WIB | 17.33 WIB | Reguler Sore | Rp20.000 |
+| KA 526 | 17.54 WIB | 18.07 WIB | 18.33 WIB | Reguler Sore | Rp20.000 |
+| KA 7062 | 18.25 WIB | - (Langsung) | 19.00 WIB | Xpress Non-Stop | Rp50.000 |
+| KA 528 | 18.54 WIB | 19.07 WIB | 19.33 WIB | Reguler Malam | Rp20.000 |
+| KA 530 | 19.54 WIB | 20.07 WIB | 20.33 WIB | Reguler Malam | Rp20.000 |
+| KA 532 | 20.55 WIB | 21.08 WIB | 21.34 WIB | Reguler Malam | Rp20.000 |
+| KA 534 | 21.45 WIB | 21.58 WIB | 22.24 WIB | Reguler Malam Terakhir | Rp20.000 |
+
+---
+
+## Panduan Perhitungan Buffer Waktu Boarding Pesawat
+
+Ketepatan waktu tiba di bandara menentukan kelancaran proses pelaporan tiket (*check-in*) dan pemeriksaan keamanan (*Security Check Point* / SCP). Gunakan tabel acuan kalkulasi waktu berikut:
+
+| Kategori Penerbangan | Syarat Tiba di Terminal Bandara | Rekomendasi Jadwal KA Bandara | Batas Tutup Check-in Counter |
+|---|---|---|---|
+| Penerbangan Domestik (Tanpa Bagasi) | Minimal 1,5 jam sebelum lepas landas | Pilih KA yang tiba 100 menit sebelum terbang | Ditutup 30 menit sebelum boarding |
+| Penerbangan Domestik (Ada Koper Bagasi) | Minimal 2 jam sebelum lepas landas | Pilih KA yang tiba 130 menit sebelum terbang | Ditutup 45 menit sebelum boarding |
+| Penerbangan Internasional (AirAsia / Scoot) | Minimal 3 jam sebelum lepas landas | Pilih KA yang tiba 190 menit sebelum terbang | Ditutup 60 menit sebelum boarding |
 
 ---
 
 ## Letak Pintu Masuk Khusus di Stasiun Tugu
 
-Calon penumpang KA Bandara wajib mengetahui bahwa ruang tunggu dan pintu keberangkatan KA Bandara **terpisah** dari pintu utama stasiun kereta api jarak jauh:
-* **Lokasi Gate Keberangkatan:** Berada di sisi barat daya Stasiun Tugu (akses masuk dari Jalan Pasar Kembang, tepat di seberang deretan hotel dan kafe Sosrowijayan).
-* **Fasilitas Ruang Tunggu:** Dilengkapi pendingin udara sejuk, toilet modern berstandar bandara, colokan pengisi daya baterai smartphone di setiap kursi, layar monitor informasi jadwal penerbangan pesawat real-time (*Flight Information Display System / FIDS*), dan mesin tiket mandiri (*vending machine*).
+Ruang tunggu keberangkatan KA Bandara YIA di Stasiun Tugu berlokasi terpisah dari pintu utama kereta api jarak jauh:
+
+* **Lokasi Gate Keberangkatan:** Berada di sisi barat daya Stasiun Tugu (akses masuk dari Jalan Pasar Kembang, tepat di seberang kawasan Sosrowijayan).
+* **Fasilitas Ruang Tunggu:** Dilengkapi pendingin udara sentral, toilet bersih, fasilitas pengisian daya perangkat mobile di setiap kursi, monitor *Flight Information Display System (FIDS)*, dan loket mandiri *Vending Machine*.
 
 ---
 
 ## Prosedur Lengkap Pembelian Tiket & Boarding
 
-### 1. Pesan Tiket Jauh-Jauh Hari (Sangat Direkomendasikan)
-Tiket KA Bandara YIA memiliki kuota kursi terbatas untuk setiap jam keberangkatan demi menjamin kenyamanan penumpang. Pada jam-jam penerbangan padat (pagi pukul 06.00–09.00 WIB dan sore pukul 14.00–17.00 WIB), tiket kerap habis terjual (*sold out*) sejak 3 hingga 5 hari sebelumnya:
-* Unduh aplikasi **Access by KAI** atau kunjungi situs web resmi *reservation.railink.co.id*.
-* Pilih menu **KA Bandara**, masukkan stasiun asal *Yogyakarta (YK)* dan stasiun tujuan *Bandara YIA (YIA)*.
-* Tentukan tanggal dan jam keberangkatan. Aturan emas: **Pilihlah jadwal kereta yang tiba di Bandara YIA minimal 2 jam sebelum jam keberangkatan penerbangan domestik Anda, atau 3 jam untuk penerbangan internasional**.
-* Lakukan pembayaran melalui QRIS, transfer virtual account, atau kartu debit/kredit. Kode barcode tiket akan tersimpan di akun Anda.
-
-### 2. Tiba di Stasiun Tugu Lebih Awal
-* Tiba di gate boarding KA Bandara Stasiun Tugu paling lambat **30 menit sebelum jadwal keberangkatan kereta**.
-* Gate boarding otomatis dibuka 30 menit sebelum kereta berangkat dan **ditutup tepat 5 menit sebelum kereta diberangkatkan**. Penumpang yang terlambat tidak diperbolehkan masuk dan tiket hangus tanpa pengembalian bea.
-
-### 3. Proses Scan Barcode di Gate
-Arahkan kode QR tiket dari layar ponsel Anda ke scanner mesin gate turnstile kaca. Begitu lampu hijau menyala dan barrier terbuka, langkahkan kaki menuju peron peron jalur khusus KA Bandara.
-
-### 4. Menikmati Fasilitas Kabin Kereta
-Rangkaian KRD Railink menggunakan gerbong modern dengan konfigurasi tempat duduk 2-2 yang empuk. Di setiap gerbong tersedia rak bagasi berukuran besar untuk meletakkan koper kabin dan koper bagasi 24–28 inci. Tempat duduk bebas dipilih (*free seating*) selama perjalanan.
-
-### 5. Tiba di Gedung Terminal Bandara YIA
-Begitu kereta merapat di Stasiun Bandara YIA, Anda cukup menuruni tangga atau menggunakan fasilitas eskalator dan lift. Pintu keluar stasiun terhubung langsung oleh koridor beratap (*covered walkway*) selama 2 menit jalan kaki menuju konter check-in maskapai Garuda Indonesia, Citilink, Lion Air, Batik Air, Super Air Jet, AirAsia, dan Scoot.
-## Panduan Membawa Bagasi Koper di KA Bandara
-
-Fasilitas bagasi di dalam rangkaian KA Bandara YIA dirancang khusus mengikuti standar kereta ekspres bandara internasional di dunia:
-* **Rak Bagasi Kabin (Overhead Racks):** Terletak di sepanjang bagian atas deretan kursi penumpang, sangat pas untuk menaruh tas ransel ransel harian, tas laptop, kardus bakpia oleh-oleh, dan tas jinjing duffel bag.
-* **Rak Koper Besar (Luggage Stacks):** Terletak di dekat pintu masuk setiap gerbong kereta api. Rak bertingkat tiga berbahan baja ini mampu memuat koper ukuran besar (*check-in baggage*) ukuran 24 inci, 28 inci, hingga 32 inci dengan pengaman palang penahan guncangan.
-* **Gratis Biaya Bagasi:** Penumpang tidak dikenakan biaya tambahan sepeser pun untuk membawa bagasi koper pribadi ke dalam kabin kereta api, selama barang bawaan tidak membahayakan keselamatan atau berbau menyengat.
-
----
-
-## Rute Balik: Dari Bandara YIA Menuju Stasiun Tugu Yogyakarta
-
-Prosedur kepulangan dari Bandara YIA menuju pusat kota Jogja sama mudahnya:
-1. Setelah mengambil bagasi di sabuk konveyor (*baggage claim carousel*), berjalanlah keluar menuju lobi kedatangan.
-2. Ikuti papan petunjuk arah bergambar kereta api bertuliskan **"Stasiun Kereta Api / Train Station"** menuju sayap timur gedung terminal.
-3. Tap-in tiket barcode di gate boarding Stasiun YIA.
-4. Kereta akan meluncur kencang menembus perbukitan Kulon Progo dan mengantarkan Anda tiba di pusat Malioboro Stasiun Tugu dalam waktu 39 menit saja.
-## Estimasi Waktu Ideal dan Rekomendasi Kedatangan di Stasiun
-
-Perjalanan menuju Bandara Internasional Yogyakarta (YIA) membutuhkan perhitungan waktu yang sangat cermat untuk menghindari risiko ketinggalan jadwal penerbangan (*missed flight*). Meskipun waktu tempuh KA Bandara YIA Xpress hanya memakan waktu 35 menit dan KA Bandara Reguler 39 menit, Anda wajib memperhitungkan waktu transit di dalam bandara:
-
-1. **Jadwal Keberangkatan Kereta:** Pilihlah jadwal kereta yang tiba di Stasiun Bandara YIA minimal **2 jam sebelum jadwal keberangkatan pesawat rute domestik**, atau **3 jam sebelum keberangkatan rute internasional**. Hal ini krusial karena konter pelaporan tiket (*check-in counter*) maskapai penerbangan umumnya ditutup 45 menit sebelum jadwal lepas landas.
-2. **Waktu Tiba di Stasiun Tugu:** Datanglah ke Ruang Tunggu Khusus KA Bandara di Stasiun Tugu (Pintu Barat/Jl. Pasar Kembang) paling lambat 30 menit sebelum jadwal keberangkatan kereta. Pintu masuk (*boarding gate*) KA Bandara akan dibuka 20 menit sebelum kereta diberangkatkan dan akan ditutup tepat 5 menit sebelum kereta melaju demi keselamatan operasional lintasan.
-3. **Waktu Jalan Kaki di Bandara YIA:** Setelah kereta merapat di peron Stasiun YIA, penumpang perlu menaiki eskalator/lift penghubung menuju lantai keberangkatan terminal utama. Jarak berjalan kaki dari peron stasiun ke area konter check-in bandara memakan waktu sekitar 5–8 menit melewati jembatan penyeberangan beratap (*skybridge*) yang nyaman dan dilengkapi pendingin udara.
-
-## Fasilitas Ramah Disabilitas, Lansia, dan Penumpang Berkeluarga
-
-Layanan KA Bandara YIA dirancang dengan standar aksesibilitas internasional untuk memfasilitasi seluruh lapisan masyarakat:
-
-- **Peron Sejajar Pintu Kereta (*Level Boarding*):** Ketinggian peron di Stasiun Tugu, Stasiun Wates, dan Stasiun YIA dibuat sejajar sempurna dengan lantai gerbong kereta, sehingga memudahkan pengguna kursi roda, kereta dorong bayi (*stroller*), dan koper beroda besar tanpa hambatan undakan tangga.
-- **Lift Prioritas dan Eskalator:** Tersedia lift berkapasitas besar di seluruh stasiun perhentian yang dapat digunakan khusus oleh lansia, ibu hamil, serta penyandang disabilitas.
-- **Toilet Khusus dan Ruang Menyusui:** Di dalam rangkaian kereta maupun di ruang tunggu stasiun, tersedia fasilitas toilet disabilitas yang higienis serta ruang laktasi (*nursery room*) yang tenang bagi orang tua yang membawa bayi.
-- **Bantuan Porter Resmi Stasiun:** Bagi penumpang dengan jumlah bagasi koper yang banyak, Stasiun Tugu dan Stasiun YIA menyediakan layanan porter berseragam resmi dengan tarif transparan yang siap membantu membawa barang bawaan hingga ke peron kereta atau konter maskapai penerbangan.
+1. **Pemesanan Melalui Aplikasi:** Unduh aplikasi **Access by KAI** atau buka situs *reservation.railink.co.id*. Tiket dibuka mulai H-7 pukul 00.00 WIB. Bayar melalui QRIS, Virtual Account, atau kartu debit/kredit.
+2. **Waktu Tiba di Stasiun:** Hadir di gate boarding Stasiun Tugu minimal 30 menit sebelum jadwal keberangkatan kereta.
+3. **Penutupan Gate:** Gate masuk otomatis ditutup tepat **5 menit sebelum kereta diberangkatkan**. Penumpang yang terlambat tidak diperkenankan masuk dan tiket dinyatakan hangus.
+4. **Scan Barcode Gate:** Arahkan barcode dari smartphone ke kaca scanner mesin turnstile otomatis untuk membuka barrier masuk peron.
+5. **Akses Menuju Terminal Bandara:** Setelah turun di Stasiun YIA, gunakan eskalator atau lift penumpang. Koridor penghubung beratap menghubungkan peron langsung ke area check-in keberangkatan bandara dalam waktu 2 menit jalan kaki.

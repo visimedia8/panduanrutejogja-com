@@ -5,6 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import AdSlot from '../../components/AdSlot.astro';
 import DepartureBoard from '../../components/DepartureBoard.astro';
 import { siteConfig } from '../../config/site';
+import { categoryPillars } from '../../data/category-pillars';
 
 export async function getStaticPaths() {
   const allPanduan = await getCollection('panduan');
@@ -20,11 +21,25 @@ export async function getStaticPaths() {
 }
 
 const { category, articles } = Astro.props;
+const pillar = categoryPillars[category.slug] || categoryPillars['trans-jogja'];
 
 const breadcrumbs = [
   { name: 'Direktori', url: `${siteConfig.url}/` },
   { name: category.name, url: `${siteConfig.url}/kategori/${category.slug}/` },
 ];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': pillar.faqs.map((f) => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': f.answer,
+    },
+  })),
+};
 ---
 
 <BaseLayout
@@ -32,12 +47,14 @@ const breadcrumbs = [
   description={category.description}
   breadcrumbs={breadcrumbs}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
     <!-- Breadcrumb -->
     <Breadcrumb items={breadcrumbs.map((b) => ({ label: b.name, href: b.url }))} />
 
     <!-- Category Header: Plang Malioboro Style -->
-    <header class="mb-10 text-center sm:text-left bg-keraton-950 border-2 border-jogja-500 text-white p-6 sm:p-10 rounded-2xl shadow-ticket relative overflow-hidden">
+    <header class="mb-8 text-center sm:text-left bg-keraton-950 border-2 border-jogja-500 text-white p-6 sm:p-10 rounded-2xl shadow-ticket relative overflow-hidden">
       <div class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#d4af3720_1px,transparent_1px),linear-gradient(to_bottom,#d4af3720_1px,transparent_1px)] bg-[size:20px_20px]"></div>
       
       <div class="relative z-10">
@@ -56,21 +73,116 @@ const breadcrumbs = [
           </span>
           <span class="text-jogja-400">•</span>
           <span>Jadwal &amp; Tarif Terkini 2026</span>
+          <span class="text-jogja-400">•</span>
+          <span>Observasi Lapangan Daop 6 &amp; Dishub DIY</span>
         </div>
       </div>
     </header>
+
+    <!-- Key Network Stats Grid -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+      {pillar.stats.map((st) => (
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-4 shadow-xs">
+          <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500 font-mono">
+            {st.label}
+          </div>
+          <div class="text-xl sm:text-2xl font-extrabold text-keraton-900 mt-1 font-mono">
+            {st.value}
+          </div>
+          <div class="text-xs text-slate-600 mt-1">
+            {st.detail}
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <!-- Authoritative Macro-Context Pillar Content -->
+    <article class="bg-white border-2 border-slate-200 rounded-2xl p-6 sm:p-10 mb-10 shadow-sm">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded text-xs font-bold bg-keraton-100 text-keraton-900 mb-3 font-mono">
+        PEDOMAN TEKNIS &amp; ARSITEKTUR LAYANAN
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
+        {pillar.pillarTitle}
+      </h2>
+      <p class="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">
+        {pillar.pillarSubtitle}
+      </p>
+
+      <div class="prose max-w-none text-slate-700 mb-8" set:html={pillar.overviewHtml} />
+
+      <!-- Tabular Network Overview Matrix -->
+      <div class="mt-8">
+        <h3 class="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-keraton-800"></span>
+          Matriks Layanan &amp; Karakteristik Jalur {category.name}
+        </h3>
+        <div class="overflow-x-auto border-2 border-slate-200 rounded-xl">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-slate-50 text-slate-800 font-bold border-b-2 border-slate-200">
+              <tr>
+                <th class="p-3">Layanan / Koridor</th>
+                <th class="p-3">Rute Lintasan Kunci</th>
+                <th class="p-3">Interval (Headway)</th>
+                <th class="p-3">Jam Layanan</th>
+                <th class="p-3">Tarif Resmi</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 font-normal text-slate-700">
+              {pillar.networkTable.map((row) => (
+                <tr class="hover:bg-slate-50/80 transition-colors">
+                  <td class="p-3 font-bold text-keraton-900 font-mono whitespace-nowrap">{row.service}</td>
+                  <td class="p-3">{row.route}</td>
+                  <td class="p-3 font-mono text-slate-600 whitespace-nowrap">{row.headway}</td>
+                  <td class="p-3 font-mono text-slate-600 whitespace-nowrap">{row.hours}</td>
+                  <td class="p-3 font-bold text-emerald-800 whitespace-nowrap">{row.fare}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
 
     <!-- Ad Slot -->
     <AdSlot slotType="in-article" />
 
     <!-- Category Departure Board Table -->
-    <div class="my-6">
+    <div class="my-10">
       <DepartureBoard
         entries={articles}
         title={`Papan Informasi Jalur ${category.name}`}
         showCategoryTabs={false}
       />
     </div>
+
+    <!-- Category FAQs Section (Search-Intent Rich) -->
+    <section class="bg-paper-50 border-2 border-slate-200 rounded-2xl p-6 sm:p-10 my-10 shadow-sm">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="w-2 h-2 rounded-full bg-jogja-600"></span>
+        <span class="text-xs font-bold uppercase tracking-wider text-slate-600 font-mono">Tanya Jawab Pengguna</span>
+      </div>
+      <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-6">
+        Pertanyaan Umum Seputar {category.name}
+      </h2>
+
+      <div class="space-y-4">
+        {pillar.faqs.map((faq) => (
+          <details class="group bg-white border border-slate-200 rounded-xl p-4 transition-all duration-200 open:shadow-xs open:border-slate-300">
+            <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-slate-900 text-sm sm:text-base group-hover:text-keraton-900">
+              <span>{faq.question}</span>
+              <span class="transition group-open:rotate-180 ml-2 text-slate-500">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-100 font-normal">
+              {faq.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
 
     <!-- Navigation Back to All Routes -->
     <div class="mt-12 pt-6 border-t border-slate-200 flex justify-between items-center text-xs sm:text-sm font-bold">
@@ -82,6 +194,12 @@ const breadcrumbs = [
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
         Kembali ke Beranda Peta Rute
+      </a>
+      <a
+        href="/redaksi"
+        class="text-slate-600 hover:text-keraton-900 transition-colors"
+      >
+        Standar Verifikasi &amp; Redaksi &rarr;
       </a>
     </div>
   </div>

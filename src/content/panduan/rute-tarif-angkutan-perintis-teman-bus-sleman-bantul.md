@@ -50,6 +50,32 @@ Di Yogyakarta, Teman Bus beroperasi menghubungkan simpul terminal perkotaan deng
 
 ---
 
+## Matriks Koridor Utama Teman Bus Aglomerasi DIY
+
+Berikut rincian koridor jaringan bus Buy The Service (BTS) Teman Bus yang melayani konektivitas wilayah Kabupaten Sleman dan Kabupaten Bantul:
+
+| Koridor Trayek | Lintasan Rute Utama | Simpul Awal & Akhir | Frekuensi Keberangkatan | Jam Layanan Operasional | Destinasi Wisata Terhubung |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Koridor 1A (Prambanan Hub)** | Bandara Adisutjipto – Kalasan – Candi Prambanan | Malioboro &rarr; Candi Prambanan | 10 – 15 Menit | 05.30 – 21.00 WIB | Candi Prambanan, Candi Kalasan, Candi Sambisari |
+| **Koridor K1J (Pakem Feeder)** | Terminal Condongcatur – Jl. Kaliurang – Pakem | Condongcatur &rarr; Terminal Pakem | 15 – 20 Menit | 05.30 – 19.30 WIB | Lereng Merapi, Museum Gunungapi Merapi, Kaliurang |
+| **Koridor Palbapang Feeder** | Terminal Ngabean – Jl. Bantul – Palbapang | Ngabean &rarr; Terminal Palbapang | 15 – 20 Menit | 05.30 – 19.30 WIB | Sentra Gerabah Kasongan, Bantul Kota |
+| **Koridor Imogiri Perintis** | Terminal Giwangan – Jl. Imogiri Timur – Imogiri | Giwangan &rarr; Pasar Imogiri | 20 – 30 Menit | 06.00 – 18.00 WIB | Makam Raja-raja Imogiri, Sentra Batik Tulis Giriloyo |
+
+---
+
+## Struktur Tarif Subsidi & Registrasi MitraDarat
+
+Kementerian Perhubungan Republik Indonesia menerapkan struktur tarif berkeadilan dengan subsidi penuh bagi kelompok rentan:
+
+| Golongan Penumpang | Besaran Tarif Perjalanan | Metode Verifikasi Tiket | Persyaratan Registrasi Khusus |
+| :--- | :--- | :--- | :--- |
+| **Masyarakat Umum** | Rp4.000 – Rp4.500 | Kartu Uang Elektronik (KUE) / QRIS | Langsung tap pada mesin TOB tanpa syarat |
+| **Pelajar / Mahasiswa DIY** | Rp2.000 (Subsidi Khusus) | Kartu Khusus MitraDarat / KUE Terdaftar | Kartu Tanda Pelajar / Mahasiswa aktif via web MitraDarat |
+| **Lansia (Usia &ge; 60 Tahun)** | Rp2.000 / Gratis Kebijakan Tertentu | KTP & Kartu Komuter Terverifikasi | Verifikasi data NIK di aplikasi resmi Kementerian Perhubungan |
+| **Penyandang Disabilitas** | Rp2.000 / Bebas Biaya Khusus | Kartu Khusus Difabel Terdaftar | Surat keterangan atau kartu komunitas disabilitas terverifikasi |
+
+---
+
 ## Armada Modern & Standar Keamanan
 
 Setiap armada Teman Bus dilengkapi fasilitas berstandar tinggi:

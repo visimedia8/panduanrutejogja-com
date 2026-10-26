@@ -17,104 +17,167 @@ const breadcrumbs = [
     <Breadcrumb items={breadcrumbs.map(b => ({ label: b.name, href: b.url }))} />
 
     <header class="mb-10 text-center sm:text-left">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 border border-brand-200 mb-3">
-        Inisiatif Utilitas Publik Independen
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-keraton-100 text-keraton-900 border border-jogja-400 mb-3 font-mono">
+        INISIATIF UTILITAS PUBLIK INDEPENDEN DIY
       </div>
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
         Tentang PanduanRuteJogja.com
       </h1>
-      <p class="mt-3 text-lg text-slate-600 leading-relaxed max-w-3xl">
-        Membantu warga lokal, mahasiswa, komuter harian, dan wisatawan menjelajahi setiap sudut Daerah Istimewa Yogyakarta dengan transportasi publik yang nyaman, murah, dan terintegrasi.
+      <p class="mt-3 text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
+        Membantu warga lokal, mahasiswa, komuter harian, dan wisatawan menjelajahi setiap sudut Daerah Istimewa Yogyakarta dengan transportasi publik yang terintegrasi, transparan, terjangkau, dan ramah lingkungan.
       </p>
     </header>
 
-    <div class="prose-transit space-y-8">
+    <div class="space-y-10 text-slate-700 text-sm sm:text-base leading-relaxed">
       
-      <!-- Latar Belakang -->
-      <section class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
-        <h2 class="!mt-0 text-xl sm:text-2xl font-bold text-navy-900 flex items-center gap-2">
-          <span class="w-2.5 h-6 rounded bg-brand-600 inline-block"></span>
-          Latar Belakang & Misi Kami
+      <!-- Latar Belakang & Urgensi -->
+      <section class="bg-white p-6 sm:p-8 rounded-2xl border-2 border-slate-200 shadow-sm">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2.5 mb-4">
+          <span class="w-2.5 h-6 rounded bg-keraton-800 inline-block"></span>
+          Latar Belakang &amp; Misi Mengatasi Defisit Informasi Rute
         </h2>
-        <p>
-          Daerah Istimewa Yogyakarta memiliki sistem transportasi publik yang sangat kaya dan terus berkembang, mulai dari jaringan bus perkotaan <strong>Trans Jogja</strong>, kereta komuter <strong>KRL Commuter Line Jogja–Solo</strong>, kereta bandara <strong>KA Bandara YIA</strong>, kereta diesel lokal <strong>Prameks</strong>, hingga angkutan perintis kawasan aglomerasi Sleman dan Bantul.
+        <p class="mb-4">
+          Daerah Istimewa Yogyakarta memiliki sistem transportasi publik yang sangat kaya dan terus berevolusi. Jaringan mobilitas daerah ini mencakup jaringan bus perkotaan <strong>Trans Jogja</strong> dengan lebih dari 17 koridor, kereta komuter modern <strong>KRL Commuter Line Jogja–Solo</strong> yang melintasi 13 stasiun antarprovinsi, kereta ekspres <strong>KA Bandara YIA</strong> yang menghubungkan pusat kota dengan Kulon Progo dalam 35 menit, kereta diesel lokal legendaris <strong>KA Prameks</strong> menuju Kutoarjo, serta armada bus perintis dan Buy The Service (BTS) Teman Bus yang melayani simpul pedesaan di Kabupaten Sleman dan Kabupaten Bantul.
+        </p>
+        <p class="mb-4">
+          Kendati infrastruktur fisik antarmoda telah terhubung dengan baik, kami mendapati adanya kesenjangan informasi yang signifikan bagi para pengguna di lapangan: jadwal keberangkatan, lokasi presisi halte transit steril vs halte portabel terbuka, kebijakan pembayaran non-tunai (kartu uang elektronik vs QRIS), serta estimasi waktu tunggu armada (*headway*) sering kali terfragmentasi di berbagai kanal dinas resmi atau bahkan sama sekali tidak terdokumentasikan dalam format yang mudah dipahami oleh wisatawan luar kota.
         </p>
         <p>
-          Namun, informasi rute, titik halte transit, metode pembayaran non-tunai, dan integrasi antarstasiun sering kali tersebar di berbagai kanal yang terpisah atau sulit dipahami oleh masyarakat awam dan wisatawan yang baru pertama kali menginjakkan kaki di Yogyakarta.
-        </p>
-        <p>
-          <strong>PanduanRuteJogja.com</strong> lahir sebagai portal utilitas independen non-komersial berorientasi masyarakat untuk merangkum seluruh informasi perjalanan secara sistematis, faktual, dan berbasis pengalaman nyata di lapangan.
+          <strong>PanduanRuteJogja.com</strong> didirikan oleh sekelompok praktisi tata kota, peneliti sistem transportasi publik, dan jurnalis warga independen di Yogyakarta untuk mengisi kekosongan informasi tersebut. Misi kami sederhana namun fundamental: menyajikan panduan rute dan jadwal perjalanan yang 100% faktual, berbasis pengujian lapangan langsung, bebas kepentingan komersial, dan dirancang dengan pendekatan humanis agar siapa pun dapat berkeliling Jogja dengan aman tanpa takut tersesat.
         </p>
       </section>
 
+      <!-- 5-Tahap Protokol Audit Fisik Rute -->
+      <section class="bg-white p-6 sm:p-8 rounded-2xl border-2 border-slate-200 shadow-sm">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2.5 mb-4">
+          <span class="w-2.5 h-6 rounded bg-keraton-800 inline-block"></span>
+          Metodologi Riset: Protokol Audit 5 Tahap Pengujian Fisik
+        </h2>
+        <p class="mb-6">
+          Setiap angka jadwal, waktu tempuh, dan catatan fasilitas halte yang dipublikasikan di situs ini bukan hasil dugaan atau kutipan brosur meja kerja. Tim redaksi menerapkan prosedur verifikasi berstandar tinggi:
+        </p>
+
+        <div class="space-y-4">
+          <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/60">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-keraton-800 text-white text-xs flex items-center justify-center font-mono">1</span>
+              Sinkronisasi Dokumen Regulasi Primer
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+              Membedah Grafik Perjalanan Kereta Api (Gapeka) resmi PT Kereta Api Indonesia (Persero), Surat Keputusan (SK) Gubernur DIY terkait penetapan tarif angkutan umum bersubsidi, dan pengumuman trayek Direktorat Jenderal Perhubungan Darat.
+            </p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/60">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-keraton-800 text-white text-xs flex items-center justify-center font-mono">2</span>
+              Penelusuran Rute Lapangan In-Situ (Ground Check)
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+              Analis kami menaiki langsung armada dari terminal awal hingga terminal akhir, mencatat waktu jeda lampu lalu lintas, titik rawan kepadatan (bottleneck), serta kondisi fisik halte (apakah bertiket permanen atau portabel tepi jalan).
+            </p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/60">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-keraton-800 text-white text-xs flex items-center justify-center font-mono">3</span>
+              Verifikasi Headway Berbasis Jam Sibuk &amp; Jam Lengang
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+              Pencatatan interval kedatangan bus dilakukan secara berulang pada tiga jendela waktu: jam sibuk pagi (06.30–08.30 WIB), jam lengang siang (11.00–14.00 WIB), dan jam pulang kerja sore (16.30–18.30 WIB).
+            </p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/60">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-keraton-800 text-white text-xs flex items-center justify-center font-mono">4</span>
+              Uji Coba Transaksi Gerbang Tiket &amp; Mesin Tap Antarmoda
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+              Menguji langsung kompatibilitas kartu uang elektronik (e-Money, Flazz, Brizzi, TapCash), aplikasi GoTransit, Access by KAI, dan pemindai QRIS pada mesin validator tiket pintu otomatis maupun mesin EDC kondektur.
+            </p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/60">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-keraton-800 text-white text-xs flex items-center justify-center font-mono">5</span>
+              Validasi Silang Rekonsiliasi Komunitas Komuter DIY
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+              Memvalidasi temuan dengan laporan harian dari komunitas pengguna KRL Jogja-Solo, pengemudi bus Trans Jogja, serta petugas loket stasiun sebelum naskah panduan resmi diterbitkan.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <!-- Prinsip Utama Kami -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 not-prose">
-        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
-          <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center font-bold mb-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 bg-white rounded-2xl border-2 border-slate-200 shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-keraton-100 text-keraton-900 flex items-center justify-center font-bold mb-4 font-mono">
             01
           </div>
-          <h3 class="text-base font-bold text-navy-900 mb-2">Observasi Lapangan</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Data halte, waktu tempuh, dan prosedur transit kami catat langsung melalui penelusuran fisik di koridor bus dan stasiun aktif.
+          <h3 class="text-base font-bold text-slate-900 mb-2">Faktual Tanpa Asumsi</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+            Data halte, waktu tempuh, dan prosedur transit kami catat langsung melalui penelusuran fisik di koridor bus dan stasiun aktif. Tidak ada angka yang dibuat-buat.
           </p>
         </div>
 
-        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
-          <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center font-bold mb-4">
+        <div class="p-6 bg-white rounded-2xl border-2 border-slate-200 shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-keraton-100 text-keraton-900 flex items-center justify-center font-bold mb-4 font-mono">
             02
           </div>
-          <h3 class="text-base font-bold text-navy-900 mb-2">Bebas Bias & Independen</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Kami bukan kepanjangan tangan operator komersial manapun. Ulasan, kelebihan, dan kelemahan rute kami sampaikan secara objektif.
+          <h3 class="text-base font-bold text-slate-900 mb-2">Bebas Bias &amp; Independen</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+            Kami bukan agen atau vendor pemasaran operator transportasi manapun. Segala kelebihan, keterbatasan armada, dan rintangan jalur kami ulas secara objektif dan jujur.
           </p>
         </div>
 
-        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
-          <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center font-bold mb-4">
+        <div class="p-6 bg-white rounded-2xl border-2 border-slate-200 shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-keraton-100 text-keraton-900 flex items-center justify-center font-bold mb-4 font-mono">
             03
           </div>
-          <h3 class="text-base font-bold text-navy-900 mb-2">Ramah Wisatawan & Warga</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Bahasa panduan dirancang lugas tanpa istilah birokrasi rumit, mempermudah siapapun bernavigasi tanpa takut tersesat.
+          <h3 class="text-base font-bold text-slate-900 mb-2">Ramah Wisatawan &amp; Warga</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+            Setiap panduan ditulis dengan bahasa yang lugas, mengedepankan petunjuk visual jalur, serta menghindari akronim birokrasi yang membingungkan orang awam.
           </p>
         </div>
       </div>
 
-      <!-- Standar Redaksi & Verifikasi Faktual -->
-      <section class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
-        <h2 class="!mt-0 text-xl sm:text-2xl font-bold text-navy-900 flex items-center gap-2">
-          <span class="w-2.5 h-6 rounded bg-brand-600 inline-block"></span>
-          Standar Redaksi & Kebijakan Pembaruan (E-E-A-T)
+      <!-- Komitmen Transparansi & Pernyataan Non-Afiliasi -->
+      <section class="p-6 sm:p-8 bg-paper-100 rounded-2xl border-2 border-slate-300">
+        <h2 class="text-lg sm:text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+          <svg class="w-5 h-5 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+          Pernyataan Independensi (Disclaimer Non-Afiliasi Resmi)
         </h2>
-        <p>
-          Tim redaksi kami rutin melakukan audit berkala terhadap jadwal keberangkatan, skema tarif flat vs progresif, ketersediaan mesin tap QRIS di halte portabel, serta penyesuaian rekayasa lalu lintas saat libur panjang (peak season).
+        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal mb-3">
+          <strong>PanduanRuteJogja.com</strong> merupakan media rujukan independen berbasis inisiatif masyarakat dan <strong>TIDAK BERAFILIASI</strong> secara kelembagaan, kepemilikan modal, maupun struktur kedinasan dengan Dinas Perhubungan D.I. Yogyakarta, PT Kereta Api Indonesia (Persero), PT Kereta Commuter Indonesia (KAI Commuter), PT Railink, Perum DAMRI, maupun PT Jogja Tugu Trans.
         </p>
-        <p>
-          Jika terdapat perubahan jalur resmi oleh Dinas Perhubungan DIY atau penyesuaian Gapeka (Grafik Perjalanan Kereta Api) oleh PT Kereta Api Indonesia, artikel panduan terkait akan segera diperbarui dengan catatan tanggal modifikasi terbaru (Date Modified).
+        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+          Seluruh nama rute, merek dagang, lambang operator, dan logo sistem perkeretaapian yang disebutkan dalam situs ini semata-mata digunakan untuk tujuan identifikasi deskriptif dalam rangka memandu publik (*fair use / public information guidance*). Untuk urusan pembelian tiket resmi kereta api jarak jauh atau pengaduan kehilangan barang, silakan menghubungi kanal customer care masing-masing instansi.
         </p>
       </section>
 
-      <!-- Pernyataan Independensi Resmi -->
-      <section class="p-6 sm:p-8 bg-slate-100 rounded-2xl border border-slate-300/80">
-        <h2 class="!mt-0 text-lg font-bold text-navy-900">
-          Pernyataan Independensi (Disclaimer Non-Afiliasi)
-        </h2>
-        <p class="text-sm text-slate-600 leading-relaxed">
-          <strong>PanduanRuteJogja.com</strong> merupakan media panduan independen milik inisiatif masyarakat dan <strong>TIDAK BERAFILIASI</strong> secara struktural maupun hukum dengan Dinas Perhubungan D.I. Yogyakarta, PT Kereta Api Indonesia (Persero), PT Kereta Commuter Indonesia (KAI Commuter), PT Railink, DAMRI, maupun PT Jogja Tugu Trans. Seluruh merek dagang, logo, dan nama layanan adalah hak cipta dari masing-masing pemegang merek resmi.
-        </p>
-      </section>
-
-      <!-- Kontak Cepat -->
+      <!-- Tautan Cepat Kontak -->
       <div class="pt-4 text-center">
         <p class="text-sm text-slate-600 mb-3">
-          Memiliki koreksi informasi halte, saran rute baru, atau pertanyaan kerjasama?
+          Memiliki pertanyaan spesifik, laporan perubahan rute, atau ingin menyarankan topik artikel baru?
         </p>
-        <a
-          href="/kontak"
-          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-600 text-white font-semibold hover:bg-brand-700 transition-colors shadow-sm"
-        >
-          Hubungi Tim Redaksi Kami &rarr;
-        </a>
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="/kontak"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-keraton-800 text-white font-bold hover:bg-keraton-900 transition-colors shadow-sm text-sm"
+          >
+            Hubungi Tim Redaksi Kami &rarr;
+          </a>
+          <a
+            href="/redaksi"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white border-2 border-slate-300 text-slate-800 font-bold hover:bg-slate-50 transition-colors text-sm"
+          >
+            Lihat Dewan Redaksi &rarr;
+          </a>
+        </div>
       </div>
 
     </div>
