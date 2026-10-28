@@ -4,6 +4,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import AdSlot from '../components/AdSlot.astro';
 import HalteFinder from '../components/HalteFinder.astro';
 import DepartureBoard from '../components/DepartureBoard.astro';
+import TransitFareCalculator from '../components/TransitFareCalculator.astro';
+import OfficialSourcesSection from '../components/OfficialSourcesSection.astro';
 import { siteConfig } from '../config/site';
 import { LINE_ORDER, LINES } from '../lib/lines';
 
@@ -213,6 +215,11 @@ const wisataCount = allPanduan.filter((p) => p.data.category === 'tiket-wisata')
     </div>
   </section>
 
+  <!-- Interactive Transit Fare & Route Calculator Tool -->
+  <section id="kalkulator" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+    <TransitFareCalculator />
+  </section>
+
   <!-- Departure Board Section (High-Contrast Function-First Transit Portal) -->
   <section id="panduan-list" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
     <DepartureBoard entries={sortedArticles} title="Papan Informasi Rute &amp; Jadwal Resmi" showCategoryTabs={true} />
@@ -269,6 +276,11 @@ const wisataCount = allPanduan.filter((p) => p.data.category === 'tiket-wisata')
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- Official Regulatory & Real-Life Sources Transparency -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <OfficialSourcesSection />
   </section>
 
   <!-- Bottom Ad Slot -->

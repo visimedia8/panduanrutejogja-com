@@ -106,6 +106,7 @@ export const siteConfig = {
 
   navItems: [
     { title: 'Beranda', href: '/' },
+    { title: 'Kalkulator Tarif', href: '/#kalkulator' },
     { title: 'Trans Jogja', href: '/kategori/trans-jogja' },
     { title: 'KRL & Bandara', href: '/kategori/kereta-bandara' },
     { title: 'Tiket & Wisata', href: '/kategori/tiket-wisata' },

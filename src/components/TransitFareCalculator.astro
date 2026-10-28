@@ -1,0 +1,533 @@
+---
+// TransitFareCalculator.astro - Kalkulator Estimasi Tarif & Rute Transit DIY
+---
+
+<div id="kalkulator-tarif" class="my-8 bg-white rounded-2xl border-2 border-keraton-300 shadow-ticket overflow-hidden">
+  
+  <!-- Header Bar -->
+  <div class="bg-keraton-950 p-4 sm:p-6 border-b-2 border-jogja-500 text-white">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div>
+        <div class="flex items-center gap-2 mb-1.5 font-mono">
+          <span class="w-2.5 h-2.5 rounded-full bg-jogja-400"></span>
+          <span class="text-xs font-bold uppercase tracking-wider text-jogja-300">
+            UTILITAS INTERAKTIF KOMUTER &amp; WISATAWAN
+          </span>
+        </div>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+          Kalkulator Estimasi Tarif &amp; Rute Transit DIY
+        </h2>
+        <p class="text-xs sm:text-sm text-keraton-200 mt-1">
+          Hitung rincian ongkos resmi, estimasi durasi perjalanan, serta simpul transit halte antarmoda di Daerah Istimewa Yogyakarta.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <span class="px-3 py-1 rounded-full bg-keraton-900 border border-jogja-400/80 text-[11px] font-mono text-jogja-300 font-bold whitespace-nowrap">
+          TARIF RESMI 2026
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-4 sm:p-6 lg:p-8 bg-paper-50/60">
+    
+    <!-- Quick Route Chips -->
+    <div class="mb-6">
+      <span class="text-xs font-bold font-mono text-keraton-900 uppercase tracking-wider block mb-2.5">
+        PILIHAN RUTE POPULER WISATAWAN &amp; KOMUTER:
+      </span>
+      <div class="flex flex-wrap gap-2">
+        <button
+          type="button"
+          class="route-preset-btn px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-keraton-900 hover:border-keraton-600 hover:bg-keraton-50 transition-all cursor-pointer shadow-2xs"
+          data-origin="yia"
+          data-destination="malioboro"
+        >
+          Bandara YIA ➔ Malioboro
+        </button>
+        <button
+          type="button"
+          class="route-preset-btn px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-keraton-900 hover:border-keraton-600 hover:bg-keraton-50 transition-all cursor-pointer shadow-2xs"
+          data-origin="tugu"
+          data-destination="prambanan"
+        >
+          Stasiun Tugu ➔ Candi Prambanan
+        </button>
+        <button
+          type="button"
+          class="route-preset-btn px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-keraton-900 hover:border-keraton-600 hover:bg-keraton-50 transition-all cursor-pointer shadow-2xs"
+          data-origin="tugu"
+          data-destination="borobudur"
+        >
+          Stasiun Tugu ➔ Candi Borobudur
+        </button>
+        <button
+          type="button"
+          class="route-preset-btn px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-keraton-900 hover:border-keraton-600 hover:bg-keraton-50 transition-all cursor-pointer shadow-2xs"
+          data-origin="solo"
+          data-destination="malioboro"
+        >
+          Solo Balapan ➔ Malioboro
+        </button>
+        <button
+          type="button"
+          class="route-preset-btn px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-keraton-900 hover:border-keraton-600 hover:bg-keraton-50 transition-all cursor-pointer shadow-2xs"
+          data-origin="giwangan"
+          data-destination="parangtritis"
+        >
+          Terminal Giwangan ➔ Pantai Parangtritis
+        </button>
+        <button
+          type="button"
+          class="route-preset-btn px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-keraton-900 hover:border-keraton-600 hover:bg-keraton-50 transition-all cursor-pointer shadow-2xs"
+          data-origin="tugu"
+          data-destination="ugm"
+        >
+          Stasiun Tugu ➔ Kampus UGM
+        </button>
+      </div>
+    </div>
+
+    <!-- Selection Controls Form -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6">
+      
+      <!-- Titik Keberangkatan -->
+      <div>
+        <label for="calc-origin" class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2 font-mono">
+          1. Titik Keberangkatan (Asal)
+        </label>
+        <div class="relative">
+          <select
+            id="calc-origin"
+            class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 text-sm font-semibold text-slate-800 bg-white focus:outline-none focus:border-keraton-800 focus:ring-2 focus:ring-keraton-800/20 transition-all cursor-pointer appearance-none"
+          >
+            <option value="yia">Bandara Internasional Yogyakarta (YIA Kulon Progo)</option>
+            <option value="tugu" selected>Stasiun Yogyakarta (Tugu / Malioboro)</option>
+            <option value="lempuyangan">Stasiun Lempuyangan (Kereta Api Ekonomi)</option>
+            <option value="malioboro">Kawasan Malioboro / Titik Nol Kilometer</option>
+            <option value="giwangan">Terminal Bus Giwangan (Yogyakarta Selatan)</option>
+            <option value="jombor">Terminal Bus Jombor (Sleman / Ring Road Utara)</option>
+            <option value="solo">Stasiun Solo Balapan / Surakarta</option>
+          </select>
+          <div class="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Titik Tujuan -->
+      <div>
+        <label for="calc-destination" class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2 font-mono">
+          2. Titik Tujuan Perjalanan
+        </label>
+        <div class="relative">
+          <select
+            id="calc-destination"
+            class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 text-sm font-semibold text-slate-800 bg-white focus:outline-none focus:border-keraton-800 focus:ring-2 focus:ring-keraton-800/20 transition-all cursor-pointer appearance-none"
+          >
+            <option value="malioboro">Malioboro &amp; Titik Nol KM</option>
+            <option value="prambanan" selected>Taman Wisata Candi Prambanan</option>
+            <option value="borobudur">Kawasan Candi Borobudur (Magelang)</option>
+            <option value="parangtritis">Kawasan Wisata Pantai Parangtritis</option>
+            <option value="yia">Bandara Internasional Yogyakarta (YIA)</option>
+            <option value="ugm">Kampus UGM / UNY Bulaksumur</option>
+            <option value="solo">Stasiun Solo Balapan (Surakarta)</option>
+          </select>
+          <div class="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Result Card Container -->
+    <div id="calc-result-box" class="bg-white rounded-xl border-2 border-keraton-800 shadow-md p-5 sm:p-7 relative overflow-hidden">
+      
+      <!-- Top Line: Moda & Status -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-200">
+        <div>
+          <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 block">
+            KOMBINASI MODA TERBAIK:
+          </span>
+          <div id="res-mode-badge" class="mt-1 inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs sm:text-sm font-bold bg-keraton-900 text-jogja-300 font-mono">
+            Trans Jogja Koridor 1A
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
+            <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
+            Jalur Terverifikasi Lapangan
+          </span>
+        </div>
+      </div>
+
+      <!-- Core Metrics Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-5">
+        
+        <!-- Total Ongkos -->
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+          <span class="text-[11px] font-mono text-slate-500 uppercase tracking-wider block mb-1">
+            TOTAL ESTIMASI ONGKOS
+          </span>
+          <div id="res-fare" class="text-xl sm:text-2xl font-black text-keraton-900 font-mono">
+            Rp3.600
+          </div>
+          <span id="res-student-fare" class="text-[11px] text-slate-600 block mt-0.5">
+            Tarif Pelajar: Rp2.000
+          </span>
+        </div>
+
+        <!-- Durasi Tempuh -->
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+          <span class="text-[11px] font-mono text-slate-500 uppercase tracking-wider block mb-1">
+            ESTIMASI WAKTU TEMPUH
+          </span>
+          <div id="res-time" class="text-xl sm:text-2xl font-black text-slate-900 font-mono">
+            40 – 50 Menit
+          </div>
+          <span class="text-[11px] text-slate-600 block mt-0.5">
+            Tergantung kondisi jam sibuk
+          </span>
+        </div>
+
+        <!-- Metode Pembayaran -->
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+          <span class="text-[11px] font-mono text-slate-500 uppercase tracking-wider block mb-1">
+            METODE BAYAR VALID
+          </span>
+          <div id="res-payment" class="text-xs font-bold text-slate-800 leading-snug">
+            QRIS &amp; Kartu Uang Elektronik
+          </div>
+          <span class="text-[11px] text-slate-500 block mt-0.5">
+            Flazz, e-Money, TapCash, Brizzi
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Step by Step Guidance -->
+      <div class="p-4 rounded-xl bg-keraton-50/70 border border-keraton-200/80 mb-5">
+        <span class="text-xs font-bold font-mono text-keraton-900 uppercase tracking-wider block mb-2 flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-keraton-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          PANDUAN SIMPUL TRANSIT &amp; PERJALANAN:
+        </span>
+        <p id="res-guidance" class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+          Naik Trans Jogja Koridor 1A dari Halte Mangkubumi 1 (sebelah timur Stasiun Tugu) langsung menuju halte akhir Terminal Prambanan tanpa perlu transit berpindah bus.
+        </p>
+      </div>
+
+      <!-- Bottom Action Link -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-slate-100">
+        <span class="text-xs text-slate-500">
+          Ingin melihat daftar halte lengkap dan jam headway terperinci?
+        </span>
+        <a
+          id="res-guide-link"
+          href="/panduan/rute-halte-trans-jogja-koridor-1a-prambanan-malioboro/"
+          class="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-keraton-800 text-white font-bold text-xs hover:bg-keraton-900 transition-colors shadow-xs"
+        >
+          <span>Buka Panduan Rute Terkait</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script>
+interface JourneyData {
+  primaryMode: string;
+  fare: string;
+  studentFare: string;
+  time: string;
+  payment: string;
+  guidance: string;
+  guideUrl: string;
+}
+
+const JOURNEY_DB: Record<string, JourneyData> = {
+  // Bandara YIA origins
+  'yia-malioboro': {
+    primaryMode: 'KA Bandara YIA Reguler / Xpress + Jalan Kaki',
+    fare: 'Rp20.000 (Reguler) / Rp50.000 (Xpress)',
+    studentFare: 'Tarif Umum Resmi PT Railink',
+    time: '35 – 39 Menit',
+    payment: 'Access by KAI, Tiket Vending Machine YIA, KMT',
+    guidance: 'Naik KA Bandara YIA dari Stasiun Bandara YIA turun di Stasiun Tugu Yogyakarta. Dari pintu timur Stasiun Tugu, Anda cukup berjalan kaki 100 meter langsung memasuki kawasan pedestrian Malioboro.',
+    guideUrl: '/panduan/cara-naik-ka-bandara-yia-stasiun-tugu-kulon-progo/'
+  },
+  'yia-prambanan': {
+    primaryMode: 'KA Bandara YIA + Trans Jogja Koridor 1A',
+    fare: 'Rp23.600 (KA Rp20.000 + Bus Rp3.600)',
+    studentFare: 'Rp22.000 (Pelajar Bus Rp2.000)',
+    time: '80 – 95 Menit',
+    payment: 'KA: Access by KAI | Bus: QRIS / e-Money',
+    guidance: 'Naik KA Bandara YIA menuju Stasiun Tugu. Keluar via pintu timur ke Halte Mangkubumi 1, lalu sambung Trans Jogja Koridor 1A langsung menuju halte akhir Terminal Prambanan.',
+    guideUrl: '/panduan/rute-halte-trans-jogja-koridor-1a-prambanan-malioboro/'
+  },
+  'yia-borobudur': {
+    primaryMode: 'Bus DAMRI Bandara YIA – Borobudur (KSPN)',
+    fare: 'Rp65.000 – Rp75.000 (Tarif Resmi DAMRI)',
+    studentFare: 'Tarif Flat Terpadu Pariwisata',
+    time: '80 – 90 Menit',
+    payment: 'Loket Tiket DAMRI Bandara YIA & Aplikasi KAI/DAMRI',
+    guidance: 'Tersedia bus shuttle DAMRI khusus Kawasan Strategis Pariwisata Nasional (KSPN) dari lantai dasar Bandara YIA langsung menuju Terminal Borobudur via jalur Bedakah/Salaman.',
+    guideUrl: '/panduan/panduan-naik-bus-damri-bandara-yia-jogja-magelang/'
+  },
+  'yia-ugm': {
+    primaryMode: 'KA Bandara YIA + Trans Jogja Koridor 3A / Taksi',
+    fare: 'Rp23.600 (KA Rp20.000 + Bus Rp3.600)',
+    studentFare: 'Rp22.000',
+    time: '65 – 75 Menit',
+    payment: 'Access by KAI + Tap non-tunai di halte',
+    guidance: 'Naik KA Bandara turun di Stasiun Tugu, jalan ke Halte Malioboro 1 atau Mangkubumi, naik Trans Jogja Koridor 3A atau Koridor 2A menuju kawasan Kampus UGM Bulaksumur.',
+    guideUrl: '/panduan/rute-jadwal-trans-jogja-koridor-2a-condongcatur-jombor/'
+  },
+
+  // Stasiun Tugu origins
+  'tugu-prambanan': {
+    primaryMode: 'Trans Jogja Koridor 1A (Direct Trunk)',
+    fare: 'Rp3.600 (Flat Sekali Jalan)',
+    studentFare: 'Rp2.000 (Kartu Khusus)',
+    time: '40 – 50 Menit',
+    payment: 'QRIS (Semua e-Wallet) & Kartu Flazz/e-Money/Brizzi',
+    guidance: 'Berjalan kaki 2 menit dari pintu timur Stasiun Tugu ke Halte Mangkubumi 1. Naik bus Koridor 1A tanpa transit dan turun di Terminal Prambanan.',
+    guideUrl: '/panduan/rute-halte-trans-jogja-koridor-1a-prambanan-malioboro/'
+  },
+  'tugu-borobudur': {
+    primaryMode: 'Trans Jogja 2A/2B + Bus DAMRI KSPN Jombor',
+    fare: 'Rp28.600 (Bus TJ Rp3.600 + DAMRI Rp25.000)',
+    studentFare: 'Rp27.000',
+    time: '75 – 90 Menit',
+    payment: 'Trans Jogja: QRIS/KUE | DAMRI: Tunai/Non-tunai di Terminal',
+    guidance: 'Dari Stasiun Tugu naik Trans Jogja 2A ke Terminal Jombor. Di Terminal Jombor, beralih ke armada Bus DAMRI KSPN rute Jombor – Candi Borobudur via Tempel/Muntilan.',
+    guideUrl: '/panduan/panduan-rute-angkutan-umum-jogja-candi-borobudur/'
+  },
+  'tugu-parangtritis': {
+    primaryMode: 'Trans Jogja 3A/4A + DAMRI Perintis Giwangan',
+    fare: 'Rp18.600 (Bus TJ Rp3.600 + Angkutan Rp15.000)',
+    studentFare: 'Rp17.000',
+    time: '70 – 85 Menit',
+    payment: 'Non-tunai di halte + Tunai/QRIS di Terminal Giwangan',
+    guidance: 'Dari Halte Malioboro/Mangkubumi naik Trans Jogja rute Terminal Giwangan. Di Giwangan, naik angkutan perintis DAMRI atau minibus tujuan Pantai Parangtritis.',
+    guideUrl: '/panduan/transportasi-umum-pantai-parangtritis-terminal-giwangan/'
+  },
+  'tugu-malioboro': {
+    primaryMode: 'Pedestrian Skybridge / Jalan Kaki',
+    fare: 'Gratis (Rp0) atau Rp3.600 jika naik Trans Jogja',
+    studentFare: 'Rp0',
+    time: '2 – 5 Menit',
+    payment: 'Tanpa Biaya (Jalur Pedestrian Heritage)',
+    guidance: 'Pintu keluar sisi timur Stasiun Tugu langsung menyatu dengan pangkal utara Jalan Malioboro. Anda dapat berjalan kaki santai menikmati trotoar Malioboro.',
+    guideUrl: '/panduan/tips-naik-transportasi-umum-malioboro-wisatawan/'
+  },
+  'tugu-yia': {
+    primaryMode: 'KA Bandara YIA (Reguler / Xpress)',
+    fare: 'Rp20.000 (Reguler) / Rp50.000 (Xpress)',
+    studentFare: 'Tarif Resmi PT Railink',
+    time: '35 – 39 Menit',
+    payment: 'Aplikasi Access by KAI, Mesin Tiket Mandiri Stasiun Tugu',
+    guidance: 'Masuk melalui Gedung Khusus KA Bandara di pintu selatan Stasiun Tugu (Jl. Pasar Kembang). Tiket wajib dipindai barcode maksimal 10 menit sebelum keberangkatan.',
+    guideUrl: '/panduan/perbedaan-ka-bandara-yia-reguler-vs-yia-xpress/'
+  },
+  'tugu-ugm': {
+    primaryMode: 'Trans Jogja Koridor 2A / 3A',
+    fare: 'Rp3.600 (Flat Sekali Jalan)',
+    studentFare: 'Rp2.000',
+    time: '20 – 30 Menit',
+    payment: 'QRIS & Kartu Uang Elektronik di gate halte',
+    guidance: 'Naik dari Halte Mangkubumi 1 rute Koridor 2A. Turun di Halte FK UGM, RSUP Dr. Sardjito, atau Halte Agro Colombo untuk area kampus.',
+    guideUrl: '/panduan/rute-jadwal-trans-jogja-koridor-2a-condongcatur-jombor/'
+  },
+  'tugu-solo': {
+    primaryMode: 'KRL Commuter Line Lin Yogyakarta – Solo',
+    fare: 'Rp8.000 (Flat Subsidi Pemerintah)',
+    studentFare: 'Rp8.000',
+    time: '75 – 80 Menit',
+    payment: 'KMT, Flazz, e-Money, TapCash, Brizzi, GoTransit',
+    guidance: 'Masuk peron KRL Stasiun Tugu Jogja via pintu selatan atau barat. Kereta melaju melewati 13 stasiun hingga Stasiun Solo Balapan / Solo Jebres / Palur.',
+    guideUrl: '/panduan/jadwal-tarif-krl-commuter-line-jogja-solo-terbaru/'
+  },
+
+  // Solo Balapan origins
+  'solo-malioboro': {
+    primaryMode: 'KRL Commuter Line Jogja – Solo',
+    fare: 'Rp8.000 (Flat Sekali Jalan)',
+    studentFare: 'Rp8.000',
+    time: '75 – 80 Menit',
+    payment: 'KMT, Kartu Bank Elektronik, GoTransit',
+    guidance: 'Naik KRL dari Stasiun Solo Balapan, turun di stasiun akhir Stasiun Yogyakarta (Tugu). Keluar via pintu timur langsung tiba di kawasan Malioboro.',
+    guideUrl: '/panduan/cara-beli-tiket-krl-jogja-solo-access-kai-gotransit/'
+  },
+  'solo-prambanan': {
+    primaryMode: 'KRL Commuter Line turun di Stasiun Brambanan',
+    fare: 'Rp8.000 (Flat)',
+    studentFare: 'Rp8.000',
+    time: '50 – 55 Menit',
+    payment: 'KMT & Kartu Uang Elektronik',
+    guidance: 'Naik KRL dari Solo Balapan dan turun di Stasiun Brambanan (Klaten). Dari stasiun, cukup jalan kaki 800 meter atau naik becak wisata ke loket Candi Prambanan.',
+    guideUrl: '/panduan/jadwal-tarif-krl-commuter-line-jogja-solo-terbaru/'
+  },
+  'solo-yia': {
+    primaryMode: 'KRL Solo – Jogja + KA Bandara YIA',
+    fare: 'Rp28.000 (KRL Rp8.000 + KA Bandara Rp20.000)',
+    studentFare: 'Rp28.000',
+    time: '120 – 135 Menit (Termasuk Transit)',
+    payment: 'KRL: Kartu Bank / KMT | KA Bandara: Access by KAI',
+    guidance: 'Naik KRL dari Solo Balapan turun di Stasiun Tugu Jogja. Di Stasiun Tugu, pindah ke ruang tunggu peron KA Bandara YIA untuk lanjut ke Kulon Progo.',
+    guideUrl: '/panduan/cara-naik-ka-bandara-yia-stasiun-tugu-kulon-progo/'
+  },
+
+  // Terminal Giwangan origins
+  'giwangan-parangtritis': {
+    primaryMode: 'Angkutan Antarmoda DAMRI / Minibus Parangtritis',
+    fare: 'Rp15.000 – Rp20.000 per orang',
+    studentFare: 'Rp10.000',
+    time: '50 – 60 Menit',
+    payment: 'Tunai di loket terminal / QRIS pengemudi',
+    guidance: 'Di Terminal Bus Giwangan, cari shelter jalur angkutan pedesaan jalur selatan menuju Pantai Parangtritis langsung menyusuri Jalan Parangtritis (Jl. Paris).',
+    guideUrl: '/panduan/transportasi-umum-pantai-parangtritis-terminal-giwangan/'
+  },
+  'giwangan-malioboro': {
+    primaryMode: 'Trans Jogja Koridor 3A / 4A',
+    fare: 'Rp3.600 (Flat Sekali Jalan)',
+    studentFare: 'Rp2.000',
+    time: '35 – 45 Menit',
+    payment: 'QRIS & Kartu Uang Elektronik',
+    guidance: 'Naik Trans Jogja dari Halte Terminal Giwangan jalur Koridor 3A, bus bergerak menuju lingkar dalam kota dan menurunkan penumpang di Halte Malioboro 2 atau 3.',
+    guideUrl: '/panduan/rute-lengkap-trans-jogja-koridor-3a-bandara-adisutjipto-giwangan/'
+  },
+
+  // Stasiun Lempuyangan origins
+  'lempuyangan-yia': {
+    primaryMode: 'KRL / Trans Jogja ke Tugu + KA Bandara YIA',
+    fare: 'Rp23.600 (Bus TJ Rp3.600 + KA Rp20.000)',
+    studentFare: 'Rp22.000',
+    time: '55 – 65 Menit',
+    payment: 'Tap non-tunai bus + Barcode tiket KA Bandara',
+    guidance: 'Dari Lempuyangan naik Trans Jogja Koridor 4A atau KRL 1 stasiun ke Stasiun Tugu. Di Tugu, pindah ke armada KA Bandara YIA menuju bandara.',
+    guideUrl: '/panduan/lokasi-halte-trans-jogja-terdekat-stasiun-tugu-lempuyangan/'
+  },
+  'lempuyangan-malioboro': {
+    primaryMode: 'Trans Jogja Koridor 4A / Jalan Santai via Kotabaru',
+    fare: 'Rp3.600 (Bus) atau Rp0 (Jalan Kaki 1,2 km)',
+    studentFare: 'Rp2.000',
+    time: '12 – 20 Menit',
+    payment: 'QRIS & Kartu Bank Elektronik',
+    guidance: 'Naik Trans Jogja dari Halte Stasiun Lempuyangan melintasi heritage Kotabaru dan turun di Halte Mangkubumi atau Malioboro.',
+    guideUrl: '/panduan/lokasi-halte-trans-jogja-terdekat-stasiun-tugu-lempuyangan/'
+  },
+
+  // Terminal Jombor origins
+  'jombor-malioboro': {
+    primaryMode: 'Trans Jogja Koridor 2A / 2B',
+    fare: 'Rp3.600 (Flat Sekali Jalan)',
+    studentFare: 'Rp2.000',
+    time: '25 – 35 Menit',
+    payment: 'QRIS & Kartu Uang Elektronik',
+    guidance: 'Naik dari Halte Terminal Jombor jalur Koridor 2A menyusuri Jl. Magelang, Monumen Tugu, dan turun di Halte Malioboro 1.',
+    guideUrl: '/panduan/rute-jadwal-trans-jogja-koridor-2a-condongcatur-jombor/'
+  },
+  'jombor-borobudur': {
+    primaryMode: 'Bus DAMRI KSPN Jombor – Borobudur',
+    fare: 'Rp25.000 (Tarif Resmi Bersubsidi)',
+    studentFare: 'Rp25.000',
+    time: '60 – 75 Menit',
+    payment: 'Loket Tiket Terminal Jombor / QRIS',
+    guidance: 'Armada DAMRI KSPN beroperasi rutin dari peron barat Terminal Jombor mengantarkan pelancong langsung ke pintu gerbang Candi Borobudur.',
+    guideUrl: '/panduan/panduan-rute-angkutan-umum-jogja-candi-borobudur/'
+  }
+};
+
+function calculateJourney() {
+  const originSelect = document.getElementById('calc-origin') as HTMLSelectElement | null;
+  const destSelect = document.getElementById('calc-destination') as HTMLSelectElement | null;
+  
+  if (!originSelect || !destSelect) return;
+
+  const origin = originSelect.value;
+  const destination = destSelect.value;
+  const key = `${origin}-${destination}`;
+
+  const modeBadge = document.getElementById('res-mode-badge');
+  const fareEl = document.getElementById('res-fare');
+  const studentFareEl = document.getElementById('res-student-fare');
+  const timeEl = document.getElementById('res-time');
+  const paymentEl = document.getElementById('res-payment');
+  const guidanceEl = document.getElementById('res-guidance');
+  const guideLink = document.getElementById('res-guide-link') as HTMLAnchorElement | null;
+
+  if (origin === destination) {
+    if (modeBadge) modeBadge.textContent = 'Lokasi Asal & Tujuan Sama';
+    if (fareEl) fareEl.textContent = 'Rp0';
+    if (studentFareEl) studentFareEl.textContent = 'Titik Berada di Kawasan yang Sama';
+    if (timeEl) timeEl.textContent = '0 Menit';
+    if (paymentEl) paymentEl.textContent = 'Tidak Memerlukan Angkutan';
+    if (guidanceEl) guidanceEl.textContent = 'Titik keberangkatan dan tujuan yang Anda pilih berada pada simpul lokasi yang sama. Silakan pilih destinasi berbeda.';
+    if (guideLink) guideLink.href = '/kategori/trans-jogja/';
+    return;
+  }
+
+  const data = JOURNEY_DB[key];
+
+  if (data) {
+    if (modeBadge) modeBadge.textContent = data.primaryMode;
+    if (fareEl) fareEl.textContent = data.fare;
+    if (studentFareEl) studentFareEl.textContent = `Tarif Pelajar: ${data.studentFare}`;
+    if (timeEl) timeEl.textContent = data.time;
+    if (paymentEl) paymentEl.textContent = data.payment;
+    if (guidanceEl) guidanceEl.textContent = data.guidance;
+    if (guideLink) guideLink.href = data.guideUrl;
+  } else {
+    // Dynamic Intelligent Multimodal Fallback for other combinations
+    if (modeBadge) modeBadge.textContent = 'Trans Jogja Jaringan BRT / Transit Tugu';
+    if (fareEl) fareEl.textContent = 'Rp3.600 – Rp8.000';
+    if (studentFareEl) studentFareEl.textContent = 'Tarif Subsidi Non-Tunai Resmi';
+    if (timeEl) timeEl.textContent = '30 – 60 Menit';
+    if (paymentEl) paymentEl.textContent = 'QRIS & Kartu Uang Elektronik';
+    if (guidanceEl) guidanceEl.textContent = 'Untuk rute ini, gunakan bus Trans Jogja menuju simpul transit terdekat (Halte Malioboro atau Terminal Jombor/Giwangan) untuk melanjutkan ke tujuan akhir Anda.';
+    if (guideLink) guideLink.href = '/panduan/cara-transit-dan-pindah-bus-trans-jogja/';
+  }
+}
+
+// Bind event listeners
+const originSelect = document.getElementById('calc-origin');
+const destSelect = document.getElementById('calc-destination');
+
+if (originSelect && destSelect) {
+  originSelect.addEventListener('change', calculateJourney);
+  destSelect.addEventListener('change', calculateJourney);
+}
+
+// Preset buttons
+const presetBtns = document.querySelectorAll('.route-preset-btn');
+presetBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const orig = btn.getAttribute('data-origin');
+    const dest = btn.getAttribute('data-destination');
+    if (orig && dest && originSelect && destSelect) {
+      (originSelect as HTMLSelectElement).value = orig;
+      (destSelect as HTMLSelectElement).value = dest;
+      calculateJourney();
+    }
+  });
+});
+
+// Run initial calculation on load
+calculateJourney();
+</script>
