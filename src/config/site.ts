@@ -28,6 +28,7 @@ export const siteConfig = {
   url: 'https://panduanrutejogja.com',
   author: 'Tim Redaksi PanduanRuteJogja.com',
   contactEmail: 'kontak@panduanrutejogja.com',
+  contactFormEndpoint: (import.meta.env.PUBLIC_FORMSPREE_ENDPOINT as string) || '',
   organization: {
     name: 'Panduan Rute Jogja Media',
     address: 'Jl. Malioboro No. 45, Danurejan, Kota Yogyakarta, D.I. Yogyakarta 55213',

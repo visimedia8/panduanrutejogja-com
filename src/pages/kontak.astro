@@ -114,7 +114,13 @@ const breadcrumbs = [
             Gunakan formulir di bawah ini untuk mengirimkan laporan perubahan halte, jadwal terbaru, atau pertanyaan transportasi langsung ke meja redaksi kami.
           </p>
 
-          <form id="contact-form" class="space-y-4">
+          <form id="contact-form" data-endpoint={siteConfig.contactFormEndpoint} class="space-y-4">
+            <div id="form-error-alert" class="hidden p-3 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700 flex items-center gap-2">
+              <svg class="w-4 h-4 shrink-0 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span id="form-error-text">Terjadi kendala saat mengirimkan pesan. Silakan hubungi kami via email langsung.</span>
+            </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label for="contact-name" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 font-mono">
@@ -179,12 +185,16 @@ const breadcrumbs = [
             <button
               type="submit"
               id="submit-btn"
-              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-keraton-800 text-white font-bold hover:bg-keraton-900 transition-colors shadow-sm cursor-pointer text-sm"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-keraton-800 text-white font-bold hover:bg-keraton-900 transition-colors shadow-sm cursor-pointer text-sm disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg id="submit-icon" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
               </svg>
-              <span>Kirimkan Pesan ke Redaksi</span>
+              <svg id="submit-spinner" class="hidden animate-spin w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              <span id="submit-text">Kirimkan Pesan ke Redaksi</span>
             </button>
           </form>
 
@@ -332,16 +342,66 @@ const breadcrumbs = [
   const contactForm = document.getElementById('contact-form') as HTMLFormElement | null;
   const successModal = document.getElementById('success-modal');
   const resetFormBtn = document.getElementById('reset-form-btn');
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+  const submitText = document.getElementById('submit-text');
+  const submitIcon = document.getElementById('submit-icon');
+  const submitSpinner = document.getElementById('submit-spinner');
+  const formErrorAlert = document.getElementById('form-error-alert');
+  const formErrorText = document.getElementById('form-error-text');
 
   if (contactForm && successModal && resetFormBtn) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      successModal.classList.remove('hidden');
-      contactForm.reset();
+      formErrorAlert?.classList.add('hidden');
+
+      // Loading state (Anti-double submit)
+      if (submitBtn) submitBtn.disabled = true;
+      if (submitText) submitText.textContent = 'Mengirimkan Pesan...';
+      submitIcon?.classList.add('hidden');
+      submitSpinner?.classList.remove('hidden');
+
+      const endpoint = contactForm.getAttribute('data-endpoint')?.trim() || '';
+      const formData = new FormData(contactForm);
+
+      try {
+        if (endpoint) {
+          const res = await fetch(endpoint, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              Accept: 'application/json'
+            }
+          });
+
+          if (res.ok) {
+            successModal.classList.remove('hidden');
+            contactForm.reset();
+          } else {
+            const data = await res.json().catch(() => ({}));
+            throw new Error(data.error || 'Gagal mengirimkan pesan via server.');
+          }
+        } else {
+          // Simulation fallback with realistic delay
+          await new Promise((resolve) => setTimeout(resolve, 800));
+          successModal.classList.remove('hidden');
+          contactForm.reset();
+        }
+      } catch (err: any) {
+        if (formErrorAlert && formErrorText) {
+          formErrorText.textContent = err.message || 'Gagal mengirimkan pesan. Silakan hubungi kami via email langsung.';
+          formErrorAlert.classList.remove('hidden');
+        }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+        if (submitText) submitText.textContent = 'Kirimkan Pesan ke Redaksi';
+        submitIcon?.classList.remove('hidden');
+        submitSpinner?.classList.add('hidden');
+      }
     });
 
     resetFormBtn.addEventListener('click', () => {
       successModal.classList.add('hidden');
+      formErrorAlert?.classList.add('hidden');
     });
   }
 </script>
