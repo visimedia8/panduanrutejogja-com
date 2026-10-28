@@ -40,6 +40,8 @@ Meskipun secara administratif berada di provinsi yang berbeda, akses transportas
 
 ## Opsi Rute Paling Populer: Via Terminal Jombor (Paling Murah)
 
+![Peta Rute Estafet Angkutan Umum Stasiun Tugu Jombor ke Candi Borobudur](/images/peta-rute-estafet-borobudur.webp)
+
 Skema rute dua tahap via Terminal Jombor adalah jalur paling klasik yang digunakan puluhan ribu pelancong setiap tahunnya:
 
 ### Tahap 1: Dari Pusat Kota (Malioboro / Stasiun Tugu) Menuju Terminal Jombor

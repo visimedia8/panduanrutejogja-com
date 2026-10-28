@@ -67,6 +67,40 @@ const formattedDate = new Date(publishDate).toLocaleDateString('id-ID', {
   month: 'long',
   day: 'numeric'
 });
+
+function getArticleGeo(slug: string, articleTitle: string) {
+  const s = (slug + ' ' + articleTitle).toLowerCase();
+  if (s.includes('yia') || s.includes('bandara yia')) {
+    return { placename: 'Bandara Internasional Yogyakarta (YIA Kulon Progo)', latitude: -7.9071, longitude: 110.0565 };
+  }
+  if (s.includes('prambanan')) {
+    return { placename: 'Taman Wisata Candi Prambanan Sleman', latitude: -7.7520, longitude: 110.4914 };
+  }
+  if (s.includes('borobudur')) {
+    return { placename: 'Taman Wisata Candi Borobudur Magelang', latitude: -7.6079, longitude: 110.2038 };
+  }
+  if (s.includes('parangtritis')) {
+    return { placename: 'Kawasan Wisata Pantai Parangtritis Bantul', latitude: -8.0255, longitude: 110.3298 };
+  }
+  if (s.includes('lempuyangan')) {
+    return { placename: 'Stasiun Lempuyangan Yogyakarta', latitude: -7.7906, longitude: 110.3752 };
+  }
+  if (s.includes('giwangan')) {
+    return { placename: 'Terminal Bus Giwangan Kota Yogyakarta', latitude: -7.8346, longitude: 110.3926 };
+  }
+  if (s.includes('jombor')) {
+    return { placename: 'Terminal Bus Jombor Sleman', latitude: -7.7478, longitude: 110.3606 };
+  }
+  if (s.includes('solo') || s.includes('krl')) {
+    return { placename: 'Stasiun Solo Balapan Surakarta', latitude: -7.5583, longitude: 110.8214 };
+  }
+  if (s.includes('ugm') || s.includes('ring road')) {
+    return { placename: 'Kawasan Kampus UGM Bulaksumur Sleman', latitude: -7.7713, longitude: 110.3775 };
+  }
+  return { placename: 'Stasiun Yogyakarta (Tugu) & Malioboro', latitude: -7.7892, longitude: 110.3635 };
+}
+
+const geo = getArticleGeo((Astro.params.slug as string) || '', title);
 ---
 
 <BaseLayout
@@ -78,6 +112,7 @@ const formattedDate = new Date(publishDate).toLocaleDateString('id-ID', {
   updatedDate={updatedDate}
   breadcrumbs={breadcrumbs}
   faqs={faqs}
+  geo={geo}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
     

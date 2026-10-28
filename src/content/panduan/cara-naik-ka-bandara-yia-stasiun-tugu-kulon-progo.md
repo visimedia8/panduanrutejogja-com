@@ -113,6 +113,8 @@ Ketepatan waktu tiba di bandara menentukan kelancaran proses pelaporan tiket (*c
 
 ## Letak Pintu Masuk Khusus di Stasiun Tugu
 
+![Diagram Alur Pintu Masuk Khusus dan Ruang Tunggu Boarding KA Bandara YIA di Stasiun Tugu Yogyakarta](/images/infografis-boarding-ka-bandara-tugu.webp)
+
 Ruang tunggu keberangkatan KA Bandara YIA di Stasiun Tugu berlokasi terpisah dari pintu utama kereta api jarak jauh:
 
 * **Lokasi Gate Keberangkatan:** Berada di sisi barat daya Stasiun Tugu (akses masuk dari Jalan Pasar Kembang, tepat di seberang kawasan Sosrowijayan).

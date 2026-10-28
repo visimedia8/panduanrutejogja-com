@@ -1,0 +1,101 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#051410" />
+      <stop offset="60%" stop-color="#0f382c" />
+      <stop offset="100%" stop-color="#051410" />
+    </linearGradient>
+    <pattern id="gridPat" width="24" height="24" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="24" y2="0" stroke="#d4af37" stroke-width="0.5" stroke-opacity="0.12" />
+      <line x1="0" y1="0" x2="0" y2="24" stroke="#d4af37" stroke-width="0.5" stroke-opacity="0.12" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+  <rect width="1200" height="630" fill="url(#gridPat)" />
+
+  <!-- Outer Heritage Border -->
+  <rect x="24" y="24" width="1152" height="582" rx="16" fill="none" stroke="#d4af37" stroke-width="2" stroke-opacity="0.4" />
+  <rect x="30" y="30" width="1140" height="570" rx="12" fill="none" stroke="#d4af37" stroke-width="0.75" stroke-dasharray="6,6" stroke-opacity="0.5" />
+
+  <!-- Header Banner Ribbon -->
+  <g transform="translate(80, 65)">
+    <rect width="320" height="28" rx="6" fill="#09231c" stroke="#059669" stroke-width="1.5" />
+    <text x="160" y="18" fill="#d4af37" font-size="11" font-weight="bold" font-family="monospace" text-anchor="middle">PETA JARINGAN BRT RESMI DIY</text>
+    <rect x="330" y="0" width="210" height="28" rx="6" fill="#059669" />
+    <text x="435" y="18" fill="#ffffff" font-size="11" font-weight="bold" font-family="monospace" text-anchor="middle">KORIDOR 1A – 5B</text>
+  </g>
+
+  <!-- Title & Subtitle -->
+  <g transform="translate(80, 140)">
+    <text x="0" y="24" fill="#ffffff" font-size="30" font-weight="900" font-family="sans-serif">Peta Jaringan Koridor Bus Trans Jogja &amp; Teman Bus</text>
+    <text x="0" y="60" fill="#cbd5e1" font-size="16" font-family="sans-serif" font-weight="normal">Lintasan Koridor 1A–5B, Simpul Transit Stasiun Tugu, Malioboro, Giwangan &amp; Jombor</text>
+  </g>
+
+  <!-- Divider Line -->
+  <line x1="80" y1="240" x2="1120" y2="240" stroke="#d4af37" stroke-width="1.5" stroke-opacity="0.3" />
+
+  <!-- Key Metrics Row -->
+  
+    <g transform="translate(80, 280)">
+      <rect width="245" height="72" rx="10" fill="#09231c" stroke="#d4af37" stroke-width="1.2" opacity="0.9" />
+      <text x="16" y="28" fill="#d4af37" font-size="11" font-weight="bold" font-family="monospace">TARIF UMUM</text>
+      <text x="16" y="56" fill="#ffffff" font-size="20" font-weight="900" font-family="monospace">Rp3.600</text>
+    </g>
+  
+    <g transform="translate(345, 280)">
+      <rect width="245" height="72" rx="10" fill="#09231c" stroke="#d4af37" stroke-width="1.2" opacity="0.9" />
+      <text x="16" y="28" fill="#d4af37" font-size="11" font-weight="bold" font-family="monospace">TARIF PELAJAR</text>
+      <text x="16" y="56" fill="#ffffff" font-size="20" font-weight="900" font-family="monospace">Rp2.000</text>
+    </g>
+  
+    <g transform="translate(610, 280)">
+      <rect width="245" height="72" rx="10" fill="#09231c" stroke="#d4af37" stroke-width="1.2" opacity="0.9" />
+      <text x="16" y="28" fill="#d4af37" font-size="11" font-weight="bold" font-family="monospace">INTEGRASI</text>
+      <text x="16" y="56" fill="#ffffff" font-size="20" font-weight="900" font-family="monospace">1 Jam</text>
+    </g>
+  
+    <g transform="translate(875, 280)">
+      <rect width="245" height="72" rx="10" fill="#09231c" stroke="#d4af37" stroke-width="1.2" opacity="0.9" />
+      <text x="16" y="28" fill="#d4af37" font-size="11" font-weight="bold" font-family="monospace">OPERASIONAL</text>
+      <text x="16" y="56" fill="#ffffff" font-size="20" font-weight="900" font-family="monospace">05.30–21.30</text>
+    </g>
+  
+
+  <!-- Feature List Items -->
+  
+    <g transform="translate(80, 380)">
+      <circle cx="12" cy="12" r="7" fill="#059669" stroke="#ffffff" stroke-width="2" />
+      <text x="32" y="16" fill="#e2e8f0" font-size="15" font-family="sans-serif" font-weight="500">Koridor 1A: Terminal Prambanan ➔ Bandara Adisutjipto ➔ Stasiun Tugu ➔ Malioboro</text>
+    </g>
+  
+    <g transform="translate(80, 424)">
+      <circle cx="12" cy="12" r="7" fill="#059669" stroke="#ffffff" stroke-width="2" />
+      <text x="32" y="16" fill="#e2e8f0" font-size="15" font-family="sans-serif" font-weight="500">Koridor 2A: Condongcatur ➔ Monumen Tugu ➔ Malioboro ➔ Terminal Jombor</text>
+    </g>
+  
+    <g transform="translate(80, 468)">
+      <circle cx="12" cy="12" r="7" fill="#059669" stroke="#ffffff" stroke-width="2" />
+      <text x="32" y="16" fill="#e2e8f0" font-size="15" font-family="sans-serif" font-weight="500">Koridor 3A: Bandara Adisutjipto ➔ Ring Road Utara ➔ Terminal Giwangan</text>
+    </g>
+  
+    <g transform="translate(80, 512)">
+      <circle cx="12" cy="12" r="7" fill="#059669" stroke="#ffffff" stroke-width="2" />
+      <text x="32" y="16" fill="#e2e8f0" font-size="15" font-family="sans-serif" font-weight="500">Koridor 4A/B: Giwangan ➔ Lempuyangan ➔ Kampus UGM ➔ Ring Road Barat</text>
+    </g>
+  
+    <g transform="translate(80, 556)">
+      <circle cx="12" cy="12" r="7" fill="#059669" stroke="#ffffff" stroke-width="2" />
+      <text x="32" y="16" fill="#e2e8f0" font-size="15" font-family="sans-serif" font-weight="500">Koridor 5A/B: Rute Melingkar Penuh Ring Road Jogja &amp; Perintis Sleman-Bantul</text>
+    </g>
+  
+
+  <!-- Footer Brand Attribution -->
+  <g transform="translate(80, 580)">
+    <text x="0" y="0" fill="#94a3b8" font-size="11" font-family="monospace">PANDUANRUTEJOGJA.COM • PORTAL INDEPENDEN TRANSPORTASI PUBLIK D.I. YOGYAKARTA</text>
+    <text x="1040" y="0" fill="#d4af37" font-size="11" font-weight="bold" font-family="monospace" text-anchor="end">TERVERIFIKASI REAL-LIFE 2026</text>
+  </g>
+</svg>
+  

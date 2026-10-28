@@ -117,6 +117,8 @@ Jadwal keberangkatan KRL Commuter Line relasi Palur dan Solo Balapan menuju Yogy
 
 ## Karakteristik 13 Stasiun Transit di Sepanjang Koridor
 
+![Diagram Skematik 13 Stasiun Transit KRL Commuter Line Yogyakarta sampai Palur Solo](/images/diagram-13-stasiun-krl-jogja-solo.webp)
+
 Jalur KRL melintasi kawasan strategis dengan fungsi antarmoda yang berbeda di setiap stasiun pemberhentian:
 
 1. **Stasiun Yogyakarta (Tugu):** Terletak pada kilometer 542 lintas selatan Jawa. Pintu timur stasiun terhubung langsung dengan Jalan Malioboro dan Halte Trans Jogja Malioboro 1, sementara sayap selatan menyediakan gate khusus antarmoda menuju KA Bandara Internasional Yogyakarta (YIA).

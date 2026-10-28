@@ -21,6 +21,11 @@ interface Props {
   featuredImage?: string;
   breadcrumbs?: BreadcrumbItem[];
   faqs?: FAQItem[];
+  geo?: {
+    latitude: number;
+    longitude: number;
+    placename: string;
+  };
 }
 
 const {
@@ -32,7 +37,8 @@ const {
   updatedDate,
   featuredImage,
   breadcrumbs = [],
-  faqs = []
+  faqs = [],
+  geo
 } = Astro.props;
 
 const schemas: any[] = [];
@@ -85,7 +91,7 @@ if (type === 'website') {
 
 // Article Schema
 if (type === 'article') {
-  schemas.push({
+  const articleSchema: any = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     mainEntityOfPage: {
@@ -109,8 +115,30 @@ if (type === 'article') {
         '@type': 'ImageObject',
         url: `${siteConfig.url}/images/logo.svg`
       }
-    }
-  });
+    },
+    spatialCoverage: 'Daerah Istimewa Yogyakarta, Indonesia',
+    inLanguage: 'id-ID'
+  };
+
+  if (geo) {
+    articleSchema.contentLocation = {
+      '@type': 'Place',
+      name: geo.placename,
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: geo.latitude,
+        longitude: geo.longitude
+      },
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Yogyakarta',
+        addressRegion: 'D.I. Yogyakarta',
+        addressCountry: 'ID'
+      }
+    };
+  }
+
+  schemas.push(articleSchema);
 }
 
 // BreadcrumbList Schema

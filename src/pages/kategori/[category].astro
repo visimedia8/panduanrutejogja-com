@@ -40,6 +40,25 @@ const faqSchema = {
     },
   })),
 };
+
+const categoryVisualMap: Record<string, { image: string; alt: string; caption: string }> = {
+  'trans-jogja': {
+    image: '/images/peta-jaringan-trans-jogja.webp',
+    alt: 'Peta Jaringan Koridor Bus Trans Jogja dan Teman Bus DIY',
+    caption: 'Diagram visual resmi lintasan Koridor 1A–5B, Teman Bus perintis, dan simpul transfer utama Stasiun Tugu & Malioboro.'
+  },
+  'kereta-bandara': {
+    image: '/images/skematik-multimoda-rel-jogja.webp',
+    alt: 'Skematik Multimoda Rel KRL Jogja-Solo, KA Bandara YIA dan Prameks',
+    caption: 'Peta skematik jalur rel komuter Daop 6: 13 stasiun lin KRL, KA Bandara YIA elevated track, dan KA Prameks Kutoarjo.'
+  },
+  'tiket-wisata': {
+    image: '/images/panduan-tiket-wisata-jogja.webp',
+    alt: 'Panduan Integrasi Antarmoda Wisata dan Pembayaran Non-Tunai DIY',
+    caption: 'Panduan visual metode transaksi cashless QRIS/KUE serta rute angkutan wisata Candi Borobudur, Prambanan, dan Pantai Parangtritis.'
+  }
+};
+const catVisual = categoryVisualMap[category.slug];
 ---
 
 <BaseLayout
@@ -95,6 +114,32 @@ const faqSchema = {
         </div>
       ))}
     </section>
+
+    <!-- Category Schematic Wayfinding Banner (Highly Optimized & Geo-tagged) -->
+    {catVisual && (
+      <figure class="mb-10 bg-white border-2 border-keraton-200 rounded-2xl overflow-hidden shadow-ticket">
+        <div class="relative aspect-[1200/630] w-full bg-keraton-950">
+          <img
+            src={catVisual.image}
+            alt={catVisual.alt}
+            width="1200"
+            height="630"
+            loading="eager"
+            decoding="async"
+            class="w-full h-auto object-cover"
+          />
+        </div>
+        <figcaption class="p-3 sm:p-4 bg-slate-50 border-t border-slate-200 text-xs text-slate-600 flex items-center justify-between gap-3">
+          <span class="flex items-center gap-1.5 font-medium">
+            <span class="w-2 h-2 rounded-full bg-jogja-500"></span>
+            {catVisual.caption}
+          </span>
+          <span class="hidden sm:inline-block font-mono text-[10px] text-keraton-800 font-bold bg-keraton-100 px-2 py-0.5 rounded">
+            DOKUMEN RESMI 2026
+          </span>
+        </figcaption>
+      </figure>
+    )}
 
     <!-- Authoritative Macro-Context Pillar Content -->
     <article class="bg-white border-2 border-slate-200 rounded-2xl p-6 sm:p-10 mb-10 shadow-sm">

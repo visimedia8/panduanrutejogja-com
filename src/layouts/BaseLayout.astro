@@ -16,6 +16,11 @@ interface Props {
   updatedDate?: string;
   breadcrumbs?: { name: string; url: string }[];
   faqs?: { question: string; answer: string }[];
+  geo?: {
+    latitude: number;
+    longitude: number;
+    placename: string;
+  };
 }
 
 const {
@@ -26,7 +31,8 @@ const {
   publishDate,
   updatedDate,
   breadcrumbs = [],
-  faqs = []
+  faqs = [],
+  geo
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, siteConfig.url).toString();
@@ -50,6 +56,12 @@ const fullImageUrl = new URL(image, siteConfig.url).toString();
     <meta name="description" content={description} />
     <meta name="author" content={siteConfig.author} />
     <meta name="robots" content="index, follow" />
+
+    <!-- Geographic Location Meta Tags (Yogyakarta Transit & Local SEO) -->
+    <meta name="geo.region" content="ID-YO" />
+    <meta name="geo.placename" content={geo?.placename || 'Yogyakarta, Daerah Istimewa Yogyakarta'} />
+    <meta name="geo.position" content={`${geo?.latitude || -7.7892};${geo?.longitude || 110.3635}`} />
+    <meta name="ICBM" content={`${geo?.latitude || -7.7892}, ${geo?.longitude || 110.3635}`} />
 
     <!-- Open Graph / Facebook (1200x630 Raster PNG/WebP for Universal Preview) -->
     <meta property="og:type" content={article ? 'article' : 'website'} />
@@ -88,6 +100,7 @@ const fullImageUrl = new URL(image, siteConfig.url).toString();
       featuredImage={image}
       breadcrumbs={breadcrumbs}
       faqs={faqs}
+      geo={geo}
     />
   </head>
   <body class="min-h-screen flex flex-col bg-slate-50 text-slate-800 font-sans selection:bg-keraton-600 selection:text-white">

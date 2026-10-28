@@ -40,6 +40,8 @@ Bagi Anda yang tidak membawa kendaraan pribadi atau enggan menyewa sepeda motor 
 
 ## Panduan Perjalanan Lengkap dari Kota Menuju Parangtritis
 
+![Peta Koridor Angkutan Umum Terminal Giwangan ke Pantai Parangtritis](/images/peta-koridor-selatan-parangtritis.webp)
+
 Perjalanan menuju pesisir selatan berpusat di terminal induk terbesar Yogyakarta: **Terminal Bus Giwangan**. Berikut langkah-langkah detailnya:
 
 ### 1. Menuju Terminal Giwangan dari Pusat Kota
