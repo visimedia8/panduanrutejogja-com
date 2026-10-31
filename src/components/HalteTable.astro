@@ -47,7 +47,7 @@ const { title = "Daftar Titik Pemberhentian & Halte Transit", haltes = [], route
         const isTransfer = Boolean(halte.transit);
         return (
           <div class={`transit-stop-node ${isTransfer ? 'transfer' : ''}`}>
-            <div class="flex items-start justify-between gap-2">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
               <div>
                 <span class="text-xs font-mono font-bold text-keraton-700 block">
                   #{String(idx + 1).padStart(2, '0')}
@@ -62,7 +62,7 @@ const { title = "Daftar Titik Pemberhentian & Halte Transit", haltes = [], route
                 )}
               </div>
               {halte.transit && (
-                <span class="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded bg-jogja-100 text-jogja-900 border border-jogja-300">
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-jogja-100 text-jogja-900 border border-jogja-300 max-w-full text-wrap w-fit">
                   {halte.transit}
                 </span>
               )}

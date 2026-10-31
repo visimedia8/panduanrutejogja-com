@@ -99,16 +99,16 @@ const catVisual = categoryVisualMap[category.slug];
     </header>
 
     <!-- Key Network Stats Grid -->
-    <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-10">
       {pillar.stats.map((st) => (
-        <div class="bg-white border-2 border-slate-200 rounded-xl p-4 shadow-xs">
-          <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500 font-mono">
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-3 sm:p-4 shadow-xs">
+          <div class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-500 font-mono">
             {st.label}
           </div>
-          <div class="text-xl sm:text-2xl font-extrabold text-keraton-900 mt-1 font-mono">
+          <div class="text-base sm:text-xl md:text-2xl font-extrabold text-keraton-900 mt-1 font-mono break-words leading-tight">
             {st.value}
           </div>
-          <div class="text-xs text-slate-600 mt-1">
+          <div class="text-[11px] sm:text-xs text-slate-600 mt-1">
             {st.detail}
           </div>
         </div>
@@ -142,26 +142,26 @@ const catVisual = categoryVisualMap[category.slug];
     )}
 
     <!-- Authoritative Macro-Context Pillar Content -->
-    <article class="bg-white border-2 border-slate-200 rounded-2xl p-6 sm:p-10 mb-10 shadow-sm">
+    <article class="bg-white border-2 border-slate-200 rounded-2xl p-4 sm:p-8 lg:p-10 mb-10 shadow-sm overflow-hidden min-w-0">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded text-xs font-bold bg-keraton-100 text-keraton-900 mb-3 font-mono">
         PEDOMAN TEKNIS &amp; ARSITEKTUR LAYANAN
       </div>
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight mb-2 break-words">
         {pillar.pillarTitle}
       </h2>
       <p class="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">
         {pillar.pillarSubtitle}
       </p>
 
-      <div class="prose max-w-none text-slate-700 mb-8" set:html={pillar.overviewHtml} />
+      <div class="prose max-w-none text-slate-700 mb-8 overflow-hidden min-w-0" set:html={pillar.overviewHtml} />
 
       <!-- Tabular Network Overview Matrix -->
-      <div class="mt-8">
-        <h3 class="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
+      <div class="mt-8 overflow-hidden min-w-0">
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-keraton-800"></span>
           Matriks Layanan &amp; Karakteristik Jalur {category.name}
         </h3>
-        <div class="overflow-x-auto border-2 border-slate-200 rounded-xl">
+        <div class="overflow-x-auto border-2 border-slate-200 rounded-xl max-w-full">
           <table class="w-full text-left text-xs sm:text-sm">
             <thead class="bg-slate-50 text-slate-800 font-bold border-b-2 border-slate-200">
               <tr>

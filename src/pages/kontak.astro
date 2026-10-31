@@ -20,7 +20,7 @@ const breadcrumbs = [
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-keraton-100 text-keraton-900 border border-jogja-400 mb-3 font-mono">
         LAYANAN KOMUNIKASI &amp; KOREKSI PUBLIK
       </div>
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight break-words">
         Hubungi Tim Redaksi PanduanRuteJogja.com
       </h1>
       <p class="mt-3 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
@@ -45,12 +45,12 @@ const breadcrumbs = [
           <p class="text-xs text-slate-500 mb-2">
             Surat elektronik resmi redaksi (teks polos tanpa obfuscation):
           </p>
-          <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 font-mono text-sm font-bold text-keraton-900 select-all flex items-center justify-between">
-            <span id="email-text">{siteConfig.contactEmail}</span>
+          <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 font-mono text-xs sm:text-sm font-bold text-keraton-900 select-all flex flex-wrap items-center justify-between gap-2">
+            <span id="email-text" class="break-all">{siteConfig.contactEmail}</span>
             <button
               type="button"
               id="copy-email-btn"
-              class="text-xs text-slate-500 hover:text-keraton-900 underline font-sans cursor-pointer"
+              class="text-xs text-slate-500 hover:text-keraton-900 underline font-sans cursor-pointer shrink-0"
               title="Salin Email"
             >
               Salin

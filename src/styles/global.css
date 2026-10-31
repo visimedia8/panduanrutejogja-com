@@ -8,6 +8,25 @@
     color: #1e293b;
     background-color: #fbfbf9;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, a {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 }
 
@@ -187,15 +206,35 @@
 
 /* Markdown tables in prose */
 .prose-transit table {
+  display: block;
   width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border-collapse: separate;
   border-spacing: 0;
   margin: 1.5rem 0;
   font-size: 0.875rem;
   border-radius: 0.75rem;
-  overflow: hidden;
   border: 1px solid #e1eee7;
   box-shadow: 0 2px 4px rgba(27, 77, 62, 0.04);
+}
+
+.prose-transit thead {
+  display: table-header-group;
+}
+
+.prose-transit tbody {
+  display: table-row-group;
+}
+
+.prose-transit tr {
+  display: table-row;
+}
+
+.prose-transit th,
+.prose-transit td {
+  white-space: nowrap;
 }
 
 .prose-transit th {

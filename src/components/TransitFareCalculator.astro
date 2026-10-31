@@ -93,22 +93,22 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6">
       
       <!-- Titik Keberangkatan -->
-      <div>
+      <div class="min-w-0">
         <label for="calc-origin" class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2 font-mono">
           1. Titik Keberangkatan (Asal)
         </label>
-        <div class="relative">
+        <div class="relative min-w-0">
           <select
             id="calc-origin"
-            class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 text-sm font-semibold text-slate-800 bg-white focus:outline-none focus:border-keraton-800 focus:ring-2 focus:ring-keraton-800/20 transition-all cursor-pointer appearance-none"
+            class="w-full min-w-0 max-w-full px-4 py-3 pr-10 rounded-xl border-2 border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 bg-white focus:outline-none focus:border-keraton-800 focus:ring-2 focus:ring-keraton-800/20 transition-all cursor-pointer appearance-none truncate"
           >
-            <option value="yia">Bandara Internasional Yogyakarta (YIA Kulon Progo)</option>
-            <option value="tugu" selected>Stasiun Yogyakarta (Tugu / Malioboro)</option>
-            <option value="lempuyangan">Stasiun Lempuyangan (Kereta Api Ekonomi)</option>
-            <option value="malioboro">Kawasan Malioboro / Titik Nol Kilometer</option>
-            <option value="giwangan">Terminal Bus Giwangan (Yogyakarta Selatan)</option>
-            <option value="jombor">Terminal Bus Jombor (Sleman / Ring Road Utara)</option>
-            <option value="solo">Stasiun Solo Balapan / Surakarta</option>
+            <option value="yia">Bandara YIA (Kulon Progo)</option>
+            <option value="tugu" selected>Stasiun Tugu (Malioboro)</option>
+            <option value="lempuyangan">Stasiun Lempuyangan (Kereta Api)</option>
+            <option value="malioboro">Malioboro &amp; Titik Nol KM</option>
+            <option value="giwangan">Terminal Bus Giwangan</option>
+            <option value="jombor">Terminal Bus Jombor</option>
+            <option value="solo">Stasiun Solo Balapan</option>
           </select>
           <div class="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -119,22 +119,22 @@
       </div>
 
       <!-- Titik Tujuan -->
-      <div>
+      <div class="min-w-0">
         <label for="calc-destination" class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2 font-mono">
           2. Titik Tujuan Perjalanan
         </label>
-        <div class="relative">
+        <div class="relative min-w-0">
           <select
             id="calc-destination"
-            class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 text-sm font-semibold text-slate-800 bg-white focus:outline-none focus:border-keraton-800 focus:ring-2 focus:ring-keraton-800/20 transition-all cursor-pointer appearance-none"
+            class="w-full min-w-0 max-w-full px-4 py-3 pr-10 rounded-xl border-2 border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 bg-white focus:outline-none focus:border-keraton-800 focus:ring-2 focus:ring-keraton-800/20 transition-all cursor-pointer appearance-none truncate"
           >
             <option value="malioboro">Malioboro &amp; Titik Nol KM</option>
             <option value="prambanan" selected>Taman Wisata Candi Prambanan</option>
-            <option value="borobudur">Kawasan Candi Borobudur (Magelang)</option>
-            <option value="parangtritis">Kawasan Wisata Pantai Parangtritis</option>
-            <option value="yia">Bandara Internasional Yogyakarta (YIA)</option>
+            <option value="borobudur">Kawasan Candi Borobudur</option>
+            <option value="parangtritis">Kawasan Pantai Parangtritis</option>
+            <option value="yia">Bandara YIA (Kulon Progo)</option>
             <option value="ugm">Kampus UGM / UNY Bulaksumur</option>
-            <option value="solo">Stasiun Solo Balapan (Surakarta)</option>
+            <option value="solo">Stasiun Solo Balapan</option>
           </select>
           <div class="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

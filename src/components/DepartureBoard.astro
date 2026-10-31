@@ -113,10 +113,10 @@ const tiketCount = sortedEntries.filter(e => e.data.category === 'tiket-wisata')
   </div>
 
   <!-- Board Table Container -->
-  <div class="overflow-x-auto">
-    <table class="w-full text-left border-collapse" id="departure-table">
-      <thead>
-        <tr class="bg-keraton-900/90 text-jogja-300 font-mono text-[11px] uppercase tracking-wider border-b border-keraton-800 hidden sm:table-row">
+  <div class="overflow-x-auto w-full min-w-0">
+    <table class="w-full text-left border-collapse block sm:table" id="departure-table">
+      <thead class="hidden sm:table-header-group">
+        <tr class="bg-keraton-900/90 text-jogja-300 font-mono text-[11px] uppercase tracking-wider border-b border-keraton-800">
           <th class="py-3 px-4 w-20">Lini</th>
           <th class="py-3 px-4">Rute / Panduan Perjalanan</th>
           <th class="py-3 px-4 w-44">Jam Operasional</th>
@@ -126,7 +126,7 @@ const tiketCount = sortedEntries.filter(e => e.data.category === 'tiket-wisata')
           <th class="py-3 px-4 w-24 text-right">Aksi</th>
         </tr>
       </thead>
-      <tbody class="divide-y divide-slate-100 font-sans">
+      <tbody class="divide-y divide-slate-100 font-sans block sm:table-row-group">
         {sortedEntries.map((entry) => {
           const badge = getLineBadge(entry.data.title, entry.data.category);
           const rawDate = entry.data.updatedDate || entry.data.publishDate;

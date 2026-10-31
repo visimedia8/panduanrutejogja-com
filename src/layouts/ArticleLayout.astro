@@ -114,7 +114,7 @@ const geo = getArticleGeo((Astro.params.slug as string) || '', title);
   faqs={faqs}
   geo={geo}
 >
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 min-w-0 overflow-hidden">
     
     <!-- Breadcrumb -->
     <Breadcrumb items={breadcrumbs.map(b => ({ label: b.name, href: b.url }))} />
@@ -132,7 +132,7 @@ const geo = getArticleGeo((Astro.params.slug as string) || '', title);
         <span class="text-xs font-bold text-slate-600 font-mono">{routeType}</span>
       </div>
 
-      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4 break-words">
         {title}
       </h1>
 
@@ -152,7 +152,7 @@ const geo = getArticleGeo((Astro.params.slug as string) || '', title);
           </div>
         </div>
 
-        <div class="flex items-center gap-4 text-xs font-medium">
+        <div class="flex flex-wrap items-center gap-2 sm:gap-4 text-xs font-medium">
           <span>Ditinjau: <strong class="text-slate-900">{formattedDate}</strong></span>
           <span class="inline-flex items-center gap-1 text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded font-bold text-[11px]">
             <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -193,7 +193,7 @@ const geo = getArticleGeo((Astro.params.slug as string) || '', title);
     <AdSlot slotType="in-article" />
 
     <!-- Main Content Prose -->
-    <article class="prose-transit">
+    <article class="prose-transit min-w-0 overflow-hidden">
       <slot />
     </article>
 
