@@ -36,6 +36,11 @@ export const siteConfig = {
     operationalHours: 'Senin – Jumat: 08.30 – 16.30 WIB'
   },
   
+  // Google Analytics Configuration
+  analytics: {
+    gaId: 'G-M76R8VBMJS'
+  },
+
   // Google AdSense Configuration
   // CATATAN KEPATUHAN ADSENSE:
   // Selama masa peninjauan (Review Stage), 'enabled' di-set false agar tidak merender

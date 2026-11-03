@@ -47,6 +47,16 @@ const fullImageUrl = new URL(image, siteConfig.url).toString();
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
     
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-M76R8VBMJS"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-M76R8VBMJS');
+    </script>
+
     <!-- Google AdSense Account Ownership Verification Meta Tag -->
     <meta name="google-adsense-account" content={siteConfig.adsense.clientId} />
 
