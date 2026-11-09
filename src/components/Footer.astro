@@ -40,24 +40,24 @@ const currentYear = new Date().getFullYear();
         <ul class="space-y-2.5 text-xs">
           {siteConfig.categories.map((cat) => (
             <li>
-              <a href={`/kategori/${cat.slug}`} class="text-keraton-200 hover:text-white transition-colors flex items-center gap-1.5 font-medium">
+              <a href={`/kategori/${cat.slug}/`} class="text-keraton-200 hover:text-white transition-colors flex items-center gap-1.5 font-medium">
                 <span class="w-1.5 h-1.5 rounded-full bg-jogja-400"></span>
                 {cat.name}
               </a>
             </li>
           ))}
           <li>
-            <a href="/kategori/trans-jogja" class="text-keraton-200 hover:text-white transition-colors">
+            <a href="/kategori/trans-jogja/" class="text-keraton-200 hover:text-white transition-colors">
               Rute Bus Trans Jogja (1A - 5B)
             </a>
           </li>
           <li>
-            <a href="/kategori/kereta-bandara" class="text-keraton-200 hover:text-white transition-colors">
+            <a href="/kategori/kereta-bandara/" class="text-keraton-200 hover:text-white transition-colors">
               KRL Jogja - Solo &amp; KA Bandara YIA
             </a>
           </li>
           <li>
-            <a href="/kategori/tiket-wisata" class="text-keraton-200 hover:text-white transition-colors">
+            <a href="/kategori/tiket-wisata/" class="text-keraton-200 hover:text-white transition-colors">
               Tarif &amp; Integrasi Antarmoda Wisata
             </a>
           </li>
@@ -71,27 +71,27 @@ const currentYear = new Date().getFullYear();
         </h3>
         <ul class="space-y-2.5 text-xs">
           <li>
-            <a href="/panduan/rute-halte-trans-jogja-koridor-1a-prambanan-malioboro" class="text-keraton-200 hover:text-white transition-colors">
+            <a href="/panduan/rute-halte-trans-jogja-koridor-1a-prambanan-malioboro/" class="text-keraton-200 hover:text-white transition-colors">
               Trans Jogja 1A (Prambanan - Malioboro)
             </a>
           </li>
           <li>
-            <a href="/panduan/cara-naik-ka-bandara-yia-stasiun-tugu-kulon-progo" class="text-keraton-200 hover:text-white transition-colors">
+            <a href="/panduan/cara-naik-ka-bandara-yia-stasiun-tugu-kulon-progo/" class="text-keraton-200 hover:text-white transition-colors">
               KA Bandara YIA dari Stasiun Tugu
             </a>
           </li>
           <li>
-            <a href="/panduan/jadwal-tarif-krl-commuter-line-jogja-solo-terbaru" class="text-keraton-200 hover:text-white transition-colors">
+            <a href="/panduan/jadwal-tarif-krl-commuter-line-jogja-solo-terbaru/" class="text-keraton-200 hover:text-white transition-colors">
               Jadwal &amp; Tarif KRL Jogja - Solo
             </a>
           </li>
           <li>
-            <a href="/panduan/cara-pembayaran-trans-jogja-emoney-qris-tunai" class="text-keraton-200 hover:text-white transition-colors">
+            <a href="/panduan/cara-pembayaran-trans-jogja-emoney-qris-tunai/" class="text-keraton-200 hover:text-white transition-colors">
               Cara Bayar Trans Jogja (QRIS &amp; Kartu)
             </a>
           </li>
           <li>
-            <a href="/panduan/panduan-rute-angkutan-umum-jogja-candi-borobudur" class="text-keraton-200 hover:text-white transition-colors">
+            <a href="/panduan/panduan-rute-angkutan-umum-jogja-candi-borobudur/" class="text-keraton-200 hover:text-white transition-colors">
               Transportasi Umum Jogja ke Borobudur
             </a>
           </li>
@@ -112,12 +112,12 @@ const currentYear = new Date().getFullYear();
             </li>
           ))}
           <li>
-            <a href="/redaksi" class="text-keraton-200 hover:text-white transition-colors font-medium">
+            <a href="/redaksi/" class="text-keraton-200 hover:text-white transition-colors font-medium">
               Dewan Redaksi &amp; Verifikasi Lapangan
             </a>
           </li>
           <li>
-            <a href="/privacy" class="text-keraton-200 hover:text-white transition-colors">
+            <a href="/privacy/" class="text-keraton-200 hover:text-white transition-colors">
               Kebijakan Cookie &amp; Iklan
             </a>
           </li>
@@ -142,9 +142,9 @@ const currentYear = new Date().getFullYear();
     <div class="mt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-keraton-400 gap-4">
       <p>© {currentYear} {siteConfig.name}. Seluruh hak cipta dilindungi undang-undang.</p>
       <div class="flex items-center gap-4 text-[11px]">
-        <a href="/privacy" class="hover:text-white">Privasi</a>
+        <a href="/privacy/" class="hover:text-white">Privasi</a>
         <span>•</span>
-        <a href="/terms" class="hover:text-white">Syarat &amp; Ketentuan</a>
+        <a href="/terms/" class="hover:text-white">Syarat &amp; Ketentuan</a>
         <span>•</span>
         <a href="/sitemap.xml" class="hover:text-white">Sitemap XML</a>
       </div>

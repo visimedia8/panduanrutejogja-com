@@ -112,17 +112,17 @@ export const siteConfig = {
   navItems: [
     { title: 'Beranda', href: '/' },
     { title: 'Kalkulator Tarif', href: '/#kalkulator' },
-    { title: 'Trans Jogja', href: '/kategori/trans-jogja' },
-    { title: 'KRL & Bandara', href: '/kategori/kereta-bandara' },
-    { title: 'Tiket & Wisata', href: '/kategori/tiket-wisata' },
-    { title: 'Tim Redaksi', href: '/redaksi' }
+    { title: 'Trans Jogja', href: '/kategori/trans-jogja/' },
+    { title: 'KRL & Bandara', href: '/kategori/kereta-bandara/' },
+    { title: 'Tiket & Wisata', href: '/kategori/tiket-wisata/' },
+    { title: 'Tim Redaksi', href: '/redaksi/' }
   ] as NavItem[],
 
   legalNavItems: [
-    { title: 'Tentang Kami', href: '/tentang' },
-    { title: 'Tim Redaksi (E-E-A-T)', href: '/redaksi' },
-    { title: 'Hubungi Kami', href: '/kontak' },
-    { title: 'Kebijakan Privasi', href: '/privacy' },
-    { title: 'Syarat & Ketentuan', href: '/terms' }
+    { title: 'Tentang Kami', href: '/tentang/' },
+    { title: 'Tim Redaksi (E-E-A-T)', href: '/redaksi/' },
+    { title: 'Hubungi Kami', href: '/kontak/' },
+    { title: 'Kebijakan Privasi', href: '/privacy/' },
+    { title: 'Syarat & Ketentuan', href: '/terms/' }
   ] as NavItem[]
 };
